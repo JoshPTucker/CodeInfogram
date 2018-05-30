@@ -19,7 +19,7 @@ public class MainController {
 		return "studentform";
 	}
 	@PostMapping("/studentform")
-	public String dgsg() {
+	public String displayform() {
 		return "";
 	}
 }
