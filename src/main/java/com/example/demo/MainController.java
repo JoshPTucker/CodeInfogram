@@ -26,8 +26,9 @@ public class MainController {
 	@PostMapping("/studentform")
 	public String displayform( @Valid@ModelAttribute("student")Student student, BindingResult result, Model model) {
 		if(result.hasErrors()) {
-			return "";
+			return "studentform";
 		}else {
+			studentrepository.save(student);
 			return"";
 		}
 	}
