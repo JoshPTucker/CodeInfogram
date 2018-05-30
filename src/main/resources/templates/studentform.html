@@ -7,8 +7,6 @@
 <body>
 <form action="#" th:action="@{/studentform}" th:object="${student}" method="post">
 <fieldset>
-<span th:if="${#fields.hasErrors('firstName')}" 
-	    	th:errors="*{firstName}">First Name Error</span>
 <input type="text" id="firstname" th:field="*{firstname}" placeholder="First Name"/>
 </fieldset>
 <fieldset>

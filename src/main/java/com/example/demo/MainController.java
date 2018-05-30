@@ -29,7 +29,7 @@ public class MainController {
 			return "studentform";
 		}else {
 			studentrepository.save(student);
-			return"";
+			return"printpage";
 		}
 	}
 }
