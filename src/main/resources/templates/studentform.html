@@ -5,9 +5,11 @@
 <title>Student Form</title>
 </head>
 <body>
-<form action="#" th:action="#" th:object="#" method="#">
+<form action="#" th:action="@{/studentform}" th:object="${student}" method="post">
 <fieldset>
-<input type="text" name="">
+<span th:if="${#fields.hasErrors('firstName')}" 
+	    	th:errors="*{firstName}">First Name Error</span>
+<input type="text" id="firstname" th:field="*{firstname}" placeholder="First Name"/>
 </fieldset>
 <fieldset>
 <input type="reset"/>
