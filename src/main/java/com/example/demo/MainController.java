@@ -29,6 +29,7 @@ public class MainController {
 			return "studentform";
 		}else {
 			studentrepository.save(student);
+			//model.addAttribute(student);
 			return"printpage";
 		}
 	}

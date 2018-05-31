@@ -8,6 +8,7 @@
 <form action="#" th:action="@{/studentform}" th:object="${student}" method="post">
 <fieldset>
 <input type="text" id="firstname" th:field="*{firstname}" placeholder="First Name"/>
+<input type="text" id="lastname" th:field="*{lastname}" placeholder="Last Name"/>
 </fieldset>
 <fieldset>
 <input type="reset"/>
