@@ -37,13 +37,12 @@ public class Student {
 	@Column(name = "studentid")
 	private String studentId;
 
-	@Nullable
 	@Column(name = "dateOfBirth")
 	private String dob;
 	
 	private String adress;
 	private String zipcode;
-	private String phone;
+	private String homephone;
 	private String State;
 	private String city;
 	private String gender;
@@ -53,7 +52,8 @@ public class Student {
 	private String hours;
 	private String salary;
 	private String startdate;
-	
+	private String workPhone;
+	private String reasonUEmploy;
 	
 	private int ssn;
 	
@@ -68,6 +68,15 @@ public class Student {
 	private boolean isTAAP;
 	private boolean isVeteran;
 	private boolean isSpouseVeteran;
+	
+	
+	
+	private boolean isNatGaurd;
+	private boolean isMdRes;
+	private boolean is60plus;
+	
+	private boolean hasRecievedGreivanceVet;
+	
 	
 	//Race choices
 	 private boolean isHispanic;
@@ -134,4 +143,285 @@ public class Student {
 		this.ssn = ssn;
 	}
 
+	public String getMiddleInitial() {
+		return middleInitial;
+	}
+
+	public void setMiddleInitial(String middleInitial) {
+		this.middleInitial = middleInitial;
+	}
+
+	public String getAdress() {
+		return adress;
+	}
+
+	public void setAdress(String adress) {
+		this.adress = adress;
+	}
+
+	public String getZipcode() {
+		return zipcode;
+	}
+
+	public void setZipcode(String zipcode) {
+		this.zipcode = zipcode;
+	}
+
+	public String getHomephone() {
+		return homephone;
+	}
+
+	public void setHomephone(String homephone) {
+		this.homephone = homephone;
+	}
+
+	public String getState() {
+		return State;
+	}
+
+	public void setState(String state) {
+		State = state;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getGender() {
+		return gender;
+	}
+
+	public void setGender(String gender) {
+		this.gender = gender;
+	}
+
+	public String getHighestEducation() {
+		return highestEducation;
+	}
+
+	public void setHighestEducation(String highestEducation) {
+		this.highestEducation = highestEducation;
+	}
+
+	public String getEmployer() {
+		return employer;
+	}
+
+	public void setEmployer(String employer) {
+		this.employer = employer;
+	}
+
+	public String getHours() {
+		return hours;
+	}
+
+	public void setHours(String hours) {
+		this.hours = hours;
+	}
+
+	public String getSalary() {
+		return salary;
+	}
+
+	public void setSalary(String salary) {
+		this.salary = salary;
+	}
+
+	public String getStartdate() {
+		return startdate;
+	}
+
+	public void setStartdate(String startdate) {
+		this.startdate = startdate;
+	}
+
+	public String getWorkPhone() {
+		return workPhone;
+	}
+
+	public void setWorkPhone(String workPhone) {
+		this.workPhone = workPhone;
+	}
+
+	public boolean isHasDisability() {
+		return hasDisability;
+	}
+
+	public void setHasDisability(boolean hasDisability) {
+		this.hasDisability = hasDisability;
+	}
+
+	public boolean isCitizen() {
+		return isCitizen;
+	}
+
+	public void setCitizen(boolean isCitizen) {
+		this.isCitizen = isCitizen;
+	}
+
+	public boolean isPermanentResidnetAlien() {
+		return isPermanentResidnetAlien;
+	}
+
+	public void setPermanentResidnetAlien(boolean isPermanentResidnetAlien) {
+		this.isPermanentResidnetAlien = isPermanentResidnetAlien;
+	}
+
+	public boolean isEmployed() {
+		return isEmployed;
+	}
+
+	public void setEmployed(boolean isEmployed) {
+		this.isEmployed = isEmployed;
+	}
+
+	public boolean isUnderEmployed() {
+		return isUnderEmployed;
+	}
+
+	public void setUnderEmployed(boolean isUnderEmployed) {
+		this.isUnderEmployed = isUnderEmployed;
+	}
+
+	public boolean isPellgrant() {
+		return isPellgrant;
+	}
+
+	public void setPellgrant(boolean isPellgrant) {
+		this.isPellgrant = isPellgrant;
+	}
+
+	public boolean isFullTimeStudent() {
+		return isFullTimeStudent;
+	}
+
+	public void setFullTimeStudent(boolean isFullTimeStudent) {
+		this.isFullTimeStudent = isFullTimeStudent;
+	}
+
+	public boolean isPartTimeStudent() {
+		return isPartTimeStudent;
+	}
+
+	public void setPartTimeStudent(boolean isPartTimeStudent) {
+		this.isPartTimeStudent = isPartTimeStudent;
+	}
+
+	public boolean isTAAP() {
+		return isTAAP;
+	}
+
+	public void setTAAP(boolean isTAAP) {
+		this.isTAAP = isTAAP;
+	}
+
+	public boolean isVeteran() {
+		return isVeteran;
+	}
+
+	public void setVeteran(boolean isVeteran) {
+		this.isVeteran = isVeteran;
+	}
+
+	public boolean isSpouseVeteran() {
+		return isSpouseVeteran;
+	}
+
+	public void setSpouseVeteran(boolean isSpouseVeteran) {
+		this.isSpouseVeteran = isSpouseVeteran;
+	}
+
+	public boolean isNatGaurd() {
+		return isNatGaurd;
+	}
+
+	public void setNatGaurd(boolean isNatGaurd) {
+		this.isNatGaurd = isNatGaurd;
+	}
+
+	public boolean isMdRes() {
+		return isMdRes;
+	}
+
+	public void setMdRes(boolean isMdRes) {
+		this.isMdRes = isMdRes;
+	}
+
+	public boolean isIs60plus() {
+		return is60plus;
+	}
+
+	public void setIs60plus(boolean is60plus) {
+		this.is60plus = is60plus;
+	}
+
+	public boolean isHasRecievedGreivanceVet() {
+		return hasRecievedGreivanceVet;
+	}
+
+	public void setHasRecievedGreivanceVet(boolean hasRecievedGreivanceVet) {
+		this.hasRecievedGreivanceVet = hasRecievedGreivanceVet;
+	}
+
+	public boolean isHispanic() {
+		return isHispanic;
+	}
+
+	public void setHispanic(boolean isHispanic) {
+		this.isHispanic = isHispanic;
+	}
+
+	public boolean isAmericanIndian() {
+		return isAmericanIndian;
+	}
+
+	public void setAmericanIndian(boolean isAmericanIndian) {
+		this.isAmericanIndian = isAmericanIndian;
+	}
+
+	public boolean isAsian() {
+		return isAsian;
+	}
+
+	public void setAsian(boolean isAsian) {
+		this.isAsian = isAsian;
+	}
+
+	public boolean isBlackAfricanAmerican() {
+		return isBlackAfricanAmerican;
+	}
+
+	public void setBlackAfricanAmerican(boolean isBlackAfricanAmerican) {
+		this.isBlackAfricanAmerican = isBlackAfricanAmerican;
+	}
+
+	public boolean isWhite() {
+		return isWhite;
+	}
+
+	public void setWhite(boolean isWhite) {
+		this.isWhite = isWhite;
+	}
+
+	public boolean isHawaiian() {
+		return isHawaiian;
+	}
+
+	public void setHawaiian(boolean isHawaiian) {
+		this.isHawaiian = isHawaiian;
+	}
+
+	public String getReasonUEmploy() {
+		return reasonUEmploy;
+	}
+
+	public void setReasonUEmploy(String reasonUEmploy) {
+		this.reasonUEmploy = reasonUEmploy;
+	}
+
+	
 }
