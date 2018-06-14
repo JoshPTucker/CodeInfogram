@@ -7,8 +7,13 @@
 <body>
 <form action="#" th:action="@{/studentform}" th:object="${student}" method="post">
 <fieldset>
+<input type=text id="studentid" th:field="*{studentId}" placeholder="MC Student Id"/>
 <input type="text" id="firstname" th:field="*{firstname}" placeholder="First Name"/>
 <input type="text" id="lastname" th:field="*{lastname}" placeholder="Last Name"/>
+<input type="text" id="email" th:field="*{email}" placeholder="Email"/>
+</fieldset>
+<fieldset>
+<input type="text" id="dob" th:field="*{dob}" placeholder="Date of birth"/>
 </fieldset>
 <fieldset>
 <input type="reset"/>
