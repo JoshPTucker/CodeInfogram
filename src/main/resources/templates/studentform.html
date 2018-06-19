@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="www.thymeleaf.org">
 <head>
-<meta charset="ISO-8859-1"/>
+<meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
 <title>Student Form</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous"/>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
 </head>
 <body>
+<h1>Welcome to the Code Work Academy Registration page.</h1>
+<h2>Please enter your information and press submit when you are done.</h2>
 <form action="#" th:action="@{/studentform}" th:object="${student}" method="post">
 	<fieldset>
 	<input type="text" id="studentid" th:field="*{studentId}" placeholder="MC Student Id"/>
@@ -12,6 +18,9 @@
 	<p>Have you attended Mc before?</p>
 	<input type="checkbox" value="yes" id="attenMcb4" th:field="*{attenMcb4}">Yes</input>
 	<input type="checkbox"value="no" id="attenMcb4" th:field="*{attenMcb4}">No</input>
+	<p>Have you recieved Copies of the "Grievance Procedures" and "Veterans Priority of Service" policies?</p>
+	<input type="checkbox" value="yes" id="recievGreiveVet" th:field="*{recievGreiveVet}">Yes</input>
+	<input type="checkbox"value="no" id="recievGreiveVet" th:field="*{recievGreiveVet}">No</input>
 	</fieldset>
 	
 	<fieldset>
@@ -46,8 +55,6 @@
 	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Non-Credit">Non-CreditProgram</input>
 	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Other">Other</input>
 	</fieldset>
-	
-	
 	<fieldset>
 		<input type="reset"/>
 		<input type="submit"/>

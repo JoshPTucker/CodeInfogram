@@ -74,6 +74,7 @@ public class Student {
 	private boolean isPellgrant;
 	private boolean isFullTimeStudent;
 	private boolean isPartTimeStudent;
+	//TAAP is Trade adjustment Assistance Program
 	private boolean isTAAP;
 	private boolean isVeteran;
 	private boolean isSpouseVeteran;
@@ -84,6 +85,7 @@ public class Student {
 	private boolean isMdRes;
 	private boolean is60plus;
 	
+	//Has student recieved the Greivance and Veteran forms
 	private boolean recievGreiveVet;
 	
 	
