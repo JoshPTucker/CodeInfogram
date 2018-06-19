@@ -16,19 +16,19 @@
 	<input type="text" id="studentid" th:field="*{studentId}" placeholder="MC Student Id"/>
 	<input type="text" id="email" th:field="*{email}" placeholder="Email"/>
 	<p>Have you attended Mc before?</p>
-	<input type="checkbox" value="yes" id="attenMcb4" th:field="*{attenMcb4}">Yes</input>
-	<input type="checkbox"value="no" id="attenMcb4" th:field="*{attenMcb4}">No</input>
-	<p>Have you recieved Copies of the "Grievance Procedures" and "Veterans Priority of Service" policies?</p>
-	<input type="checkbox" value="yes" id="recievGreiveVet" th:field="*{recievGreiveVet}">Yes</input>
-	<input type="checkbox"value="no" id="recievGreiveVet" th:field="*{recievGreiveVet}">No</input>
+	<input type="radio" value="yes" id="attenMcb4" th:field="*{attenMcb4}"/><label>Yes</label>
+	<input type="radio"value="no" id="attenMcb4" th:field="*{attenMcb4}"/><label>No</label>
+	<p>Have you received Copies of the "Grievance Procedures" and "Veterans Priority of Service" policies?</p>
+	<input type="radio" value="yes" id="recievGreiveVet" th:field="*{recievGreiveVet}"/><label>Yes</label>
+	<input type="radio"value="no" id="recievGreiveVet" th:field="*{recievGreiveVet}"/><label>No</label>
 	</fieldset>
 	
 	<fieldset>
 		<input type="text" id="firstname" th:field="*{firstname}" placeholder="First Name"/>
 		<input type="text" id="lastname" th:field="*{lastname}" placeholder="Last Name"/>
 		<input type="text" id="middleinitial" th:field="*{middleInitial}" placeholder="Middle Initial"/>
-		<input type="radio" id="gender" value="Male" th:field="*{gender}">Male</input>
-		<input type="radio" id="gender" value="Female" th:field="*{gender}">Female</input>
+		<input type="radio" id="gender" value="Male" th:field="*{gender}"/><label>Male</label>
+		<input type="radio" id="gender" value="Female" th:field="*{gender}"/><label>Female</label>
 	</fieldset>
 	
 	<fieldset>
@@ -41,19 +41,31 @@
 	
 	<fieldset>
 	<p>What is your highest education?</p>
-	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="GED">GED</input>
-	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="H.S Diploma">H.S Diploma</input>
-	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="Some College"/>Some College</input>
-	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="Associates Degree">Associates Degree</input>
-	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="Bachelors Degree">Bachelors Degree</input>
-	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="Graduate Degree">Graduate Degree</input>
+	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="GED"/><label>GED</label>
+	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="H.S Diploma"/><label>H.S Diploma</label>
+	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="Some College"/><label>Some College</label>
+	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="Associates Degree"/><label>Associates Degree</label>
+	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="Bachelors Degree"/><label>Bachelors Degree</label>
+	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="Graduate Degree"/><label>Graduate Degree</label>
 	</fieldset>
 	<fieldset>
 	<p>Please identify the program of study you are currently enrolled in(select 1)</p>
-	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Certificate">Certificate</input>
-	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Associates Degree">Associates Degree</input>
-	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Non-Credit">Non-CreditProgram</input>
-	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Other">Other</input>
+	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Certificate"/><label>Certificate</label>
+	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Associates Degree"/><label>Associates Degree</label>
+	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Non-Credit"/><label>Non-CreditProgram</label>
+	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Other"/><label>Other</label>
+	</fieldset>
+	<fieldset>
+	<p>Are you currently employed?</p>
+	<input type="radio" value="yes" id="Employed" th:field="*{Employed}"/><label>Yes</label>
+	<input type="radio"value="no" id="Employed" th:field="*{Employed}"/><label>No</label>
+	<p>Are you under employed</p>
+	<input type="radio" value="yes" id="UnderEmployed" th:field="*{UnderEmployed}"/><label>Yes</label>
+	<input type="radio"value="no" id="UnderEmployed" th:field="*{UnderEmployed}"/><label>No</label>
+	
+	<p>If yes, what is the reason for you under employment?</p>
+	<input type="textarea" id="reasonUEmploy" th:field="*{reasonUEmploy}"/>
+
 	</fieldset>
 	<fieldset>
 		<input type="reset"/>
