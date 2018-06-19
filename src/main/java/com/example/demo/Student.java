@@ -33,20 +33,28 @@ public class Student {
 
 	@Column(name = "email")
 	private String email;
-
+	
 	@Column(name = "studentid")
 	private String studentId;
-
-	@Column(name = "dateOfBirth")
-	private String dob;
 	
+	
+	
+
+//	@Column(name = "dateOfBirth")
+//	private String dob;
+	
+	@Column(name="Street_Adress")
 	private String adress;
 	private String zipcode;
 	private String homephone;
+	
 	private String State;
 	private String city;
+	
 	private String gender;
+	
 	private String highestEducation;
+	private String currentEnroll;
 	
 	private String employer;
 	private String hours;
@@ -55,8 +63,9 @@ public class Student {
 	private String workPhone;
 	private String reasonUEmploy;
 	
-	private int ssn;
+//	private int ssn;
 	
+	private boolean attenMcb4;
 	private boolean hasDisability;
 	private boolean isCitizen;
 	private boolean isPermanentResidnetAlien;
@@ -75,7 +84,7 @@ public class Student {
 	private boolean isMdRes;
 	private boolean is60plus;
 	
-	private boolean hasRecievedGreivanceVet;
+	private boolean recievGreiveVet;
 	
 	
 	//Race choices
@@ -111,13 +120,13 @@ public class Student {
 		this.lastname = lastname;
 	}
 
-	public String getDob() {
-		return dob;
-	}
-
-	public void setDob(String dob) {
-		this.dob = dob;
-	}
+//	public String getDob() {
+//		return dob;
+//	}
+//
+//	public void setDob(String dob) {
+//		this.dob = dob;
+//	}
 
 	public String getEmail() {
 		return email;
@@ -127,6 +136,8 @@ public class Student {
 		this.email = email;
 	}
 
+
+
 	public String getStudentId() {
 		return studentId;
 	}
@@ -135,13 +146,13 @@ public class Student {
 		this.studentId = studentId;
 	}
 
-	public int getSsn() {
-		return ssn;
-	}
-
-	public void setSsn(int ssn) {
-		this.ssn = ssn;
-	}
+//	public int getSsn() {
+//		return ssn;
+//	}
+//
+//	public void setSsn(int ssn) {
+//		this.ssn = ssn;
+//	}
 
 	public String getMiddleInitial() {
 		return middleInitial;
@@ -359,14 +370,6 @@ public class Student {
 		this.is60plus = is60plus;
 	}
 
-	public boolean isHasRecievedGreivanceVet() {
-		return hasRecievedGreivanceVet;
-	}
-
-	public void setHasRecievedGreivanceVet(boolean hasRecievedGreivanceVet) {
-		this.hasRecievedGreivanceVet = hasRecievedGreivanceVet;
-	}
-
 	public boolean isHispanic() {
 		return isHispanic;
 	}
@@ -421,6 +424,30 @@ public class Student {
 
 	public void setReasonUEmploy(String reasonUEmploy) {
 		this.reasonUEmploy = reasonUEmploy;
+	}
+
+	public String getCurrentEnroll() {
+		return currentEnroll;
+	}
+
+	public void setCurrentEnroll(String currentEnroll) {
+		this.currentEnroll = currentEnroll;
+	}
+
+	public boolean isAttenMcb4() {
+		return attenMcb4;
+	}
+
+	public void setAttenMcb4(boolean attenMcb4) {
+		this.attenMcb4 = attenMcb4;
+	}
+
+	public boolean isRecievGreiveVet() {
+		return recievGreiveVet;
+	}
+
+	public void setRecievGreiveVet(boolean recievGreiveVet) {
+		this.recievGreiveVet = recievGreiveVet;
 	}
 
 	

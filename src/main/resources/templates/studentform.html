@@ -6,19 +6,52 @@
 </head>
 <body>
 <form action="#" th:action="@{/studentform}" th:object="${student}" method="post">
-<fieldset>
-<input type=text id="studentid" th:field="*{studentId}" placeholder="MC Student Id"/>
-<input type="text" id="firstname" th:field="*{firstname}" placeholder="First Name"/>
-<input type="text" id="lastname" th:field="*{lastname}" placeholder="Last Name"/>
-<input type="text" id="email" th:field="*{email}" placeholder="Email"/>
-</fieldset>
-<fieldset>
-<input type="text" id="dob" th:field="*{dob}" placeholder="Date of birth"/>
-</fieldset>
-<fieldset>
-<input type="reset"/>
-<input type="submit"/>
-</fieldset>
+	<fieldset>
+	<input type="text" id="studentid" th:field="*{studentId}" placeholder="MC Student Id"/>
+	<input type="text" id="email" th:field="*{email}" placeholder="Email"/>
+	<p>Have you attended Mc before?</p>
+	<input type="checkbox" value="yes" id="attenMcb4" th:field="*{attenMcb4}">Yes</input>
+	<input type="checkbox"value="no" id="attenMcb4" th:field="*{attenMcb4}">No</input>
+	</fieldset>
+	
+	<fieldset>
+		<input type="text" id="firstname" th:field="*{firstname}" placeholder="First Name"/>
+		<input type="text" id="lastname" th:field="*{lastname}" placeholder="Last Name"/>
+		<input type="text" id="middleinitial" th:field="*{middleInitial}" placeholder="Middle Initial"/>
+		<input type="radio" id="gender" value="Male" th:field="*{gender}">Male</input>
+		<input type="radio" id="gender" value="Female" th:field="*{gender}">Female</input>
+	</fieldset>
+	
+	<fieldset>
+	<input type="text" id="adress" th:field="*{adress}" placeholder="Street Address"/>
+	<input type="text" id="zipcode" th:field="*{zipcode}" placeholder="Zipcode"/>
+	<input type="text" id="homephone" th:field="*{homephone}" placeholder="Home Phone Number"/>
+	<input type="text" id="sate" th:field="*{state}" placeholder="State"/>
+	<input type="text" id="city" th:field="*{city}" placeholder="City"/>
+	</fieldset>
+	
+	<fieldset>
+	<p>What is your highest education?</p>
+	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="GED">GED</input>
+	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="H.S Diploma">H.S Diploma</input>
+	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="Some College"/>Some College</input>
+	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="Associates Degree">Associates Degree</input>
+	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="Bachelors Degree">Bachelors Degree</input>
+	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="Graduate Degree">Graduate Degree</input>
+	</fieldset>
+	<fieldset>
+	<p>Please identify the program of study you are currently enrolled in(select 1)</p>
+	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Certificate">Certificate</input>
+	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Associates Degree">Associates Degree</input>
+	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Non-Credit">Non-CreditProgram</input>
+	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Other">Other</input>
+	</fieldset>
+	
+	
+	<fieldset>
+		<input type="reset"/>
+		<input type="submit"/>
+	</fieldset>
 </form>
 </body>
 </html>
