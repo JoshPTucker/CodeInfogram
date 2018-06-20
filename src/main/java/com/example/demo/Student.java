@@ -61,6 +61,7 @@ public class Student {
 	private String salary;
 	private String startdate;
 	private String workPhone;
+	@Column(length=400)
 	private String reasonUEmploy;
 	
 //	private int ssn;

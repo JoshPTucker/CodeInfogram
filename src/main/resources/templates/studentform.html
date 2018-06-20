@@ -29,16 +29,41 @@
 		<input type="text" id="middleinitial" th:field="*{middleInitial}" placeholder="Middle Initial"/>
 		<input type="radio" id="gender" value="Male" th:field="*{gender}"/><label>Male</label>
 		<input type="radio" id="gender" value="Female" th:field="*{gender}"/><label>Female</label>
+
+		<p>What is your race or ethnicity. Check all that apply</p>
+		<input type="checkbox" id="hispanic" value="" th:field="*{Hispanic}"><label>Hispanic/Latino</label>
+		<input type="checkbox" id="americanIndian" value="" th:field="*{AmericanIndian}"><label>American Indian</label>
+		<input type="checkbox" id="asian" value="" th:field="*{Asian}"><label>Asian</label>
+		<input type="checkbox" id="black" value="" th:field="*{BlackAfricanAmerican}"><label>Black/African American</label>
+		<input type="checkbox" id="white" value="" th:field="*{White}"><label>White</label>
+		<input type="checkbox" id="hawaiian" value="" th:field="*{Hawaiian}"><label>Hawaiian</label>
+
+		<p>Do you have a documented disability?</p>
+		<input type="radio" value="yes" id="hasDisability" th:field="*{hasDisability}"/><label>Yes</label>
+		<input type="radio" value="no" id="hasDisability" th:field="*{hasDisability}"/><label>No</label>
+		<p>Are you a United States Citizen?</p>
+		<input type="radio" value="yes" id="Citizen" th:field="*{Citizen}"/><label>Yes</label>
+		<input type="radio" value="no" id="Citizen" th:field="*{Citizen}"/><label>No</label>
+		<p>Are you a permanent resident alien?</p>
+		<input type="radio" value="yes" id="PermanentResidnetAlien" th:field="*{PermanentResidnetAlien}"/><label>Yes</label>
+		<input type="radio" value="no" id="PermanentResidnetAlien" th:field="*{PermanentResidnetAlien}"/><label>No</label>
+
 	</fieldset>
 	
 	<fieldset>
+	<p>Have you been a maryland[as defined by montgomery college] resident for at least three months? </p>
+		<input type="radio" value="yes" id="MdRes" th:field="*{MdRes}"/><label>Yes</label>
+		<input type="radio" value="no" id="MdRes" th:field="*{MdRes}"/><label>No</label>
+		<p>Are you 60 years of age or older?</p>
+		<input type="radio" value="yes" id="sixtyPlus" th:field="*{sixtyPlus}"/><label>Yes</label>
+		<input type="radio" value="no" id="sixtyPlus" th:field="*{sixtyPlus}"/><label>No</label>
+		<br/>
 	<input type="text" id="adress" th:field="*{adress}" placeholder="Street Address"/>
 	<input type="text" id="zipcode" th:field="*{zipcode}" placeholder="Zipcode"/>
 	<input type="text" id="homephone" th:field="*{homephone}" placeholder="Home Phone Number"/>
 	<input type="text" id="sate" th:field="*{state}" placeholder="State"/>
 	<input type="text" id="city" th:field="*{city}" placeholder="City"/>
 	</fieldset>
-	
 	<fieldset>
 	<p>What is your highest education?</p>
 	<input type="radio" id="highestEducation" th:field="*{highestEducation}" value="GED"/><label>GED</label>
@@ -54,18 +79,55 @@
 	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Associates Degree"/><label>Associates Degree</label>
 	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Non-Credit"/><label>Non-CreditProgram</label>
 	<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Other"/><label>Other</label>
+		<p>Are you a fulltime student?</p>
+		<input type="radio" value="yes" id="fulltime" th:field="*{FullTimeStudent}"/><label>Yes</label>
+		<input type="radio" value="no" id="fulltime" th:field="*{FullTimeStudent}"/><label>No</label>
+		<p>Are you a part time student?</p>
+		<input type="radio"value="yes" id="partime" th:field="*{PartTimeStudent}"/><label>Yes</label>
+		<input type="radio"value="no" id="partime" th:field="*{PartTimeStudent}"/><label>No</label>
+		<p>Do you have or are you eligible for a pell grant?</p>
+		<input type="radio"value="yes" id="pell" th:field="*{Pellgrant}"/><label>Yes</label>
+		<input type="radio"value="no" id="pell" th:field="*{Pellgrant}"/><label>No</label>
 	</fieldset>
 	<fieldset>
-	<p>Are you currently employed?</p>
-	<input type="radio" value="yes" id="Employed" th:field="*{Employed}"/><label>Yes</label>
-	<input type="radio"value="no" id="Employed" th:field="*{Employed}"/><label>No</label>
-	<p>Are you under employed</p>
+		<p>Are you currently employed?</p>
+		<input type="radio" value="yes" id="Employed" th:field="*{Employed}"/><label>Yes</label>
+		<input type="radio"value="no" id="Employed" th:field="*{Employed}"/><label>No</label>
+		<p>If yes, please enter the following </p>
+		<input type="text" id="employer" th:field="*{employer}" placeholder="Employer"/>
+		<input type="text" id="salary" th:field="*{salary}" placeholder="Salary" />
+		<input type="text" id="hours" th:field="*{hours}" placeholder="Hours" />
+		<input type="text" id="startdate" th:field="*{startdate}" placeholder="Start Date" />
+		<input type="text" id="workphone" th:field="*{workPhone}" placeholder="Work Phone" />
+
+		<p>Are you under employed</p>
 	<input type="radio" value="yes" id="UnderEmployed" th:field="*{UnderEmployed}"/><label>Yes</label>
 	<input type="radio"value="no" id="UnderEmployed" th:field="*{UnderEmployed}"/><label>No</label>
 	
 	<p>If yes, what is the reason for you under employment?</p>
-	<input type="textarea" id="reasonUEmploy" th:field="*{reasonUEmploy}"/>
 
+		<input type="checkbox" id="reasonUEmploy" th:field="*{reasonUEmploy}" value="Working Part Time"/>
+		<label>Working Part Time</label>
+		<br/>
+		<input type="checkbox" id="reasonUEmploy" th:field="*{reasonUEmploy}" value="My Earnings are less than $19.96/hr with benefits or $21.78/hr without benefits"/>
+		<label>My Earnings are less than $19.96/hr with benefits or $21.78/hr without benefits</label>
+		<br/>
+		<input type="checkbox" id="reasonUEmploy" th:field="*{reasonUEmploy}" value="Working fulltime, but duties and/or salary are not commensurate with my skill level"/>
+		<label>Working fulltime, but duties and/or salary are not commensurate with my skill level</label>
+		<br/>
+		<input type="checkbox" id="reasonUEmploy" th:field="*{reasonUEmploy}" value="Working fulltime, but duties and/or salary are not commensurate with my education level"/>
+		<label>Working fulltime, but duties and/or salary are not commensurate with my education level</label>
+	</fieldset>
+	<fieldset>
+		<p>Are you a veteran?</p>
+		<input type="radio" value="yes" id="Veteran" th:field="*{Veteran}"/><label>Yes</label>
+		<input type="radio" value="no" id="Veteran" th:field="*{Veteran}"/><label>No</label>
+		<p>Are you the spouse of a veteran?</p>
+		<input type="radio" value="yes" id="SpouseVeteran" th:field="*{SpouseVeteran}"/><label>Yes</label>
+		<input type="radio" value="no" id="SpouseVeteran" th:field="*{SpouseVeteran}"/><label>No</label>
+		<p>Are you a Maryland National Gaurd memeber enlisted fr at least 24 months and submitting proof of such from the adjutant general's office?</p>
+		<input type="radio" value="yes" id="NatGaurd" th:field="*{NatGaurd}"/><label>Yes</label>
+		<input type="radio" value="no" id="NatGaurd" th:field="*{NatGaurd}"/><label>No</label>
 	</fieldset>
 	<fieldset>
 		<input type="reset"/>
