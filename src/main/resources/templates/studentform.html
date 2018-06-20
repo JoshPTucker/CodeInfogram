@@ -16,10 +16,10 @@
             crossorigin="anonymous"></script>
     <script>
         function myFunction(){
-            document.getElementById("test1").style.visibility = "hidden";
+            document.getElementById("test1").style.display = "block";
         }
         function myFunction2(){
-            document.getElementById("test2").style.visibility = "hidden";
+            document.getElementById("test2").style.display = "block";
         }
     </script>
 </head>
@@ -231,9 +231,9 @@
             <span class="border border-primary">
             <div class="col-auto">
               <p>Are you currently employed?</p>
-            <input type="radio" value="yes" id="Employed" th:field="*{Employed}" /><label>Yes</label>
-            <input type="radio" value="no" id="Employed" th:field="*{Employed}" onclick="myFunction()"/><label>No</label>
-               <div id="test1">
+            <input type="radio" value="yes" id="Employed" th:field="*{Employed}" onclick="myFunction()"/><label>Yes</label>
+            <input type="radio" value="no" id="Employed" th:field="*{Employed}" /><label>No</label>
+               <div id="test1" style="display:none">
                      <p>Please enter the following </p>
             <input type="text" id="employer" th:field="*{employer}" placeholder="Employer"/>
             <input type="text" id="salary" th:field="*{salary}" placeholder="Salary"/>
@@ -250,10 +250,10 @@
             <span class="border border-primary">
             <div class="col-auto">
                <p>Are you under employed</p>
-            <input type="radio" value="yes" id="UnderEmployed" th:field="*{UnderEmployed}"/><label>Yes</label>
-            <input type="radio" value="no" id="UnderEmployed" th:field="*{UnderEmployed}" onclick="myFunction2()"/><label>No</label>
+            <input type="radio" value="yes" id="UnderEmployed" th:field="*{UnderEmployed}" onclick="myFunction2()"/><label>Yes</label>
+            <input type="radio" value="no" id="UnderEmployed" th:field="*{UnderEmployed}" /><label>No</label>
             </div>
-            <div id="test2">
+            <div id="test2" style="display:none">
                  <div class="col-auto">
               <p>If yes, what is the reason for you under employment?</p>
 
