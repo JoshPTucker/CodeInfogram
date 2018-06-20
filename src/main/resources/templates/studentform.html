@@ -92,6 +92,9 @@
 		<input type="radio"value="no" id="pell" th:field="*{Pellgrant}"/><label>No</label>
 	</fieldset>
 	<fieldset>
+		<p>Are you currently recieving benefits under the trade adjustment assistance program?</p>
+		<input type="radio" value="yes" id="recTAAP" th:field="*{recTAAP}"/><label>Yes</label>
+		<input type="radio"value="no" id="recTAAP" th:field="*{recTAAP}"/><label>No</label>
 		<p>Are you currently employed?</p>
 		<input type="radio" value="yes" id="Employed" th:field="*{Employed}"/><label>Yes</label>
 		<input type="radio"value="no" id="Employed" th:field="*{Employed}"/><label>No</label>
@@ -130,6 +133,9 @@
 		<p>Are you a Maryland National Gaurd memeber enlisted fr at least 24 months and submitting proof of such from the adjutant general's office?</p>
 		<input type="radio" value="yes" id="NatGaurd" th:field="*{NatGaurd}"/><label>Yes</label>
 		<input type="radio" value="no" id="NatGaurd" th:field="*{NatGaurd}"/><label>No</label>
+	</fieldset>
+	<fieldset>
+		<p>how di dyou hear about this program?</p>
 	</fieldset>
 	<fieldset>
 		<input type="reset"/>
