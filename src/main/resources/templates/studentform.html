@@ -12,31 +12,49 @@
 <h1>Welcome to the Code Work Academy Registration page.</h1>
 <h2>Please enter your information and press submit when you are done.</h2>
 <form action="#" th:action="@{/studentform}" th:object="${student}" method="post">
-	<fieldset>
-	<input type="text" id="studentid" th:field="*{studentId}" placeholder="MC Student Id"/>
-	<input type="text" id="email" th:field="*{email}" placeholder="Email"/>
-	<p>Have you attended Mc before?</p>
-	<input type="radio" value="yes" id="attenMcb4" th:field="*{attenMcb4}"/><label>Yes</label>
-	<input type="radio"value="no" id="attenMcb4" th:field="*{attenMcb4}"/><label>No</label>
+	<div class="row">
+		<div class="col">
+	<input  class="form-control" type="text" id="studentid" th:field="*{studentId}" placeholder="MC Student Id"/>
+		</div>
+		<div class ="col">
+	<input class="form-control" type="text" id="email" th:field="*{email}" placeholder="Email"/>
+	</div>
+	</div>
+	<div class="row">
+	<div class="col">
+		<p>Have you attended Mc before?</p>
+		<input type="radio" value="yes" id="attenMcb4" th:field="*{attenMcb4}"/><label>Yes</label>
+		<input type="radio"value="no" id="attenMcb4" th:field="*{attenMcb4}"/><label>No</label>
+	</div>
+
+	<div class="col">
 	<p>Have you received Copies of the "Grievance Procedures" and "Veterans Priority of Service" policies?</p>
 	<input type="radio" value="yes" id="recievGreiveVet" th:field="*{recievGreiveVet}"/><label>Yes</label>
 	<input type="radio"value="no" id="recievGreiveVet" th:field="*{recievGreiveVet}"/><label>No</label>
-	</fieldset>
+	</div>
+	</div>
 	
-	<fieldset>
-		<input type="text" id="firstname" th:field="*{firstname}" placeholder="First Name"/>
-		<input type="text" id="lastname" th:field="*{lastname}" placeholder="Last Name"/>
-		<input type="text" id="middleinitial" th:field="*{middleInitial}" placeholder="Middle Initial"/>
-		<input type="radio" id="gender" value="Male" th:field="*{gender}"/><label>Male</label>
-		<input type="radio" id="gender" value="Female" th:field="*{gender}"/><label>Female</label>
-		<br/>
-		<input type="text" id="adress" th:field="*{adress}" placeholder="Street Address"/>
-		<input type="text" id="aptnum" th:field="*{aptnum}" placeholder="Apartment Number"/>
-		<input type="text" id="zipcode" th:field="*{zipcode}" placeholder="Zipcode"/>
-		<input type="text" id="homephone" th:field="*{homephone}" placeholder="Home Phone Number"/>
-		<input type="text" id="sate" th:field="*{state}" placeholder="State"/>
-		<input type="text" id="city" th:field="*{city}" placeholder="City"/>
+	<div class="row">
+		<div class="col"><input class="form-control" type="text" id="firstname" th:field="*{firstname}" placeholder="First Name"/></div>
+		<div class="col"><input class="form-control" type="text" id="lastname" th:field="*{lastname}" placeholder="Last Name"/></div>
+		<div class="col"><input class="form-control" type="text" id="middleinitial" th:field="*{middleInitial}" placeholder="Middle Initial"/></div>
+		<div class="col">
+			<p>Gender</p>
+			<input type="radio" id="gender" value="Male" th:field="*{gender}"/><label>Male</label>
+			<input type="radio" id="gender" value="Female" th:field="*{gender}"/><label>Female</label>
+		</div>
 
+	</div>
+
+	<div class="row">
+		<div class="col"><input class="form-control" type="text" id="adress" th:field="*{adress}" placeholder="Street Address"/></div>
+		<div class="col"><input class="form-control" type="text" id="aptnum" th:field="*{aptnum}" placeholder="Apartment Number"/></div>
+		<div class="col"><input class="form-control" type="text" id="zipcode" th:field="*{zipcode}" placeholder="Zipcode"/></div>
+		<div class="col"><input class="form-control" type="text" id="homephone" th:field="*{homephone}" placeholder="Home Phone Number"/></div>
+		<div class="col"><input class="form-control" type="text" id="sate" th:field="*{state}" placeholder="State"/></div>
+		<div class="col"><input class="form-control" type="text" id="city" th:field="*{city}" placeholder="City"/></div>
+	</div>
+	<div>
 		<p>What is your race or ethnicity. Check all that apply</p>
 		<input type="checkbox" id="hispanic" value="" th:field="*{Hispanic}"><label>Hispanic/Latino</label>
 		<input type="checkbox" id="americanIndian" value="" th:field="*{AmericanIndian}"><label>American Indian</label>
@@ -55,7 +73,7 @@
 		<input type="radio" value="yes" id="PermanentResidnetAlien" th:field="*{PermanentResidnetAlien}"/><label>Yes</label>
 		<input type="radio" value="no" id="PermanentResidnetAlien" th:field="*{PermanentResidnetAlien}"/><label>No</label>
 
-	</fieldset>
+	</div>
 	
 	<fieldset>
 	<p>Have you been a maryland[as defined by montgomery college] resident for at least three months? </p>
