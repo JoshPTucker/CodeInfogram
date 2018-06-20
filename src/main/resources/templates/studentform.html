@@ -29,6 +29,12 @@
 		<input type="text" id="middleinitial" th:field="*{middleInitial}" placeholder="Middle Initial"/>
 		<input type="radio" id="gender" value="Male" th:field="*{gender}"/><label>Male</label>
 		<input type="radio" id="gender" value="Female" th:field="*{gender}"/><label>Female</label>
+		<br/>
+		<input type="text" id="adress" th:field="*{adress}" placeholder="Street Address"/>
+		<input type="text" id="zipcode" th:field="*{zipcode}" placeholder="Zipcode"/>
+		<input type="text" id="homephone" th:field="*{homephone}" placeholder="Home Phone Number"/>
+		<input type="text" id="sate" th:field="*{state}" placeholder="State"/>
+		<input type="text" id="city" th:field="*{city}" placeholder="City"/>
 
 		<p>What is your race or ethnicity. Check all that apply</p>
 		<input type="checkbox" id="hispanic" value="" th:field="*{Hispanic}"><label>Hispanic/Latino</label>
@@ -58,11 +64,7 @@
 		<input type="radio" value="yes" id="sixtyPlus" th:field="*{sixtyPlus}"/><label>Yes</label>
 		<input type="radio" value="no" id="sixtyPlus" th:field="*{sixtyPlus}"/><label>No</label>
 		<br/>
-	<input type="text" id="adress" th:field="*{adress}" placeholder="Street Address"/>
-	<input type="text" id="zipcode" th:field="*{zipcode}" placeholder="Zipcode"/>
-	<input type="text" id="homephone" th:field="*{homephone}" placeholder="Home Phone Number"/>
-	<input type="text" id="sate" th:field="*{state}" placeholder="State"/>
-	<input type="text" id="city" th:field="*{city}" placeholder="City"/>
+
 	</fieldset>
 	<fieldset>
 	<p>What is your highest education?</p>
