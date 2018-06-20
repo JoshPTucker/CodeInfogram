@@ -16,89 +16,90 @@
             crossorigin="anonymous"></script>
 </head>
 <body>
-<h1>Welcome to the Code Work Academy Registration page.</h1>
-<h2>Please enter your information and press submit when you are done.</h2>
-<form action="#" th:action="@{/studentform}" th:object="${student}" method="post">
-    <div class="form-row">
-        <div class="col">
-            <input class="form-control" type="text" id="studentid" th:field="*{studentId}" placeholder="MC Student Id"/>
+<div class="container">
+    <h1>Welcome to the Code Work Academy Registration page.</h1>
+    <h2>Please enter your information and press submit when you are done.</h2>
+
+    <form action="#" th:action="@{/studentform}" th:object="${student}" method="post">
+
+        <div class="form-row">
+            <div class="col-auto">
+                <input class="form-control" type="text" id="studentid" th:field="*{studentId}" placeholder="MC Student Id"/>
+            </div>
+            <div class="col-auto">
+                <input class="form-control" type="text" id="email" th:field="*{email}" placeholder="Email"/>
+            </div>
+            <div class="col-auto"><input class="form-control" type="text" id="firstname" th:field="*{firstname}"
+                                         placeholder="First Name"/></div>
+            <div class="col-auto"><input class="form-control" type="text" id="lastname" th:field="*{lastname}"
+                                         placeholder="Last Name"/></div>
+            <div class="col-auto"><input class="form-control" type="text" id="middleinitial" th:field="*{middleInitial}"
+                                         placeholder="Middle Initial"/></div>
+
         </div>
-        <div class="col">
-            <input class="form-control" type="text" id="email" th:field="*{email}" placeholder="Email"/>
+        <div class="form-row">
+
+            <div class="col-auto"><input class="form-control" type="text" id="adress" th:field="*{adress}"
+                                         placeholder="Street Address"/></div>
+            <div class="col-auto"><input class="form-control" type="text" id="aptnum" th:field="*{aptnum}"
+                                         placeholder="Apartment Number"/></div>
+            <div class="col-auto"><input class="form-control" type="text" id="zipcode" th:field="*{zipcode}"
+                                         placeholder="Zipcode"/></div>
+            <div class="col-auto"><input class="form-control" type="text" id="homephone" th:field="*{homephone}"
+                                         placeholder="Home Phone Number"/></div>
+            <div class="col-auto"><input class="form-control" type="text" id="sate" th:field="*{state}" placeholder="State"/>
+            </div>
+            <div class="col-auto"><input class="form-control" type="text" id="city" th:field="*{city}" placeholder="City"/></div>
+
         </div>
-    </div>
-    <div class="form-row">
-        <div class="col">
-            <p>Have you attended Mc before?</p>
-            <input type="radio" value="yes" id="attenMcb4" th:field="*{attenMcb4}"/><label>Yes</label>
-            <input type="radio" value="no" id="attenMcb4" th:field="*{attenMcb4}"/><label>No</label>
+        <div class="form-row">
+            <span class="border border-primary">
+            <div class="col-auto">
+                <p>Have you attended Mc before?</p>
+                <input type="radio" value="yes" id="attenMcb4" th:field="*{attenMcb4}"/><label>Yes</label>
+                <input type="radio" value="no" id="attenMcb4" th:field="*{attenMcb4}"/><label>No</label>
+            </div>
+            </span>
+            <span class="border border-primary">
+            <div class="col-auto">
+                <p>Have you received Copies of the "Grievance Procedures" and "Veterans Priority of Service" policies?</p>
+                <input type="radio" value="yes" id="recievGreiveVet" th:field="*{recievGreiveVet}"/><label>Yes</label>
+                <input type="radio" value="no" id="recievGreiveVet" th:field="*{recievGreiveVet}"/><label>No</label>
+            </div>
+            </span>
         </div>
 
-        <div class="col">
-            <p>Have you received Copies of the "Grievance Procedures" and "Veterans Priority of Service" policies?</p>
-            <input type="radio" value="yes" id="recievGreiveVet" th:field="*{recievGreiveVet}"/><label>Yes</label>
-            <input type="radio" value="no" id="recievGreiveVet" th:field="*{recievGreiveVet}"/><label>No</label>
-        </div>
-    </div>
 
-    <div class="form-row">
-        <div class="col"><input class="form-control" type="text" id="firstname" th:field="*{firstname}"
-                                placeholder="First Name"/></div>
-        <div class="col"><input class="form-control" type="text" id="lastname" th:field="*{lastname}"
-                                placeholder="Last Name"/></div>
-        <div class="col"><input class="form-control" type="text" id="middleinitial" th:field="*{middleInitial}"
-                                placeholder="Middle Initial"/></div>
-        <div class="col">
-            <p>Gender</p>
-            <input type="radio" id="gender" value="Male" th:field="*{gender}"/><label>Male</label>
-            <input type="radio" id="gender" value="Female" th:field="*{gender}"/><label>Female</label>
-        </div>
-
-    </div>
-
-    <div class="form-row">
-        <div class="col"><input class="form-control" type="text" id="adress" th:field="*{adress}"
-                                placeholder="Street Address"/></div>
-        <div class="col"><input class="form-control" type="text" id="aptnum" th:field="*{aptnum}"
-                                placeholder="Apartment Number"/></div>
-        <div class="col"><input class="form-control" type="text" id="zipcode" th:field="*{zipcode}"
-                                placeholder="Zipcode"/></div>
-        <div class="col"><input class="form-control" type="text" id="homephone" th:field="*{homephone}"
-                                placeholder="Home Phone Number"/></div>
-        <div class="col"><input class="form-control" type="text" id="sate" th:field="*{state}" placeholder="State"/>
-        </div>
-        <div class="col"><input class="form-control" type="text" id="city" th:field="*{city}" placeholder="City"/></div>
-    </div>
-    <div class="form-row">
+        <div class="form-row">
 		<span class="border border-primary">
 		<div class="col-auto">
 			<p>What is your race or ethnicity. Check all that apply</p>
 			<div class="form-check form-check-inline">
 				<div class="row">
-					<div class="col">
+					<div class="col-auto">
 						<input class="form-check-input" type="checkbox" id="hispanic" value=""
                                th:field="*{Hispanic}"><label class="form-check-label">Hispanic/Latino</label>
 					</div>
-					<div class="col">
+					<div class="col-auto">
 						<input class="form-check-input" type="checkbox" id="americanIndian" value=""
                                th:field="*{AmericanIndian}"><label class="form-check-label">American Indian</label>
 					</div>
-					<div class="col">
+					<div class="col-auto">
 						<input class="form-check-input" type="checkbox" id="asian" value="" th:field="*{Asian}"><label
                             class="form-check-label">Asian</label>
 					</div>
 				</div>
 				<div class="row">
-					<div class="col">
+					<div class="col-auto">
 						<input class="form-check-input" type="checkbox" id="black" value=""
                                th:field="*{BlackAfricanAmerican}"><label
                             class="form-check-label">Black/African American</label>
 					</div>
-					<div class="col">
+					<div class="col-auto">
 						<input class="form-check-input" type="checkbox" id="white" value="" th:field="*{White}"><label
                             class="form-check-label">White</label>
 					</div>
-					<div class="col">
+					<div class="col-auto">
 						<input class="form-check-input" type="checkbox" id="hawaiian" value=""
                                th:field="*{Hawaiian}"><label class="form-check-label">Hawaiian</label>
 					</div>
@@ -107,24 +108,32 @@
 			</div>
 		</div>
 		</span>
-        <span class="border border-primary">
+            <span class="border border-primary">
 		<div class="col-auto"><p>Do you have a documented disability?</p>
 			<input type="radio" value="yes" id="hasDisability" th:field="*{hasDisability}"/><label>Yes</label>
 			<input type="radio" value="no" id="hasDisability"
                    th:field="*{hasDisability}"/><label>No</label></div></span>
-        <span class="border border-primary">
+            <span class="border border-primary">
 		<div class="col-auto"><p>Are you a United States Citizen?</p>
 			<input type="radio" value="yes" id="Citizen" th:field="*{Citizen}"/><label>Yes</label>
 			<input type="radio" value="no" id="Citizen" th:field="*{Citizen}"/><label>No</label></div></span>
-        <span class="border border-primary">
+            <span class="border border-primary">
 		<div class="col-auto"><p>Are you a permanent resident alien?</p>
 			<input type="radio" value="yes" id="PermanentResidnetAlien"
                    th:field="*{PermanentResidnetAlien}"/><label>Yes</label>
 			<input type="radio" value="no" id="PermanentResidnetAlien"
                    th:field="*{PermanentResidnetAlien}"/><label>No</label></div></span>
-    </div>
 
-    <div class="form-row">
+            <span class="border border-primary">
+            <div class="col-auto">
+                <p>Gender</p>
+                <input type="radio" id="gender" value="Male" th:field="*{gender}"/><label>Male</label>
+                <input type="radio" id="gender" value="Female" th:field="*{gender}"/><label>Female</label>
+            </div>
+            </span>
+        </div>
+
+        <div class="form-row">
 		<span class="border border-primary">
 		<div class="col-auto">
 			<p>Have you been a maryland[as defined by montgomery college] resident for at least three months? </p>
@@ -132,7 +141,7 @@
 			<input type="radio" value="no" id="MdRes" th:field="*{MdRes}"/><label>No</label>
 		</div>
 		</span>
-        <span class="border border-primary">
+            <span class="border border-primary">
 		<div class="col-auto">
 			<p>Are you 60 years of age or older?</p>
 			<input type="radio" value="yes" id="sixtyPlus" th:field="*{sixtyPlus}"/><label>Yes</label>
@@ -140,7 +149,7 @@
 		</div>
 		</span>
 
-        <span class="border border-primary">
+            <span class="border border-primary">
 			<div class="col-auto"><p align="center">What is your highest education?</p></div>
 			<div class="col-auto"><input type="radio" id="highestEducation" th:field="*{highestEducation}" value="GED"/><label>GED</label></div>
 			<div class="col-auto"><input type="radio" id="highestEducation" th:field="*{highestEducation}"
@@ -154,10 +163,10 @@
 			<div class="col-auto"><input type="radio" id="highestEducation" th:field="*{highestEducation}"
                                          value="Graduate Degree"/><label>Graduate Degree</label></div>
         </span>
-    </div>
+        </div>
 
 
-    <div class="form-row">
+        <div class="form-row">
     <span class="border border-primary">
 		<div class="col-auto">
 			<p>Are you a fulltime student?</p>
@@ -166,23 +175,23 @@
 
 		</div>
     </span>
-        <span class="border border-primary">
+            <span class="border border-primary">
 		<div class="col-auto">
 			<p>Are you a part time student?</p>
 			<input type="radio" value="yes" id="partime" th:field="*{PartTimeStudent}"/><label>Yes</label>
 			<input type="radio" value="no" id="partime" th:field="*{PartTimeStudent}"/><label>No</label>
 		</div>
 		</span>
-        <span class="border border-primary">
+            <span class="border border-primary">
 		<div class="col-auto">
 			<p>Do you have or are you eligible for a pell grant?</p>
 			<input type="radio" value="yes" id="pell" th:field="*{Pellgrant}"/><label>Yes</label>
 			<input type="radio" value="no" id="pell" th:field="*{Pellgrant}"/><label>No</label>
 		</div>
 		</span>
-    </div>
+        </div>
 
-    <div class="form-row">
+        <div class="form-row">
 		<span class="border border-primary">
 		<div class="col-auto">
 		<p>Please identify the program of study you are currently enrolled in(select 1)</p>
@@ -202,88 +211,111 @@
 		<input type="radio" id="currentEnroll" th:field="*{currentEnroll}" value="Other"/><label>Other</label>
 		</div>
 		</span>
-    </div>
+        </div>
 
-    <div>
-        <p>Are you currently recieving benefits under the trade adjustment assistance program?</p>
-        <input type="radio" value="yes" id="recTAAP" th:field="*{recTAAP}"/><label>Yes</label>
-        <input type="radio" value="no" id="recTAAP" th:field="*{recTAAP}"/><label>No</label>
-        <p>Are you currently employed?</p>
-        <input type="radio" value="yes" id="Employed" th:field="*{Employed}"/><label>Yes</label>
-        <input type="radio" value="no" id="Employed" th:field="*{Employed}"/><label>No</label>
-        <p>If yes, please enter the following </p>
-        <input type="text" id="employer" th:field="*{employer}" placeholder="Employer"/>
-        <input type="text" id="salary" th:field="*{salary}" placeholder="Salary"/>
-        <input type="text" id="hours" th:field="*{hours}" placeholder="Hours"/>
-        <input type="text" id="startdate" th:field="*{startdate}" placeholder="Start Date"/>
-        <input type="text" id="workphone" th:field="*{workPhone}" placeholder="Work Phone"/>
-    </div>
-
-    <div>
-        <p>Are you under employed</p>
-        <input type="radio" value="yes" id="UnderEmployed" th:field="*{UnderEmployed}"/><label>Yes</label>
-        <input type="radio" value="no" id="UnderEmployed" th:field="*{UnderEmployed}"/><label>No</label>
-
-        <p>If yes, what is the reason for you under employment?</p>
-
-        <input type="checkbox" id="reasonUEmploy" th:field="*{reasonUEmploy}" value="Working Part Time"/>
-        <label>Working Part Time</label>
-        <br/>
-        <input type="checkbox" id="reasonUEmploy" th:field="*{reasonUEmploy}"
-               value="My Earnings are less than $19.96/hr with benefits or $21.78/hr without benefits"/>
-        <label>My Earnings are less than $19.96/hr with benefits or $21.78/hr without benefits</label>
-        <br/>
-        <input type="checkbox" id="reasonUEmploy" th:field="*{reasonUEmploy}"
-               value="Working fulltime, but duties and/or salary are not commensurate with my skill level"/>
-        <label>Working fulltime, but duties and/or salary are not commensurate with my skill level</label>
-        <br/>
-        <input type="checkbox" id="reasonUEmploy" th:field="*{reasonUEmploy}"
-               value="Working fulltime, but duties and/or salary are not commensurate with my education level"/>
-        <label>Working fulltime, but duties and/or salary are not commensurate with my education level</label>
-    </div>
-
-    <div class="form-row">
-        <div class="col-auto"><p>Are you a veteran?</p>
-            <input type="radio" value="yes" id="Veteran" th:field="*{Veteran}"/><label>Yes</label>
-            <input type="radio" value="no" id="Veteran" th:field="*{Veteran}"/><label>No</label></div>
-        <div class="col-auto"><p>Are you the spouse of a veteran?</p>
-            <input type="radio" value="yes" id="SpouseVeteran" th:field="*{SpouseVeteran}"/><label>Yes</label>
-            <input type="radio" value="no" id="SpouseVeteran" th:field="*{SpouseVeteran}"/><label>No</label></div>
-        <div class="col-auto"><p>Are you a Maryland National Gaurd memeber enlisted fr at least 24 months and submitting
-            proof of such from the adjutant general's office?</p>
-            <input type="radio" value="yes" id="NatGaurd" th:field="*{NatGaurd}"/><label>Yes</label>
-            <input type="radio" value="no" id="NatGaurd" th:field="*{NatGaurd}"/><label>No</label></div>
-
-    </div>
-    <legend align="center">How did you hear about this program?</legend>
-    <div class="form-row" align="center">
-        <div class="col-auto">
-            <div class="form-check"><input class="form-check-input" type="checkbox" id="hearMC" th:field="*{hearMC}"
-                                           value="Mail brochure"/><label class="form-check-label">Mail brochure</label>
+        <div class="form-row">
+            <span class="border border-primary">
+            <div class="col-auto">
+                <p>Are you currently recieving benefits under the trade adjustment assistance program?</p>
+                <input type="radio" value="yes" id="recTAAP" th:field="*{recTAAP}"/><label>Yes</label>
+                <input type="radio" value="no" id="recTAAP" th:field="*{recTAAP}"/><label>No</label>
             </div>
-        </div>
-        <div class="col-auto">
-            <div class="form-check"><input class="form-check-input" type="checkbox" id="hearMC" th:field="*{hearMC}"
-                                           value="Website"/><label class="form-check-label">Website</label></div>
-        </div>
-        <div class="col-auto">
-            <div class="form-check"><input class="form-check-input" type="checkbox" id="hearMC" th:field="*{hearMC}"
-                                           value="Social media"/><label class="form-check-label">Social media</label>
+            </span>
+            <span class="border border-primary">
+            <div class="col-auto">
+              <p>Are you currently employed?</p>
+            <input type="radio" value="yes" id="Employed" th:field="*{Employed}"/><label>Yes</label>
+            <input type="radio" value="no" id="Employed" th:field="*{Employed}"/><label>No</label>
+            <p>If yes, please enter the following </p>
+            <input type="text" id="employer" th:field="*{employer}" placeholder="Employer"/>
+            <input type="text" id="salary" th:field="*{salary}" placeholder="Salary"/>
+            <input type="text" id="hours" th:field="*{hours}" placeholder="Hours"/>
+            <input type="text" id="startdate" th:field="*{startdate}" placeholder="Start Date"/>
+            <input type="text" id="workphone" th:field="*{workPhone}" placeholder="Work Phone"/>
             </div>
+            </span>
         </div>
-        <div class="col-auto">
-            <div class="form-check"><input class="form-check-input" type="checkbox" id="hearMC" th:field="*{hearMC}"
-                                           value="On campus"/><label class="form-check-label">On campus</label></div>
+
+        <div class="form-row">
+            <span class="border border-primary">
+            <div class="col-auto">
+               <p>Are you under employed</p>
+            <input type="radio" value="yes" id="UnderEmployed" th:field="*{UnderEmployed}"/><label>Yes</label>
+            <input type="radio" value="no" id="UnderEmployed" th:field="*{UnderEmployed}"/><label>No</label>
+            </div>
+
+            <div class="col-auto">
+              <p>If yes, what is the reason for you under employment?</p>
+
+            <input type="checkbox" id="reasonUEmploy" th:field="*{reasonUEmploy}" value="Working Part Time"/>
+            <label>Working Part Time</label>
+            <br/>
+            <input type="checkbox" id="reasonUEmploy" th:field="*{reasonUEmploy}"
+                   value="My Earnings are less than $19.96/hr with benefits or $21.78/hr without benefits"/>
+            <label>My Earnings are less than $19.96/hr with benefits or $21.78/hr without benefits</label>
+            <br/>
+            <input type="checkbox" id="reasonUEmploy" th:field="*{reasonUEmploy}"
+                   value="Working fulltime, but duties and/or salary are not commensurate with my skill level"/>
+            <label>Working fulltime, but duties and/or salary are not commensurate with my skill level</label>
+            <br/>
+            <input type="checkbox" id="reasonUEmploy" th:field="*{reasonUEmploy}"
+                   value="Working fulltime, but duties and/or salary are not commensurate with my education level"/>
+            <label>Working fulltime, but duties and/or salary are not commensurate with my education level</label>
+            </div>
+
+
+            </span>
         </div>
-        <div class="col-auto">
-            <div class="form-check"><input class="form-check-input" type="checkbox" id="hearMC" th:field="*{hearMC}"
-                                           value="Other"/><label class="form-check-label">other</label></div>
+
+        <div class="form-row">
+            <span class="border border-primary">
+            <div class="col-auto"><p>Are you a veteran?</p>
+                <input type="radio" value="yes" id="Veteran" th:field="*{Veteran}"/><label>Yes</label>
+                <input type="radio" value="no" id="Veteran" th:field="*{Veteran}"/><label>No</label></div></span>
+            <span class="border border-primary">
+            <div class="col-auto"><p>Are you the spouse of a veteran?</p>
+                <input type="radio" value="yes" id="SpouseVeteran" th:field="*{SpouseVeteran}"/><label>Yes</label>
+                <input type="radio" value="no" id="SpouseVeteran" th:field="*{SpouseVeteran}"/><label>No</label></div></span>
+            <span class="border border-primary">
+            <div class="col-auto"><p>Are you a Maryland National Gaurd memeber enlisted fr at least 24 months and submitting
+                proof of such from the adjutant general's office?</p>
+                <input type="radio" value="yes" id="NatGaurd" th:field="*{NatGaurd}"/><label>Yes</label>
+                <input type="radio" value="no" id="NatGaurd" th:field="*{NatGaurd}"/><label>No</label></div></span>
+
         </div>
-    </div>
-    <div>
-        <input type="reset"/>
-        <input type="submit"/>
-    </div>
-</form>
+
+        <div class="form-row" align="center">
+            <span class="border border-primary">
+        <p>How did you hear about this program?</p>
+            <div class="col-auto">
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="hearMC" th:field="*{hearMC}"
+                                               value="Mail brochure"/><label class="form-check-label">Mail brochure</label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="hearMC" th:field="*{hearMC}"
+                                               value="Website"/><label class="form-check-label">Website</label></div>
+            </div>
+            <div class="col-auto">
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="hearMC" th:field="*{hearMC}"
+                                               value="Social media"/><label class="form-check-label">Social media</label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="hearMC" th:field="*{hearMC}"
+                                               value="On campus"/><label class="form-check-label">On campus</label></div>
+            </div>
+            <div class="col-auto">
+                <div class="form-check"><input class="form-check-input" type="checkbox" id="hearMC" th:field="*{hearMC}"
+                                               value="Other"/><label class="form-check-label">other</label></div>
+            </div>
+            </span>
+        </div>
+        <div class="form-row">
+            <input type="reset"/>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </form>
+</div>
 </body>
 </html>
