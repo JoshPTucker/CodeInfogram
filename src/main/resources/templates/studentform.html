@@ -14,6 +14,14 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"
             integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
             crossorigin="anonymous"></script>
+    <script>
+        function myFunction(){
+            document.getElementById("test1").style.visibility = "hidden";
+        }
+        function myFunction2(){
+            document.getElementById("test2").style.visibility = "hidden";
+        }
+    </script>
 </head>
 <body>
 <div class="container">
@@ -35,7 +43,6 @@
                                          placeholder="Last Name"/></div>
             <div class="col-auto"><input class="form-control" type="text" id="middleinitial" th:field="*{middleInitial}"
                                          placeholder="Middle Initial"/></div>
-
         </div>
         <div class="form-row">
 
@@ -224,14 +231,17 @@
             <span class="border border-primary">
             <div class="col-auto">
               <p>Are you currently employed?</p>
-            <input type="radio" value="yes" id="Employed" th:field="*{Employed}"/><label>Yes</label>
-            <input type="radio" value="no" id="Employed" th:field="*{Employed}"/><label>No</label>
-            <p>If yes, please enter the following </p>
+            <input type="radio" value="yes" id="Employed" th:field="*{Employed}" /><label>Yes</label>
+            <input type="radio" value="no" id="Employed" th:field="*{Employed}" onclick="myFunction()"/><label>No</label>
+               <div id="test1">
+                     <p>Please enter the following </p>
             <input type="text" id="employer" th:field="*{employer}" placeholder="Employer"/>
             <input type="text" id="salary" th:field="*{salary}" placeholder="Salary"/>
             <input type="text" id="hours" th:field="*{hours}" placeholder="Hours"/>
             <input type="text" id="startdate" th:field="*{startdate}" placeholder="Start Date"/>
             <input type="text" id="workphone" th:field="*{workPhone}" placeholder="Work Phone"/>
+               </div>
+
             </div>
             </span>
         </div>
@@ -241,10 +251,10 @@
             <div class="col-auto">
                <p>Are you under employed</p>
             <input type="radio" value="yes" id="UnderEmployed" th:field="*{UnderEmployed}"/><label>Yes</label>
-            <input type="radio" value="no" id="UnderEmployed" th:field="*{UnderEmployed}"/><label>No</label>
+            <input type="radio" value="no" id="UnderEmployed" th:field="*{UnderEmployed}" onclick="myFunction2()"/><label>No</label>
             </div>
-
-            <div class="col-auto">
+            <div id="test2">
+                 <div class="col-auto">
               <p>If yes, what is the reason for you under employment?</p>
 
             <input type="checkbox" id="reasonUEmploy" th:field="*{reasonUEmploy}" value="Working Part Time"/>
@@ -262,6 +272,8 @@
                    value="Working fulltime, but duties and/or salary are not commensurate with my education level"/>
             <label>Working fulltime, but duties and/or salary are not commensurate with my education level</label>
             </div>
+            </div>
+
 
 
             </span>
