@@ -31,6 +31,7 @@
 		<input type="radio" id="gender" value="Female" th:field="*{gender}"/><label>Female</label>
 		<br/>
 		<input type="text" id="adress" th:field="*{adress}" placeholder="Street Address"/>
+		<input type="text" id="aptnum" th:field="*{aptnum}" placeholder="Apartment Number"/>
 		<input type="text" id="zipcode" th:field="*{zipcode}" placeholder="Zipcode"/>
 		<input type="text" id="homephone" th:field="*{homephone}" placeholder="Home Phone Number"/>
 		<input type="text" id="sate" th:field="*{state}" placeholder="State"/>
@@ -135,7 +136,12 @@
 		<input type="radio" value="no" id="NatGaurd" th:field="*{NatGaurd}"/><label>No</label>
 	</fieldset>
 	<fieldset>
-		<p>how di dyou hear about this program?</p>
+		<p>how did you hear about this program?</p>
+		<input type="checkbox" id="hearMC" th:field="*{hearMC}" value="Mail brochure"/><label>Mail brochure</label>
+		<input type="checkbox" id="hearMC" th:field="*{hearMC}" value="Website"/><label>Website</label>
+		<input type="checkbox" id="hearMC" th:field="*{hearMC}" value="Social media"/><label>Social media</label>
+		<input type="checkbox" id="hearMC" th:field="*{hearMC}" value="On campus"/><label>On campus</label>
+		<input type="checkbox" id="hearMC" th:field="*{hearMC}" value="Other"/><label>other</label>
 	</fieldset>
 	<fieldset>
 		<input type="reset"/>

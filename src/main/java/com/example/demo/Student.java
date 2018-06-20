@@ -37,14 +37,16 @@ public class Student {
 	@Column(name = "studentid")
 	private String studentId;
 	
-	
-	
+	//How did they hear about us?
+	@Column(name="Heard_about_us", length=300)
+	private String hearMC;
 
-//	@Column(name = "dateOfBirth")
+	//	@Column(name = "dateOfBirth")
 //	private String dob;
 	
 	@Column(name="Street_Adress")
 	private String adress;
+	private String aptnum;
 	private String zipcode;
 	private String homephone;
 	
@@ -352,7 +354,18 @@ public class Student {
 	public void setHawaiian(boolean hawaiian) {
 		Hawaiian = hawaiian;
 	}
-	 
-	 
+	public String getHearMC() {
+		return hearMC;
+	}
+	public void setHearMC(String hearMC) {
+		this.hearMC = hearMC;
+	}
 
+	public String getAptnum() {
+		return aptnum;
+	}
+
+	public void setAptnum(String aptnum) {
+		this.aptnum = aptnum;
+	}
 }
