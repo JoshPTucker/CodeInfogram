@@ -81,6 +81,9 @@ public class Student {
 	//TAAP is Trade adjustment Assistance Program
 	private boolean recTAAP;
 	private boolean Veteran;
+	private String servBranch;
+	private String dateDischarge;
+	private String typeDischarge;
 	private boolean SpouseVeteran;
 	
 	
@@ -360,12 +363,34 @@ public class Student {
 	public void setHearMC(String hearMC) {
 		this.hearMC = hearMC;
 	}
-
 	public String getAptnum() {
 		return aptnum;
 	}
-
 	public void setAptnum(String aptnum) {
 		this.aptnum = aptnum;
+	}
+
+	public String getServBranch() {
+		return servBranch;
+	}
+
+	public void setServBranch(String servBranch) {
+		this.servBranch = servBranch;
+	}
+
+	public String getDateDischarge() {
+		return dateDischarge;
+	}
+
+	public void setDateDischarge(String dateDischarge) {
+		this.dateDischarge = dateDischarge;
+	}
+
+	public String getTypeDischarge() {
+		return typeDischarge;
+	}
+
+	public void setTypeDischarge(String typeDischarge) {
+		this.typeDischarge = typeDischarge;
 	}
 }

@@ -25,15 +25,26 @@
         </p>
         <p>Phone: <span th:text="${student.homephone}"/>  Email: <span th:text="${student.email}"/></p>
     </div>
-    <div>
+    <hr/>
+    <div >
         <p>Documented Disability: <span th:if="${student.hasDisability==True}"> Yes </span><span th:if="${student.hasDisability==False}"> No </span> </p>
         <p>United States Citizen: <span th:if="${student.Citizen==True}"> Yes </span> <span th:if="${student.citizen==False}"> No </span></p>
         <p>Permanent Resident Alien: <span th:if="${student.PermanentResidnetAlien==True}"> Yes </span> <span th:if="${student.PermanentResidnetAlien==False}"> No </span></p>
-    </div>
+
+
     <div>
-        <p></p>
-        <p></p>
-        <p></p>
+        <table class="table">
+            <tr>
+                <td><p>Hispanic/Latino </p></td>
+                <td><p>Hawaiian/ Pacific islander </p></td>
+                <td><p>White </p></td>
+                <td><p>Black/African American </p></td>
+                <td><p>Asian </p></td>
+                <td><p>American Indian/ Native Alaskan </p></td>
+            </tr>
+        </table>
+    </div>
+        <p>Gender: <span th:text="${student.gender}"/></p>
     </div>
 </div>
 

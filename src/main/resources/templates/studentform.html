@@ -27,6 +27,12 @@
         function myFunction4(){
             document.getElementById("test2").style.display = "none";
         }
+        function myFunction5(){
+            document.getElementById("vetStuff").style.display = "block";
+        }
+        function myFunction6(){
+            document.getElementById("vetStuff").style.display = "none";
+        }
     </script>
 </head>
 <body>
@@ -288,8 +294,15 @@
         <div class="form-row">
             <span class="border border-primary">
             <div class="col-auto"><p>Are you a veteran?</p>
-                <input type="radio" value="yes" id="Veteran1" th:field="*{Veteran}"/><label>Yes</label>
-                <input type="radio" value="no" id="Veteran2" th:field="*{Veteran}"/><label>No</label></div></span>
+                <input type="radio" value="yes" id="Veteran1" th:field="*{Veteran}" onclick="myFunction5()"/><label>Yes</label>
+                <input type="radio" value="no" id="Veteran2" th:field="*{Veteran}" onclick="myFunction6()"/><label>No</label>
+            <div id="vetStuff" style="display:none">
+                <input type="text" id="serviceBranch" th:field="*{servBranch}" placeholder="Branch of service"/>
+                <input type="text" id="typeDischarge" th:field="*{typeDischarge}" placeholder="Type of discharge"/>
+                <input type="text" id="dateDischarge" th:field="*{dateDischarge}" placeholder="Date of discharge">
+            </div>
+            </div></span>
+
             <span class="border border-primary">
             <div class="col-auto"><p>Are you the spouse of a veteran?</p>
                 <input type="radio" value="yes" id="SpouseVeteran3" th:field="*{SpouseVeteran}"/><label>Yes</label>
