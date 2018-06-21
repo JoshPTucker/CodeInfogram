@@ -28,7 +28,7 @@ public class MainController {
 		if(result.hasErrors()) {
 			return "studentform";
 		}else {
-			studentrepository.save(student);
+			//studentrepository.save(student);
 			//model.addAttribute(student);
 			return"printpage";
 		}

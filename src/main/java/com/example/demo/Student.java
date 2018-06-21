@@ -44,8 +44,8 @@ public class Student {
 	//	@Column(name = "dateOfBirth")
 //	private String dob;
 	
-	@Column(name="Street_Adress")
-	private String adress;
+	@Column(name="Street_Address")
+	private String address;
 	private String aptnum;
 	private String zipcode;
 	private String homephone;
@@ -138,11 +138,11 @@ public class Student {
 	public void setStudentId(String studentId) {
 		this.studentId = studentId;
 	}
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String adress) {
+		this.address = adress;
 	}
 	public String getZipcode() {
 		return zipcode;
