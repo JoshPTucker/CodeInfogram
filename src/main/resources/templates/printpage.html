@@ -27,6 +27,7 @@
     </div>
     <hr/>
     <div >
+        <p>Is Maryland Resident<span th:if="${student.MdRes==True}"> &#10003 </span><span th:if="${student.MdRes==False}"> &#128500 </span> </p>
         <p>Documented Disability: <span th:if="${student.hasDisability==True}"> &#10003 </span><span th:if="${student.hasDisability==False}"> &#128500 </span> </p>
         <p>United States Citizen: <span th:if="${student.Citizen==True}"> &#10003 </span> <span th:if="${student.citizen==False}"> &#128500 </span></p>
         <p>Permanent Resident Alien: <span th:if="${student.PermanentResidnetAlien==True}"> &#10003 </span> <span th:if="${student.PermanentResidnetAlien==False}"> &#128500 </span></p>
@@ -62,10 +63,19 @@
             <span th:if="${student.recTAAP==False}">&#128500</span></p>
     </div>
     <div>
+        <p>Is National gaurd member:<span th:if="${student.NatGaurd==True}">&#10003</span><span th:if="${student.NatGaurd==False}">&#128500</span></p>
         <p>Is a veteran:<span th:if="${student.Veteran==True}">&#10003</span><span th:if="${student.Veteran==False}">&#128500</span></p>
         <p>Is the spouse of a veteran:<span th:if="${student.SpouseVeteran==True}">&#10003</span><span th:if="${student.SpouseVeteran==False}">&#128500</span></p>
         <p>Branch: [[${student.servBranch}]] Date of discharge:[[${student.dateDischarge}]] Type of discharge:[[${student.typeDischarge}]]</p>
     </div>
+    <div>
+
+    </div>
+    <p>Is 60 or older:<span th:if="${student.sixtyPlus==True}">&#10003</span><span th:if="${student.sixtyPlus==False}">&#128500</span></p>
+    <p>Heard about us from: [[${student.hearMC}]]</p>
+    <p>Has attended MC before:<span th:if="${student.attenMcb4==True}">&#10003</span><span th:if="${student.attenMcb4==False}">&#128500</span> </p>
+    <p>Has received a copy the "Grievance Procedures" and "Veterans priority of service policies"<span th:if="${student.recievGreiveVet==True}">&#10003</span>
+        <span th:if="${student.recievGreiveVet==False}">&#128500</span> </p>
 </div>
 
 
