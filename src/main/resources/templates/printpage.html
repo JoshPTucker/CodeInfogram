@@ -19,8 +19,8 @@
 <div class="container">
     <h6>Student ID: [[${student.studentId}]]</h6>
     <div>
-        <p>Full Name: [[${student.lastname}]] [["${student.firstname}]] [[${student.middleInitial}]]</p>
-        <p>Address: [[${student.address}]] Apartment: [[${student.aptnum}]] <br/>
+        <p>Full Name: [[${student.lastname}]] [[${student.firstname}]] [[${student.middleInitial}]]</p>
+        <p>Address: [[${student.address}]] |Apartment: [[${student.aptnum}]] <br/>
             City: [[${student.city}]]   State: [[${student.state}]]  Zip: [[${student.zipcode}]]
         </p>
         <p>Phone: [[${student.homephone}]]  Email: [[${student.email}]]</p>
@@ -33,6 +33,7 @@
         <p>Permanent Resident Alien: <span th:if="${student.PermanentResidnetAlien==True}"> &#10003 </span> <span th:if="${student.PermanentResidnetAlien==False}"> &#128500 </span></p>
 
         <div>
+            <hr/>
             <p>Race / Ethnicity</p>
             <p>Hispanic/Latino: <span th:if="${student.hispanic==True}">&#10003</span> </p>
             <p>Hawaiian/ Pacific islander: <span th:if="${student.Hawaiian==True}">&#10003</span></p>
@@ -43,6 +44,7 @@
         </div>
         <p>Gender:[[${student.gender}]]</p>
         <div>
+            <hr/>
             <p>Date of Birth: __________________________________________</p>
             <p>Social Security number __________________________________</p>
         </div>
