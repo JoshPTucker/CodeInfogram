@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="www.tymeleaf.org">
 <head>
     <title>Title</title>
     <meta charset="ISO-8859-1" name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
@@ -50,27 +50,27 @@
             <p>Full Name: [[${student.lastname}]] [[${student.firstname}]] [[${student.middleInitial}]]</p>
             <p>Address:[[${student.address}]]  Apt:[[${student.aptnum}]]</p>
             <p>City: [[${student.city}]] State: [[${student.State}]] Zip: [[${student.zipcode}]]</p>
-            <p>Phone: Email:</p>
+            <p>Phone:[[${student.homephone}]] Email: [[${student.email}]]</p>
 
         </div>
     </div>
-        <div class="row border border-dark" style="background-color: purple">
-            <div class="col-md-12">
-                <h5 align="center">Personal Information</h5>
-            </div>
+    <div class="row border border-dark" style="background-color: purple">
+        <div class="col-md-12">
+            <h5 align="center">Personal Information</h5>
         </div>
+    </div>
     <div id="personalInformation" class="row" >
         <div class="col-sm-3 border border-dark" >
             <p>Has a documented Disability</p>
-            <p>x</p>
+            <span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span>
         </div>
         <div class="col-sm-1 border border-dark" >
             <p>US Citizen</p>
-            <p>x</p>
+            <span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span>
         </div>
         <div class="col-sm-3 border border-dark" >
             <p>Permanent Resident Alien</p>
-            <p>x</p>
+            <span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span>
         </div>
         <div class="col-sm-5 border border-dark" >
             <p>Country of citizenship:</p>
@@ -88,27 +88,27 @@
             <div class="row">
                 <div class="col-sm-2 border border-light" >
                     <p>Hispanic/Latino</p>
-                    <p>x</p>
+                    <p><span th:if="${student.hispanic==True}">&#9745</span><span th:if="${student.hispanic==False}">&#9746</span></p>
                 </div>
                 <div class="col-sm-2 border border-light" >
                     <p>American Indian/Alaskan Native</p>
-                    <p>x</p>
+                    <p><span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span></p>
                 </div>
                 <div class="col-sm-2 border border-light">
                     <p>Asian</p>
-                    <p>x</p>
+                    <p><span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span></p>
                 </div>
                 <div class="col-sm-2 border border-light" >
                     <p>Black/ African American</p>
-                    <p>x</p>
+                    <p><span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span></p>
                 </div>
                 <div class="col-sm-2 border border-light" >
                     <p>White</p>
-                    <p>x</p>
+                    <p><span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span></p>
                 </div>
                 <div class="col-sm-2 border border-light" >
                     <p>Hawaiian/ Pacific Islander</p>
-                    <p>x</p>
+                    <p><span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span></p>
                 </div>
             </div>
         </div>
@@ -121,95 +121,95 @@
             <p>Date of birth:</p>
         </div>
         <div class="col-sm-2 border border-dark" >
-            <p>Gender:</p>
+            <p>Gender:[[${student.gender}]]</p>
         </div>
     </div>
-            <div class="row border border-dark" style="background-color: purple">
-                <div class="col-md-12">
-                    <h5 align="center">Education And Employment</h5>
-                </div>
-            </div>
+    <div class="row border border-dark" style="background-color: purple">
+        <div class="col-md-12">
+            <h5 align="center">Education And Employment</h5>
+        </div>
+    </div>
     <div id ="education" class="row">
 
         <div class="col-md-3 border border-dark" >
             <p>Highest education:</p>
-            <p>x</p>
+            <p th:if="${student.!=null}">[[${student.}]]</p>
         </div>
 
         <div class="col-md-3 border border-dark" >
             <p>Program of study currently enrolled</p>
-            <p>x</p>
+            <p th:if="${student.!=null}">[[${student.}]]</p>
         </div>
         <div class="col-md-3 border border-dark">
-            <p>FullTime: </p>
-            <p>PartTime: </p>
+            <p>FullTime: <span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span></p>
+            <p>PartTime: <span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span></p>
         </div>
         <div class="col-md-3 border border-dark">
             <p>Elligible for or has Pell Grant</p>
-            <p>x</p>
+            <p th:if="${student.!=null}">[[${student.}]]</p>
         </div>
     </div>
     <div class="row" id="Employment info" >
-        <div class="col-sm-2 border border-dark">
+        <div class="col-sm-1 border border-dark">
             <p>Currently Employed</p>
-            <p>x</p>
+            <p><span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span></p>
         </div>
         <div class="col-sm-3 border border-dark" >
             <p>Employer Name:</p>
-            <p>x</p>
+            <p th:if="${student.!=null}">[[${student.}]]</p><p>x</p>
         </div>
-        <div class="col-sm-1 border border-dark">
+        <div class="col-sm-2 border border-dark">
             <p>Hours</p>
-            <p>x</p>
+            <p th:if="${student.!=null}">[[${student.}]]</p>
         </div>
         <div class="col-sm-2 border border-dark">
             <p>Salary</p>
-            <p>x</p>
+            <p th:if="${student.!=null}">[[${student.}]]</p>
         </div>
         <div class="col-sm-2 border border-dark">
             <p>StartDate</p>
-            <p>x</p>
+            <p th:if="${student.!=null}">[[${student.}]]</p>
         </div>
         <div class="col-sm-2 border border-dark">
             <p>Work Phone</p>
-            <p>444-444-4444</p>
+            <p th:if="${student.!=null}">[[${student.}]]</p>
         </div>
     </div>
     <div id="underemployment" class="row" >
         <div class="col-sm-4 border border-dark" >
             <p>Currently Under Employed</p>
-            <p> No</p>
+            <p><span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span></p>
         </div>
         <div class="col-sm-8 border border-dark" >
             <p>Reasons For underemployment</p>
-            <p>x</p>
+            <p th:if="${student.!=null}">[[${student.}]]</p>
         </div>
     </div>
-                <div class="row border border-dark"style="background-color: purple">
-                    <div class="col-md-12">
-                        <h5 align="center">Veteran Status</h5>
-                    </div>
-                </div>
+    <div class="row border border-dark"style="background-color: purple">
+        <div class="col-md-12">
+            <h5 align="center">Veteran Status</h5>
+        </div>
+    </div>
     <div id="VeteranStatus" class="row" >
         <div class="col-sm-2 border border-dark" >
             <p>Veteran</p>
-            <p>x</p>
+            <p><span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span></p>
         </div>
         <div class="col-sm-2 border border-dark" >
             <p>Spouse of veteran</p>
-            <p>x</p>
+            <p><span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span></p>
         </div>
         <div class="col-sm-4 border border-dark" >
             <p>Branch</p>
-            <p>x</p>
+            <p th:if="${student.!=null}">[[${student.}]]</p>
         </div>
         <div class="col-sm-2 border border-dark" >
             <p>Date of discharge</p>
-            <p>x</p>
+            <p th:if="${student.!=null}">[[${student.}]]</p>
         </div>
         <div class="col-sm-2 border border-dark" >
             <p>Type of Discharge</p>
-            <p>x</p>
+            <p th:if="${student.!=null}">[[${student.}]]</p>
         </div>
     </div>
 </div>
