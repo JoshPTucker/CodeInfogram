@@ -88,7 +88,7 @@
             <div class="row">
                 <div class="col-sm-2 border border-light" >
                     <p>Hispanic/Latino</p>
-                    <p><span th:if="${student.hispanic==True}">&#9745</span><span th:if="${student.hispanic==False}">&#9746</span></p>
+                    <p><span  th:if="${student.hispanic==True}">&#9745</span><span th:if="${student.hispanic==False}">&#9746</span></p>
                 </div>
                 <div class="col-sm-2 border border-light" >
                     <p>American Indian/Alaskan Native</p>
@@ -150,13 +150,13 @@
         </div>
     </div>
     <div class="row" id="Employment info" >
-        <div class="col-sm-1 border border-dark">
+        <div class="col-sm-2 border border-dark">
             <p>Currently Employed</p>
             <p><span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span></p>
         </div>
-        <div class="col-sm-3 border border-dark" >
+        <div class="col-sm-2 border border-dark" >
             <p>Employer Name:</p>
-            <p th:if="${student.!=null}">[[${student.}]]</p><p>x</p>
+            <p th:if="${student.!=null}">[[${student.}]]</p>
         </div>
         <div class="col-sm-2 border border-dark">
             <p>Hours</p>
