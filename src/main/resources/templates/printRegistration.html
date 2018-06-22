@@ -37,9 +37,10 @@
     </div>
     <div id="contactInformation" class="row" style="background-color: #0b84ff">
         <div class="col-lg-12" style="background-color: #27ffca">
-            <p>Full Name:</p>
-            <p>Address: Apt# City: State: Zip:</p>
-            <p>Phone: Email:</p>
+            <p>Full Name: [[${student.lastname}]] [[${student.firstname}]] [[${student.middleInitial}]]</p>
+            <p>Address:[[${student.address}]]  Apt:[[${student.aptnum}]]</p>
+                <p>City: [[${student.city}]] State: [[${student.State}]] Zip: [[${student.zipcode}]]</p>
+            <p>Phone: Email: Work Phone: </p>
 
         </div>
     </div>
@@ -57,16 +58,17 @@
             <p>x</p>
         </div>
         <div class="col-md-3" style="background-color: aqua">
-            <p>If yes list country of citizenship: _____________________________</p>
-            <p>registration number:</p>
+            <p>Country of citizenship:</p>
+            <p>________________________________________</p>
+            <p>Registration number:</p>
         </div>
     </div>
-    <div class ="row" style="background-color: #ff5638">
+
+    <div id="race" class ="row" style="background-color: #ff5638">
         <div class="col-sm-1">
             <p>Race</p>
         </div>
-
-        <div id="race" class="col-sm-11" style="background-color: #42ff36">
+        <div class="col-sm-11" style="background-color: #42ff36">
             <div class="row">
                 <div class="col-sm-2" style="background-color: #e3e5ff">
                     <p>Hispanic/Latino</p>
@@ -95,11 +97,39 @@
             </div>
         </div>
     </div>
+    <div class="row" style="background-color: #ff002a">
+        <div class="col-sm-4" style="background-color: #00ffff">
+            <p>Social Security# :</p>
+        </div>
+        <div class="col-sm-4" style="background-color: #8aff78">
+            <p>Date of birth:</p>
+        </div>
+        <div class="col-sm-4" style="background-color: #ff9764">
+            <p>Gender:</p>
+        </div>
+    </div>
+    <div id ="education" class="row" style="background-color: aqua">
 
-    <div id ="educationEmploy" class="row" style="background-color: aqua">
-            <div clas="">
+        <div class="col-md-3" style="background-color: #ff68bb">
+            <p>Highest education:</p>
+            <p>x</p>
+        </div>
 
-            </div>
+        <div class="col-md-3" style="background-color: #ff2177">
+            <p>Program of study currently enrolled</p>
+            <p>x</p>
+        </div>
+        <div class="col-md-3" style="background-color: #ffe634">
+            <p>FullTime: </p>
+            <p>PartTime: </p>
+        </div>
+        <div class="col-md-3" style="background-color: #16ff73">
+            <p>Elligible for or has Pell Grant</p>
+            <p>x</p>
+        </div>
+    </div>
+    <div class="row" id="Employment info">
+
     </div>
     <div id="VeteranStatus" class="row" style="background-color: aqua">
 
