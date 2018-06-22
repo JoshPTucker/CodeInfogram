@@ -18,66 +18,76 @@
 <body>
 <div class="container">
     <h6>Student ID: [[${student.studentId}]]</h6>
-    <div>
-        <p>Full Name: [[${student.lastname}]] [[${student.firstname}]] [[${student.middleInitial}]]</p>
-        <p>Address: [[${student.address}]] |Apartment: [[${student.aptnum}]] <br/>
-            City: [[${student.city}]]   State: [[${student.state}]]  Zip: [[${student.zipcode}]]
-        </p>
-        <p>Phone: [[${student.homephone}]]  Email: [[${student.email}]]</p>
-    </div>
-    <hr/>
-    <div >
-        <p>Is Maryland Resident<span th:if="${student.MdRes==True}"> &#10003 </span><span th:if="${student.MdRes==False}"> &#128500 </span> </p>
-        <p>Documented Disability: <span th:if="${student.hasDisability==True}"> &#10003 </span><span th:if="${student.hasDisability==False}"> &#128500 </span> </p>
-        <p>United States Citizen: <span th:if="${student.Citizen==True}"> &#10003 </span> <span th:if="${student.citizen==False}"> &#128500 </span></p>
-        <p>Permanent Resident Alien: <span th:if="${student.PermanentResidnetAlien==True}"> &#10003 </span> <span th:if="${student.PermanentResidnetAlien==False}"> &#128500 </span></p>
-
-        <div>
-            <hr/>
-            <p>Race / Ethnicity</p>
-            <p>Hispanic/Latino: <span th:if="${student.hispanic==True}">&#10003</span> </p>
-            <p>Hawaiian/ Pacific islander: <span th:if="${student.Hawaiian==True}">&#10003</span></p>
-            <p>White: <span th:if="${student.White==True}">&#10003</span></p>
-            <p>Black/African American: <span th:if="${student.BlackAfricanAmerican==True}">&#10003</span></p>
-            <p>Asian: <span th:if="${student.Asian==True}">&#10003</span></p>
-            <p>American Indian/ Native Alaskan: <span th:if="${student.AmericanIndian==True}">&#10003</span></p>
+    <div class="row">
+        <div class="col">
+            <p>Full Name: [[${student.lastname}]] [[${student.firstname}]] [[${student.middleInitial}]]</p>
+            <p>Address: [[${student.address}]] |Apartment: [[${student.aptnum}]] <br/>
+                City: [[${student.city}]]   State: [[${student.state}]]  Zip: [[${student.zipcode}]]
+            </p>
+            <p>Phone: [[${student.homephone}]]</p><p> Email: [[${student.email}]]</p> <p>  Work Phone:[[${student.workPhone}]]</p>
         </div>
-        <p>Gender:[[${student.gender}]]</p>
-        <div>
-            <hr/>
+        <div class="col">
+            <p>Is Maryland Resident<span th:if="${student.MdRes==True}"> &#10003 </span><span th:if="${student.MdRes==False}"> &#128500 </span> </p>
+            <p>Documented Disability: <span th:if="${student.hasDisability==True}"> &#10003 </span><span th:if="${student.hasDisability==False}"> &#128500 </span> </p>
+            <p>United States Citizen: <span th:if="${student.Citizen==True}"> &#10003 </span> <span th:if="${student.citizen==False}"> &#128500 </span></p>
+            <p>Permanent Resident Alien: <span th:if="${student.PermanentResidnetAlien==True}"> &#10003 </span> <span th:if="${student.PermanentResidnetAlien==False}"> &#128500 </span></p>
+        </div>
+    </div>
+
+    <div class="row" >
+        <div class ="col-auto">
             <p>Date of Birth: __________________________________________</p>
             <p>Social Security number __________________________________</p>
         </div>
+        <div class="col-auto">
+            <p>Gender:[[${student.gender}]]</p>
+            <p>Race / Ethnicity: <span th:if="${student.hispanic==True}"> |Hispanic/Latino|</span>
+            <span th:if="${student.Hawaiian==True}"> |Hawaiian/ Pacific islander| </span>
+            <span th:if="${student.White==True}"> |White|</span>
+            <span th:if="${student.BlackAfricanAmerican==True}"> |Black/African American|</span>
+            <span th:if="${student.Asian==True}"> |Asian|</span>
+            <span th:if="${student.AmericanIndian==True}"> |American Indian/ Native Alaskan|</span>
+            </p>
+        </div>
     </div>
-    <div>
-        <p>Highest level of education: [[${student.highestEducation}]]</p>
-        <p>Program of study currently enrolled in: [[${student.currentEnroll}]]</p>
-        <p>Full Time Student : <span th:if="${student.FullTimeStudent==True}">&#10003</span><span th:if="${student.FullTimeStudent==False}">&#128500</span></p>
-        <p>Part Time Student: <span th:if="${student.PartTimeStudent==True}">&#10003</span><span th:if="${student.PartTimeStudent==False}">&#128500</span></p>
-        <p>Elligible for Pell grant:  <span th:if="${student.Pellgrant==True}">&#10003</span><span th:if="${student.Pellgrant==False}">&#128500</span></p>
+    <div class="row">
+        <div class="col">
+            <p>Highest level of education: [[${student.highestEducation}]]</p>
+            <p>Program of study currently enrolled in: [[${student.currentEnroll}]]</p>
+            <p>Full Time Student : <span th:if="${student.FullTimeStudent==True}">&#10003</span><span th:if="${student.FullTimeStudent==False}">&#128500</span></p>
+            <p>Part Time Student: <span th:if="${student.PartTimeStudent==True}">&#10003</span><span th:if="${student.PartTimeStudent==False}">&#128500</span></p>
+            <p>Elligible for Pell grant:  <span th:if="${student.Pellgrant==True}">&#10003</span><span th:if="${student.Pellgrant==False}">&#128500</span></p>
+            <p>Has attended MC before:<span th:if="${student.attenMcb4==True}">&#10003</span><span th:if="${student.attenMcb4==False}">&#128500</span> </p>
+        </div>
+        <div class="col">
+            <p>Currently employed: <span th:if="${student.Employed==True}">&#10003</span> <span th:if="${student.Employed==False}">&#128500</span></p>
+            <p th:if="${student.Employed==True}">Employer:[[${student.employer}]] Hours:[[${student.hours}]] Salary:[[${student.salary}]]</p>
+            <p th:if="${student.Employed==True}"> StartDate:[[${student.startdate}]]</p>
+            <p th:if="${student.Employed==True}">Under Employed: <span th:if="${student.UnderEmployed==True}">&#10003</span><span th:if="${student.UnderEmployed==False}">&#128500</span></p>
+            <p th:if="${student.UnderEmployed==True}">Reasons for under-employment: [[${student.reasonUEmploy}]]</p>
+            <p>Recieves benefits under the Trade Adjustment Assistance program: <span th:if="${student.recTAAP==True}">&#10003</span>
+                <span th:if="${student.recTAAP==False}">&#128500</span></p>
+        </div>
     </div>
-    <div>
-        <p>Currently employed: <span th:if="${student.Employed==True}">&#10003</span> <span th:if="${student.Employed==False}">&#128500</span></p>
-        <p>Employer:[[${student.employer}]] Hours:[[${student.hours}]] Salary:[[${student.salary}]] StartDate:[[${student.startdate}]] Work Phone:[[${student.workPhone}]]</p>
-        <p>Under Employed: <span th:if="${student.UnderEmployed==True}">&#10003</span><span th:if="${student.UnderEmployed==False}">&#128500</span></p>
-        <p>Reasons for under-employment: [[${student.reasonUEmploy}]]</p>
-        <p>Recieves benefits under the Trade Adjustment Assistance program: <span th:if="${student.recTAAP==True}">&#10003</span>
-            <span th:if="${student.recTAAP==False}">&#128500</span></p>
-    </div>
-    <div>
-        <p>Is National gaurd member:<span th:if="${student.NatGaurd==True}">&#10003</span><span th:if="${student.NatGaurd==False}">&#128500</span></p>
-        <p>Is a veteran:<span th:if="${student.Veteran==True}">&#10003</span><span th:if="${student.Veteran==False}">&#128500</span></p>
-        <p>Is the spouse of a veteran:<span th:if="${student.SpouseVeteran==True}">&#10003</span><span th:if="${student.SpouseVeteran==False}">&#128500</span></p>
-        <p>Branch: [[${student.servBranch}]] Date of discharge:[[${student.dateDischarge}]] Type of discharge:[[${student.typeDischarge}]]</p>
-    </div>
-    <div>
 
+    <div class="row">
+        <div class="col">
+            <p>Is National gaurd member:<span th:if="${student.NatGaurd==True}">&#10003</span><span th:if="${student.NatGaurd==False}">&#128500</span></p>
+            <p>Is a veteran:<span th:if="${student.Veteran==True}">&#10003</span><span th:if="${student.Veteran==False}">&#128500</span></p>
+            <p>Is the spouse of a veteran:<span th:if="${student.SpouseVeteran==True}">&#10003</span><span th:if="${student.SpouseVeteran==False}">&#128500</span></p>
+            <p th:if="${student.Veteran==True}">Branch: [[${student.servBranch}]]<br/> Date of discharge:[[${student.dateDischarge}]]. Type of discharge:[[${student.typeDischarge}]]</p>
+        </div>
+        <div class="col">
+            <p>Is 60 or older:<span th:if="${student.sixtyPlus==True}">&#10003</span><span th:if="${student.sixtyPlus==False}">&#128500</span></p>
+            <p>Heard about us from: [[${student.hearMC}]]</p>
+
+            <p>Has received a copy the "Grievance Procedures" and "Veterans priority of service policies"<span th:if="${student.recievGreiveVet==True}">&#10003</span>
+                <span th:if="${student.recievGreiveVet==False}">&#128500</span> </p>
+        </div>
     </div>
-    <p>Is 60 or older:<span th:if="${student.sixtyPlus==True}">&#10003</span><span th:if="${student.sixtyPlus==False}">&#128500</span></p>
-    <p>Heard about us from: [[${student.hearMC}]]</p>
-    <p>Has attended MC before:<span th:if="${student.attenMcb4==True}">&#10003</span><span th:if="${student.attenMcb4==False}">&#128500</span> </p>
-    <p>Has received a copy the "Grievance Procedures" and "Veterans priority of service policies"<span th:if="${student.recievGreiveVet==True}">&#10003</span>
-        <span th:if="${student.recievGreiveVet==False}">&#128500</span> </p>
+
+
+
 </div>
 
 
