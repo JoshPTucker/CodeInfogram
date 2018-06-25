@@ -39,183 +39,168 @@
     </script>
 </head>
 <body>
-<div class="container">
+<div class="container border border-dark">
     <h1>Welcome to the Code Work Academy Registration page.</h1>
     <h2>Please enter your information and press submit when you are done.</h2>
 
     <form action="#" th:action="@{/studentform}" th:object="${student}" method="post">
 
-        <div class="form-row">
-            <div class="col-auto">
+        <div class="form-row border  border-dark">
+            <div class="col-md-2">
                 <input class="form-control" type="text"  th:field="*{studentId}" placeholder="MC Student Id"/>
             </div>
-            <div class="col-auto">
+            <div class="col-md-3">
                 <input class="form-control" type="text"  th:field="*{email}" placeholder="Email"/>
             </div>
-            <div class="col-auto"><input class="form-control" type="text"  th:field="*{firstname}"
+            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{firstname}"
                                          placeholder="First Name"/></div>
-            <div class="col-auto"><input class="form-control" type="text"  th:field="*{lastname}"
+            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{lastname}"
                                          placeholder="Last Name"/></div>
-            <div class="col-auto"><input class="form-control" type="text"  th:field="*{middleInitial}"
+            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{middleInitial}"
                                          placeholder="Middle Initial"/></div>
         </div>
-        <div class="form-row">
+        <div class="form-row border  border-dark">
 
-            <div class="col-auto"><input class="form-control" type="text"  th:field="*{address}"
+            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{address}"
                                          placeholder="Street Address"/></div>
-            <div class="col-auto"><input class="form-control" type="text"  th:field="*{aptnum}"
+            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{aptnum}"
                                          placeholder="Apartment Number"/></div>
-            <div class="col-auto"><input class="form-control" type="text"  th:field="*{zipcode}"
+            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{zipcode}"
                                          placeholder="Zipcode"/></div>
-            <div class="col-auto"><input class="form-control" type="text"  th:field="*{homephone}"
+            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{homephone}"
                                          placeholder="Home Phone Number"/></div>
-            <div class="col-auto"><input class="form-control" type="text"  th:field="*{state}" placeholder="State"/>
+            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{state}" placeholder="State"/>
             </div>
-            <div class="col-auto"><input class="form-control" type="text"  th:field="*{city}" placeholder="City"/></div>
+            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{city}" placeholder="City"/></div>
 
         </div>
         <div class="form-row">
-            <span class="border border-primary">
-            <div class="col-auto">
+            <div class="col-md-4 border  border-dark">
                 <p>Have you attended Mc before?</p>
                 <input type="radio" value="yes"  th:field="*{attenMcb4}"/><label>Yes</label>
                 <input type="radio" value="no"  th:field="*{attenMcb4}"/><label>No</label>
             </div>
-            </span>
-            <span class="border border-primary">
-            <div class="col-auto">
+            <div class="col-md-8 border  border-dark">
                 <p>Have you received Copies of the "Grievance Procedures" and "Veterans Priority of Service" policies?</p>
                 <input type="radio" value="yes"  th:field="*{recievGreiveVet}"/><label>Yes</label>
                 <input type="radio" value="no"  th:field="*{recievGreiveVet}"/><label>No</label>
             </div>
-            </span>
         </div>
 
 
-        <div class="form-row">
-		<span class="border border-primary">
-		<div class="col-auto">
-			<p>What is your race or ethnicity. Check all that apply</p>
-			<div class="form-check form-check-inline">
-				<div class="row">
-					<div class="col-auto">
-						<input class="form-check-input" type="checkbox"  value=""
-                               th:field="*{Hispanic}"><label class="form-check-label">Hispanic/Latino</label>
-					</div>
-					<div class="col-auto">
-						<input class="form-check-input" type="checkbox"  value=""
-                               th:field="*{AmericanIndian}"><label class="form-check-label">American Indian</label>
-					</div>
-					<div class="col-auto">
-						<input class="form-check-input" type="checkbox" value="" th:field="*{Asian}"><label
-                            class="form-check-label">Asian</label>
-					</div>
-				</div>
-				<div class="row">
-					<div class="col-auto">
-						<input class="form-check-input" type="checkbox"  value=""
-                               th:field="*{BlackAfricanAmerican}"><label
-                            class="form-check-label">Black/African American</label>
-					</div>
-					<div class="col-auto">
-						<input class="form-check-input" type="checkbox"  value="" th:field="*{White}"><label
-                            class="form-check-label">White</label>
-					</div>
-					<div class="col-auto">
-						<input class="form-check-input" type="checkbox"  value=""
-                               th:field="*{Hawaiian}"><label class="form-check-label">Hawaiian</label>
-					</div>
-				</div>
+        <div class="form-row ">
+            <div class="col-md-12 border  border-dark">
+                <p>What is your race or ethnicity. Check all that apply</p>
+                <div class="form-check form-check-inline">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox"  value=""
+                                   th:field="*{Hispanic}"><label class="form-check-label">Hispanic/Latino</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox"  value=""
+                                   th:field="*{AmericanIndian}"><label class="form-check-label">American Indian</label>
+                        </div>
+                        <div class="col-md-4">
+                            <input class="form-check-input" type="checkbox" value="" th:field="*{Asian}"><label
+                                class="form-check-label">Asian</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3">
+                            <input class="form-check-input" type="checkbox"  value=""
+                                   th:field="*{BlackAfricanAmerican}"><label
+                                class="form-check-label">Black/African American</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input class="form-check-input" type="checkbox"  value="" th:field="*{White}"><label
+                                class="form-check-label">White</label>
+                        </div>
+                        <div class="col-md-3">
+                            <input class="form-check-input" type="checkbox"  value=""
+                                   th:field="*{Hawaiian}"><label class="form-check-label">Hawaiian</label>
+                        </div>
+                    </div>
 
-			</div>
-		</div>
-		</span>
-            <span class="border border-primary">
-		<div class="col-auto"><p>Do you have a documented disability?</p>
-			<input type="radio" value="yes"  th:field="*{hasDisability}"/><label>Yes</label>
-			<input type="radio" value="no"
-                   th:field="*{hasDisability}"/><label>No</label></div></span>
-            <span class="border border-primary">
-		<div class="col-auto"><p>Are you a United States Citizen?</p>
+                </div>
+            </div>
+        </div>
+        <div class="form-row">
+            <div class="col-md-3 border  border-dark"><p>Do you have a documented disability?</p>
+                <input type="radio" value="yes"  th:field="*{hasDisability}"/><label>Yes</label>
+                <input type="radio" value="no"
+                       th:field="*{hasDisability}"/><label>No</label></div></span>
+
+		<div class="col-md-3 border  border-dark"><p>Are you a United States Citizen?</p>
 			<input type="radio" value="yes"  th:field="*{Citizen}"/><label>Yes</label>
-			<input type="radio" value="no"  th:field="*{Citizen}"/><label>No</label></div></span>
-            <span class="border border-primary">
-		<div class="col-auto"><p>Are you a permanent resident alien?</p>
+			<input type="radio" value="no"  th:field="*{Citizen}"/><label>No</label></div>
+
+		<div class="col-md-3 border  border-dark"><p>Are you a permanent resident alien?</p>
 			<input type="radio" value="yes"
                    th:field="*{PermanentResidnetAlien}"/><label>Yes</label>
 			<input type="radio" value="no"
-                   th:field="*{PermanentResidnetAlien}"/><label>No</label></div></span>
-
-            <span class="border border-primary">
-            <div class="col-auto">
+                   th:field="*{PermanentResidnetAlien}"/><label>No</label></div>
+            <div class="col-md-3 border  border-dark">
                 <p>Gender</p>
                 <input type="radio"  value="Male" th:field="*{gender}"/><label>Male</label>
                 <input type="radio"  value="Female" th:field="*{gender}"/><label>Female</label>
             </div>
-            </span>
         </div>
-
-        <div class="form-row">
-		<span class="border border-primary">
-		<div class="col-auto">
+<div class="form-row">
+		<div class="col-md-8 border  border-dark">
 			<p>Have you been a maryland[as defined by montgomery college] resident for at least three months? </p>
 			<input type="radio" value="yes"  th:field="*{MdRes}"/><label>Yes</label>
 			<input type="radio" value="no"  th:field="*{MdRes}"/><label>No</label>
 		</div>
-		</span>
-            <span class="border border-primary">
-		<div class="col-auto">
+
+		<div class="col-md-4 border  border-dark">
 			<p>Are you 60 years of age or older?</p>
 			<input type="radio" value="yes"  th:field="*{sixtyPlus}"/><label>Yes</label>
 			<input type="radio" value="no"  th:field="*{sixtyPlus}"/><label>No</label>
 		</div>
-		</span>
+</div>
 
-            <span class="border border-primary">
-			<div class="col-auto"><p align="center">What is your highest education?</p></div>
-			<div class="col-auto"><input type="radio"  th:field="*{highestEducation}" value="GED"/><label>GED</label></div>
-			<div class="col-auto"><input type="radio"  th:field="*{highestEducation}"
-                                         value="H.S Diploma"/><label>H.S Diploma</label></div>
-			<div class="col-auto"><input type="radio"  th:field="*{highestEducation}"
-                                         value="Some College"/><label>Some College</label></div>
-			<div class="col-auto"><input type="radio" th:field="*{highestEducation}"
-                                         value="Associates Degree"/><label>Associates Degree</label></div>
-			<div class="col-auto"><input type="radio" th:field="*{highestEducation}"
-                                         value="Bachelors Degree"/><label>Bachelors Degree</label></div>
-			<div class="col-auto"><input type="radio"  th:field="*{highestEducation}"
-                                         value="Graduate Degree"/><label>Graduate Degree</label></div>
-        </span>
-        </div>
+<div class="form-row border  border-dark">
+    <div class="col-auto"><p align="center">What is your highest education?</p></div>
+    <div class="col-auto"><input type="radio"  th:field="*{highestEducation}" value="GED"/><label>GED</label></div>
+    <div class="col-auto"><input type="radio"  th:field="*{highestEducation}"
+                                 value="H.S Diploma"/><label>H.S Diploma</label></div>
+    <div class="col-auto"><input type="radio"  th:field="*{highestEducation}"
+                                 value="Some College"/><label>Some College</label></div>
+    <div class="col-auto"><input type="radio" th:field="*{highestEducation}"
+                                 value="Associates Degree"/><label>Associates Degree</label></div>
+    <div class="col-auto"><input type="radio" th:field="*{highestEducation}"
+                                 value="Bachelors Degree"/><label>Bachelors Degree</label></div>
+    <div class="col-auto"><input type="radio"  th:field="*{highestEducation}"
+                                 value="Graduate Degree"/><label>Graduate Degree</label></div>
+</div>
 
 
-        <div class="form-row">
-    <span class="border border-primary">
-		<div class="col-auto">
+
+
+<div class="form-row">
+		<div class="col-md-4 border  border-dark">
 			<p>Are you a fulltime student?</p>
 			<input type="radio" value="yes"  th:field="*{FullTimeStudent}"/><label>Yes</label>
 			<input type="radio" value="no"  th:field="*{FullTimeStudent}"/><label>No</label>
 
 		</div>
-    </span>
-            <span class="border border-primary">
-		<div class="col-auto">
+		<div class="col-md-4 border  border-dark" >
 			<p>Are you a part time student?</p>
 			<input type="radio" value="yes"  th:field="*{PartTimeStudent}"/><label>Yes</label>
 			<input type="radio" value="no"  th:field="*{PartTimeStudent}"/><label>No</label>
 		</div>
-		</span>
-            <span class="border border-primary">
-		<div class="col-auto">
+
+		<div class="col-md-4 border  border-dark">
 			<p>Do you have or are you eligible for a pell grant?</p>
 			<input type="radio" value="yes"  th:field="*{Pellgrant}"/><label>Yes</label>
 			<input type="radio" value="no"  th:field="*{Pellgrant}"/><label>No</label>
 		</div>
-		</span>
-        </div>
 
-        <div class="form-row">
-		<span class="border border-primary">
-		<div class="col-auto">
+</div>
+
+<div class="form-row border  border-dark">
+		<div class="col-auto ">
 		<p>Please identify the program of study you are currently enrolled in(select 1)</p>
 		</div>
 		<div class="col-auto">
@@ -232,19 +217,17 @@
 		<div class="col-auto">
 		<input type="radio"  th:field="*{currentEnroll}" value="Other"/><label>Other</label>
 		</div>
-		</span>
-        </div>
 
-        <div class="form-row">
-            <span class="border border-primary">
-            <div class="col-auto">
+</div>
+
+<div class="form-row">
+            <div class="col-md-6 border  border-dark">
                 <p>Are you currently recieving benefits under the trade adjustment assistance program?</p>
                 <input type="radio" value="yes"  th:field="*{recTAAP}"/><label>Yes</label>
                 <input type="radio" value="no"  th:field="*{recTAAP}"/><label>No</label>
             </div>
-            </span>
-            <span class="border border-primary">
-            <div class="col-auto">
+
+            <div class="col-md-6 border  border-dark">
               <p>Are you currently employed?</p>
             <input type="radio" value="yes"  th:field="*{Employed}" onclick="myFunction()"/><label>Yes</label>
             <input type="radio" value="no"  th:field="*{Employed}" onclick="myFunction3()"/><label>No</label>
@@ -258,12 +241,11 @@
                </div>
 
             </div>
-            </span>
-        </div>
 
-        <div class="form-row">
-            <span class="border border-primary">
-            <div class="col-auto">
+</div>
+
+<div class="form-row border  border-dark">
+            <div class="col-md-12 ">
                <p>Are you under employed?</p>
             <input type="radio" value="yes"  th:field="*{UnderEmployed}" onclick="myFunction2()"/><label>Yes</label>
             <input type="radio" value="no"  th:field="*{UnderEmployed}" onclick="myFunction4()"/><label>No</label>
@@ -288,15 +270,10 @@
             <label>Working fulltime, but duties and/or salary are not commensurate with my education level.</label>
             </div>
             </div>
+</div>
 
-
-
-            </span>
-        </div>
-
-        <div class="form-row">
-            <span class="border border-primary">
-            <div class="col-auto"><p>Are you a veteran?</p>
+<div class="form-row">
+            <div class="col-4 border  border-dark"><p>Are you a veteran?</p>
                 <input type="radio" value="yes"  th:field="*{Veteran}" onclick="myFunction5()"/><label>Yes</label>
                 <input type="radio" value="no"  th:field="*{Veteran}" onclick="myFunction6()"/><label>No</label>
             <div id="vetStuff" style="display:none">
@@ -304,22 +281,22 @@
                 <input type="text"  th:field="*{typeDischarge}" placeholder="Type of discharge"/>
                 <input type="text"  th:field="*{dateDischarge}" placeholder="Date of discharge">
             </div>
-            </div></span>
+            </div>
 
-            <span class="border border-primary">
-            <div class="col-auto"><p>Are you the spouse of a veteran?</p>
+
+            <div class="col-md-4 border  border-dark"><p>Are you the spouse of a veteran?</p>
                 <input type="radio" value="yes" th:field="*{SpouseVeteran}"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{SpouseVeteran}"/><label>No</label></div></span>
-            <span class="border border-primary">
-            <div class="col-auto"><p>Are you a Maryland National Gaurd memeber enlisted fr at least 24 months and submitting
+                <input type="radio" value="no"  th:field="*{SpouseVeteran}"/><label>No</label></div>
+
+            <div class="col-md-4 border  border-dark"><p>Are you a Maryland National Gaurd memeber enlisted fr at least 24 months and submitting
                 proof of such from the adjutant general's office?</p>
                 <input type="radio" value="yes"  th:field="*{NatGaurd}"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{NatGaurd}"/><label>No</label></div></span>
+    <input type="radio" value="no"  th:field="*{NatGaurd}"/><label>No</label></div></span>
 
-        </div>
+</div>
 
-        <div class="form-row" align="center">
-            <span class="border border-primary">
+<div class="form-row border  border-dark" align="center">
+
         <p>How did you hear about this program?</p>
             <div class="col-auto">
                 <div class="form-check"><input class="form-check-input" type="checkbox"  th:field="*{hearMC}"
@@ -343,13 +320,13 @@
                 <div class="form-check"><input class="form-check-input" type="checkbox"  th:field="*{hearMC}"
                                                value="Other"/><label class="form-check-label">other</label></div>
             </div>
-            </span>
-        </div>
-        <div class="form-row">
-            <input type="reset"/>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </div>
-    </form>
+
+</div>
+<div class="form-row">
+    <input type="reset"/>
+    <button type="submit" class="btn btn-primary">Submit</button>
+</div>
+</form>
 </div>
 </body>
 </html>
