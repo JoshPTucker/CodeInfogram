@@ -92,7 +92,7 @@
                 </div>
                 <div class="col-sm-2 border border-light" >
                     <p>American Indian/Alaskan Native</p>
-                    <p><span th:if="${student.==True}">&#9745</span><span th:if="${student.==False}">&#9746</span></p>
+                    <p><span th:if="${student.AmericanIndian==True}">&#9745</span><span th:if="${student.AmericanIndian==False}">&#9746</span></p>
                 </div>
                 <div class="col-sm-2 border border-light">
                     <p>Asian</p>
@@ -133,12 +133,12 @@
 
         <div class="col-md-3 border border-dark" >
             <p>Highest education:</p>
-            <p th:if="${student.!=null}">[[${student.highestEducation}]]</p>
+            <p th:if="${student.highestEducation!=null}">[[${student.highestEducation}]]</p>
         </div>
 
         <div class="col-md-3 border border-dark" >
             <p>Program of study currently enrolled</p>
-            <p th:if="${student.!=null}">[[${student.currentEnroll}]]</p>
+            <p th:if="${student.currentEnroll!=null}">[[${student.currentEnroll}]]</p>
         </div>
         <div class="col-md-2 border border-dark">
             <p>FullTime: <span th:if="${student.FullTimeStudent==True}">&#9745</span><span th:if="${student.FullTimeStudent==False}">&#9746</span></p>
@@ -205,15 +205,15 @@
         </div>
         <div class="col-sm-3 border border-dark" >
             <p>Branch</p>
-            <p th:if="${student.!=null}">[[${student.servBranch}]]</p>
+            <p th:if="${student.servBranch!=null}">[[${student.servBranch}]]</p>
         </div>
         <div class="col-sm-3 border border-dark" >
             <p>Date of discharge</p>
-            <p th:if="${student.!=null}">[[${student.dateDischarge}]]</p>
+            <p th:if="${student.dateDischarge!=null}">[[${student.dateDischarge}]]</p>
         </div>
         <div class="col-sm-2 border border-dark" >
             <p>Type of Discharge</p>
-            <p th:if="${student.!=null}">[[${student.typeDischarge}]]</p>
+            <p th:if="${student.typeDischarge!=null}">[[${student.typeDischarge}]]</p>
         </div>
     </div>
 </div>

@@ -30,7 +30,7 @@ public class MainController {
 		}else {
 			studentrepository.save(student);
 			//model.addAttribute(student);
-			return"printpage";
+			return"printRegistration";
 		}
 	}
 }
