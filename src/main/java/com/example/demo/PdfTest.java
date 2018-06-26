@@ -24,9 +24,10 @@ import java.io.IOException;
 
 public class PdfTest {
 
-    public void makePDF (String studentName) {
+    public void makePDF (Student student) {
+        String studentName=student.getFirstname()+student.getLastname();
         String home = System.getProperty("user.home");
-        String src = home+"/Downloads/CyberRegForm.pdf";
+        String src = "static/CyberRegForm.pdf";
         String dest = home+"/Downloads/"+studentName+"RegForm.pdf";
         try {
             PdfDocument pdfDoc;
@@ -35,7 +36,7 @@ public class PdfTest {
             PdfCanvas canvas = new PdfCanvas(pdfDoc.getPage(1));
             Color greenColor = new DeviceCmyk(1.f, 0.f, 1.f, 0.176f);
             canvas.setFillColor(greenColor);
-            canvas.rectangle(103, 651, 152.82, 22);
+            canvas.rectangle(104, 649, 152.82, 22);
             canvas.fillStroke();
 
             pdfDoc.close();

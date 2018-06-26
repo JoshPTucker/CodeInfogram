@@ -31,9 +31,8 @@ public class MainController {
 		if(result.hasErrors()) {
 			return "studentform";
 		}else {
-			System.out.print(student.getFirstname());
+			test.makePDF(student);
 			studentrepository.save(student);
-			test.makePDF(name);
 			//model.addAttribute(student);
 			return"printRegistration";
 		}
