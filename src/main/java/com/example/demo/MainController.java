@@ -16,6 +16,8 @@ public class MainController {
 	@Autowired
 	private StudentRepository studentrepository;
 
+	PdfTest test = new PdfTest();
+
 	@GetMapping("/studentform")
 	public String studentform(Model model)
 	{
@@ -25,10 +27,13 @@ public class MainController {
 	
 	@PostMapping("/studentform")
 	public String displayform( @Valid@ModelAttribute("student")Student student, BindingResult result, Model model) {
+		String name= student.getFirstname()+student.getLastname();
 		if(result.hasErrors()) {
 			return "studentform";
 		}else {
+			System.out.print(student.getFirstname());
 			studentrepository.save(student);
+			test.makePDF(name);
 			//model.addAttribute(student);
 			return"printRegistration";
 		}
