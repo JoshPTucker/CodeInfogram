@@ -63,6 +63,7 @@ public class Student {
 	private String salary;
 	private String startdate;
 	private String workPhone;
+	private String fax;
 	@Column(length=400)
 	private String reasonUEmploy;
 	
@@ -392,5 +393,13 @@ public class Student {
 
 	public void setTypeDischarge(String typeDischarge) {
 		this.typeDischarge = typeDischarge;
+	}
+
+	public String getFax() {
+		return fax;
+	}
+
+	public void setFax(String fax) {
+		this.fax = fax;
 	}
 }
