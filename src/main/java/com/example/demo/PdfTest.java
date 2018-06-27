@@ -26,7 +26,7 @@ import java.io.IOException;
 
 public class PdfTest {
 
-    public void makePDF (Student student) {
+    public static void makeRegPDF (Student student) {
         String studentName=student.getFirstname()+student.getLastname();
         String home = System.getProperty("user.home");
         String src = "static/CyberRegForm.pdf";
@@ -39,7 +39,7 @@ public class PdfTest {
 
             //Handles student id
             Paragraph paragraph1 = new Paragraph(student.getStudentId());
-            Rectangle rectangle1 = new Rectangle(104, 649, 152, 22);
+            Rectangle rectangle1 = new Rectangle(104, 647, 152, 22);
             PdfCanvas pdfcanvas = new PdfCanvas(pdfDoc.getPage(1));
             pdfcanvas.saveState().setFillColor(Color.WHITE).rectangle(rectangle1).fill().restoreState();
             Canvas canvas1 = new Canvas(pdfcanvas,pdfDoc,rectangle1);
@@ -126,7 +126,7 @@ public class PdfTest {
             Canvas canvas10 = new Canvas(pdfcanvas10,pdfDoc,rectangle10);
             canvas10.add(paragraph10);
             canvas10.close();
-            
+
             //Zipcode
             Paragraph paragraph11 = new Paragraph(student.getZipcode());
             Rectangle rectangle11 = new Rectangle( 426,538,160,22);
@@ -136,7 +136,23 @@ public class PdfTest {
             canvas11.add(paragraph11);
             canvas11.close();
 
+            //Work Phone
+            Paragraph paragraph12 = new Paragraph(student.getWorkPhone());
+            Rectangle rectangle12 = new Rectangle( 263,512,174,22);
+            PdfCanvas pdfcanvas12 = new PdfCanvas(pdfDoc.getPage(1));
+            pdfcanvas12.saveState().setFillColor(Color.WHITE).rectangle(rectangle12).fill().restoreState();
+            Canvas canvas12 = new Canvas(pdfcanvas12,pdfDoc,rectangle12);
+            canvas12.add(paragraph12);
+            canvas12.close();
 
+            //Email
+            Paragraph paragraph13 = new Paragraph(student.getEmail());
+            Rectangle rectangle13 = new Rectangle( 259,477,320,22);
+            PdfCanvas pdfcanvas13 = new PdfCanvas(pdfDoc.getPage(1));
+            pdfcanvas13.saveState().setFillColor(Color.WHITE).rectangle(rectangle13).fill().restoreState();
+            Canvas canvas13 = new Canvas(pdfcanvas13,pdfDoc,rectangle13);
+            canvas13.add(paragraph13);
+            canvas13.close();
 
             pdfDoc.close();
             } catch (IOException e) {
@@ -149,5 +165,6 @@ public class PdfTest {
          return pt;
         }
 
+        public static void
     }
 

@@ -31,7 +31,7 @@ public class MainController {
 		if(result.hasErrors()) {
 			return "studentform";
 		}else {
-			test.makePDF(student);
+			test.makeRegPDF(student);
 			studentrepository.save(student);
 			//model.addAttribute(student);
 			return"printRegistration";
