@@ -38,7 +38,7 @@ public class PdfTest {
             // Adds content to page
 
             //Handles student id
-            Paragraph paragraph1 = new Paragraph(studentName);
+            Paragraph paragraph1 = new Paragraph(student.getStudentId());
             Rectangle rectangle1 = new Rectangle(104, 649, 152, 22);
             PdfCanvas pdfcanvas = new PdfCanvas(pdfDoc.getPage(1));
             pdfcanvas.saveState().setFillColor(Color.WHITE).rectangle(rectangle1).fill().restoreState();
