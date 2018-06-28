@@ -74,6 +74,24 @@ public class PdfTest {
             makeCheckBox(pdfDoc,student.isAmericanIndian(),23,353,6,6,1);
             //Is Hispanic
             makeCheckBox(pdfDoc,student.isHispanic(),122,374,6,6,1);
+            //Asian
+            makeCheckBox(pdfDoc,student.isAsian(),147,353,6,6,1);
+            //Black or African American
+            makeCheckBox(pdfDoc,student.isBlackAfricanAmerican(),181,353,6,6,1);
+            //Native hawaiian
+            makeCheckBox(pdfDoc,student.isHawaiian(),278,353,6,6,1);
+            //White
+            makeCheckBox(pdfDoc,student.isWhite(),420,353,6,6,1);
+            //Us Citizen
+            makeCheckBox(pdfDoc,student.isCitizen(),24,333,6,6,1);
+            //Permanent resident alien
+            makeCheckBox(pdfDoc,student.isPermanentResidnetAlien(),76,333,6,6,1);
+            //Md res
+            makeCheckBox(pdfDoc,student.isMdRes(),24,307,6,6,1);
+            //60 Plus
+            makeCheckBox(pdfDoc,student.isSixtyPlus(),24,299,6,6,1);
+            //Md National gaurd
+            makeCheckBox(pdfDoc,student.isNatGaurd(),24,285,6,6,1);
             pdfDoc.close();
             } catch (IOException e) {
                 e.printStackTrace();
