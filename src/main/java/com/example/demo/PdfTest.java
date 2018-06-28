@@ -68,6 +68,7 @@ public class PdfTest {
             //Hear about MC
             makeTextBox(pdfDoc,student.getHearMC(),131,437,460,15,1);
 
+            makeCheckBox(pdfDoc,true,0,0,100,100,1);
             pdfDoc.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -80,6 +81,9 @@ public class PdfTest {
         }
 
         public static void makeTextBox(PdfDocument pdfDoc,String paragraph,float x, float y, float w, float h, int pageNum ){
+        if(paragraph==null){
+            paragraph="";
+        }
             Paragraph p = new Paragraph(paragraph);
             Rectangle r = new Rectangle( x,y,w,h);
             PdfCanvas pdfc = new PdfCanvas(pdfDoc.getPage(pageNum));
@@ -88,5 +92,18 @@ public class PdfTest {
             c.add(p);
             c.close();
         }
+
+        public static void makeCheckBox(PdfDocument pdfDoc,boolean bool,float x, float y, float w, float h, int pageNum ){
+        Rectangle r = new Rectangle(x,y,w,h);
+        PdfCanvas canvas = new PdfCanvas(pdfDoc.getPage(pageNum));
+        if(bool) {
+            canvas.saveState().setFillColor(Color.DARK_GRAY).rectangle(r).fill().restoreState();
+        }else if(!bool){
+            canvas.saveState().setFillColor(Color.WHITE).rectangle(r).fill().restoreState();
+        }else{
+            canvas.saveState().setFillColor(Color.WHITE).rectangle(r).fill().restoreState();
+
+        }
+      }
     }
 
