@@ -402,4 +402,17 @@ public class Student {
 	public void setFax(String fax) {
 		this.fax = fax;
 	}
+
+	public static String boolString(boolean bool){
+
+		String statement="";
+		if(bool==true){
+			statement="Yes";
+		}else if (bool==false){
+			statement="no";
+		}else{
+			statement="Undetermined";
+		}
+		return statement;
+	}
 }

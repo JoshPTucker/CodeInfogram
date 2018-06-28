@@ -63,7 +63,10 @@ public class PdfTest {
             makeTextBox(pdfDoc,student.getWorkPhone(),263,512,174,22,1);
             //Email
             makeTextBox(pdfDoc,student.getEmail(),259,477,320,22,1);
-
+            //Attended MC before
+            makeTextBox(pdfDoc, student.boolString(student.isAttenMcb4()),142,463,54,13,1);
+            //Hear about MC
+            makeTextBox(pdfDoc,student.getHearMC(),131,437,460,15,1);
 
             pdfDoc.close();
             } catch (IOException e) {
