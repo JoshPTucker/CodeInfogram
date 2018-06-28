@@ -17,6 +17,7 @@ import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
 import com.itextpdf.kernel.pdf.annot.PdfTextAnnotation;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Canvas;
+import com.itextpdf.layout.border.SolidBorder;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.test.annotations.type.SampleTest;
 import org.junit.experimental.categories.Category;
@@ -38,7 +39,7 @@ public class PdfTest {
             // Adds content to page
 
             //student id
-            makeTextBox(pdfDoc,student.getStudentId(),104, 647, 152, 22,1);
+            makeTextBox(pdfDoc,student.getStudentId(),104, 646, 152, 22,1);
             //Last Name
             makeTextBox(pdfDoc,student.getLastname(),20, 612, 240, 22,1);
             //First Name
@@ -46,7 +47,7 @@ public class PdfTest {
             //middle initial
             makeTextBox(pdfDoc,student.getMiddleInitial(),544, 609, 19, 22,1);
             //Address
-            makeTextBox(pdfDoc,student.getAddress(),55,577,432,22,1);
+            makeTextBox(pdfDoc,student.getAddress(),55,576,432,22,1);
             //Apt num
             makeTextBox(pdfDoc,student.getAptnum(),514,577,70,22,1);
             //City
@@ -64,11 +65,15 @@ public class PdfTest {
             //Email
             makeTextBox(pdfDoc,student.getEmail(),259,477,320,22,1);
             //Attended MC before
-            makeTextBox(pdfDoc, student.boolString(student.isAttenMcb4()),142,463,54,13,1);
+            makeTextBox(pdfDoc, student.boolString(student.isAttenMcb4()),142,462,54,13,1);
             //Hear about MC
             makeTextBox(pdfDoc,student.getHearMC(),131,437,460,15,1);
-
-            makeCheckBox(pdfDoc,true,0,0,100,100,1);
+            //Gender
+            makeTextBox(pdfDoc,student.getGender(),513,647,61,15,1);
+            //Is American Indian
+            makeCheckBox(pdfDoc,student.isAmericanIndian(),23,353,6,6,1);
+            //Is Hispanic
+            makeCheckBox(pdfDoc,student.isHispanic(),122,374,6,6,1);
             pdfDoc.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -85,6 +90,7 @@ public class PdfTest {
             paragraph="";
         }
             Paragraph p = new Paragraph(paragraph);
+           // p.setBorder(new SolidBorder(Color.CYAN,1,1));
             Rectangle r = new Rectangle( x,y,w,h);
             PdfCanvas pdfc = new PdfCanvas(pdfDoc.getPage(pageNum));
             pdfc.saveState().setFillColor(Color.WHITE).rectangle(r).fill().restoreState();
