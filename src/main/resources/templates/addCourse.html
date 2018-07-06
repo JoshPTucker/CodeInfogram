@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Add a course</title>
+</head>
+<body>
+<form action="#" th:action="@{/addCourse}" th:object="${course}" method="post">
+   <input type="text" th:field="*{courseName}" placeholder="Course Name"/>
+   <input type="text" th:field="*{StartDate}" placeholder="StartDate"/>
+    <input type="text" th:field="*{courseNum}"  placeholder="Course Number">
+    <input type="text" th:field="*{crn}"  placeholder="CRN">
+    <input type="reset" value="Reset" id="reset"/>
+    <input type="submit" value="Add Course"/>
+</form>
+</body>
+</html>

@@ -8,11 +8,11 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class BootCamp {
+public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long campId;
+    private long courseId;
 
     private String courseName;
     private String StartDate;
@@ -20,12 +20,12 @@ public class BootCamp {
     private String crn;
     private boolean active;
 
-    public long getCampId() {
-        return campId;
+    public long getCourseId() {
+        return courseId;
     }
 
-    public void setCampId(long campId) {
-        this.campId = campId;
+    public void setCourseId(long courseId) {
+        this.courseId = courseId;
     }
 
     public String getCourseName() {

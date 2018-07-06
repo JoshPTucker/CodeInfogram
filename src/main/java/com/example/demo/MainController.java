@@ -16,6 +16,8 @@ public class MainController {
 
 	@Autowired
 	private StudentRepository studentrepository;
+	@Autowired
+	private CourseRepository courserepo;
 
 	PdfTest test = new PdfTest();
 
@@ -38,6 +40,25 @@ public class MainController {
 			return"printRegistration";
 		}
 	}
+
+	@GetMapping("/addCourse")
+	public String addcourse(Model model){
+		model.addAttribute("course", new Course());
+		return "addCourse";
+	}
+	@PostMapping("/addCourse")
+	public String showCourse(@Valid@ModelAttribute("course")Course course, BindingResult result, Model model){
+
+		if(result.hasErrors()) {
+			return "addCourse";
+		}else {
+			courserepo.save(course);
+			model.addAttribute("courses", courserepo.findAll());
+			return "courseList";
+		}
+
+	}
+
 	@RequestMapping(value = "/download", method = RequestMethod.POST)
 	public @ResponseBody String download(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("currStudent")Student student) throws IOException {
 
