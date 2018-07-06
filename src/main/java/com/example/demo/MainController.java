@@ -45,12 +45,12 @@ public class MainController {
 		}else {
 
 			studentrepository.save(student);
-			//model.addAttribute(student);
+			model.addAttribute(student);
 			return"printRegistration";
 		}
 	}
-	@RequestMapping(value = "/download", method = RequestMethod.GET)
-	public ResponseEntity download(HttpServletRequest request, HttpServletResponse response, @Valid@ModelAttribute("student")Student student) throws IOException {
+	@RequestMapping(value = "/download", method = RequestMethod.POST)
+	public ResponseEntity download(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("currStudent")Student student) throws IOException {
         String studentName=student.getFirstname()+student.getLastname();
         String home = System.getProperty("user.home");
 
