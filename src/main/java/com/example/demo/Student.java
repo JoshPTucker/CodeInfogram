@@ -17,7 +17,7 @@ import org.springframework.lang.Nullable;
  */
 @Entity
 public class Student {
-	
+	//Values do not include ssn or dob for security reasons
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
@@ -41,63 +41,62 @@ public class Student {
 	@Column(name="Heard_about_us", length=300)
 	private String hearMC;
 
-	//	@Column(name = "dateOfBirth")
-//	private String dob;
-	
 	@Column(name="Street_Address")
 	private String address;
+
 	private String aptnum;
 	private String zipcode;
 	private String homephone;
-	
 	private String State;
 	private String city;
-	
 	private String gender;
-	
 	private String highestEducation;
 	private String currentEnroll;
-	
 	private String employer;
 	private String hours;
 	private String salary;
 	private String startdate;
 	private String workPhone;
 	private String fax;
+
+	//Reason for UnderEmployment
 	@Column(length=400)
 	private String reasonUEmploy;
-	
-//	private int ssn;
-	
+
+	//Has attended Montgomery College Before
 	private boolean attenMcb4;
 	private boolean hasDisability;
 	private boolean Citizen;
 	private boolean PermanentResidnetAlien;
 	private boolean Employed;
 	private boolean UnderEmployed;
-
 	private boolean Pellgrant;
 	private boolean FullTimeStudent;
 	private boolean PartTimeStudent;
+
 	//TAAP is Trade adjustment Assistance Program
 	private boolean recTAAP;
 	private boolean Veteran;
+
+	//Branch of Military Service
 	private String servBranch;
 	private String dateDischarge;
 	private String typeDischarge;
 	private boolean SpouseVeteran;
-	
-	
-	
+
+	// is member of the MD national gaurd
 	private boolean NatGaurd;
+
+	//Is a maryland resident
 	private boolean MdRes;
+
+	//Is sixty years of age or older
 	private boolean sixtyPlus;
-	
+
 	//Has student recieved the Greivance and Veteran forms
 	private boolean recievGreiveVet;
-	
-	
-	//Race choices
+
+	//Race or ethnicity choices, true or false
 	 private boolean Hispanic;
 	 private boolean AmericanIndian;
 	 private boolean Asian;
@@ -370,39 +369,32 @@ public class Student {
 	public void setAptnum(String aptnum) {
 		this.aptnum = aptnum;
 	}
-
 	public String getServBranch() {
 		return servBranch;
 	}
-
 	public void setServBranch(String servBranch) {
 		this.servBranch = servBranch;
 	}
-
 	public String getDateDischarge() {
 		return dateDischarge;
 	}
-
 	public void setDateDischarge(String dateDischarge) {
 		this.dateDischarge = dateDischarge;
 	}
-
 	public String getTypeDischarge() {
 		return typeDischarge;
 	}
-
 	public void setTypeDischarge(String typeDischarge) {
 		this.typeDischarge = typeDischarge;
 	}
-
 	public String getFax() {
 		return fax;
 	}
-
 	public void setFax(String fax) {
 		this.fax = fax;
 	}
 
+	//Determines whether or not statement is true and returns yes or no
 	public static String boolString(boolean bool){
 
 		String statement="";

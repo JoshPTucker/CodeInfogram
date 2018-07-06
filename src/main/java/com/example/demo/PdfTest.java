@@ -88,7 +88,7 @@ public class PdfTest {
         double pt= mm*2.83;
          return pt;
         }
-
+        //Makes a text box, takes in a pdfdoc, statement, x coord, y coord, w width,h height, and page number
         public static void makeTextBox(PdfDocument pdfDoc,String paragraph,float x, float y, float w, float h, int pageNum ){
         if(paragraph==null){
             paragraph="";
@@ -103,6 +103,7 @@ public class PdfTest {
             c.close();
         }
 
+        //Makes a check box at location, if boolean statement is true fill of box is set to gray
         public static void makeCheckBox(PdfDocument pdfDoc,boolean bool,float x, float y, float w, float h, int pageNum ){
         Rectangle r = new Rectangle(x,y,w,h);
         PdfCanvas canvas = new PdfCanvas(pdfDoc.getPage(pageNum));
