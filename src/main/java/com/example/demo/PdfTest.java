@@ -1,30 +1,14 @@
 package com.example.demo;
 
-import com.itextpdf.forms.PdfAcroForm;
-import com.itextpdf.forms.fields.PdfButtonFormField;
-import com.itextpdf.forms.fields.PdfFormField;
 import com.itextpdf.kernel.color.Color;
-import com.itextpdf.kernel.color.DeviceCmyk;
-import com.itextpdf.kernel.geom.PageSize;
 import com.itextpdf.kernel.geom.Rectangle;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
-import com.itextpdf.kernel.pdf.PdfString;
 import com.itextpdf.kernel.pdf.PdfWriter;
-import com.itextpdf.kernel.pdf.action.PdfAction;
-
-import com.itextpdf.kernel.pdf.annot.PdfAnnotation;
-import com.itextpdf.kernel.pdf.annot.PdfTextAnnotation;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Canvas;
-import com.itextpdf.layout.border.SolidBorder;
 import com.itextpdf.layout.element.Paragraph;
-import com.itextpdf.test.annotations.type.SampleTest;
-import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
-import org.junit.experimental.categories.Category;
-
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.IOException;
 
 public class PdfTest {
