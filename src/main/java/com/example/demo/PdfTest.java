@@ -20,22 +20,24 @@ import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.border.SolidBorder;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.test.annotations.type.SampleTest;
+import com.sun.xml.internal.messaging.saaj.util.ByteOutputStream;
 import org.junit.experimental.categories.Category;
 
+import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.IOException;
 
 public class PdfTest {
 
-    public static void makeRegPDF (Student student) {
+    public static void makeRegPDF (Student student, ByteArrayOutputStream stream) {
         String studentName=student.getFirstname()+student.getLastname();
         String home = System.getProperty("user.home");
         String src = "static/CyberRegForm.pdf";
-        String dest = home+"/Downloads/"+studentName+"RegForm.pdf";
+       // String dest = home+"/Downloads/"+studentName+"RegForm.pdf";
         try {
             //Creates a new pdf doc
             PdfDocument pdfDoc;
-                pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(dest));
+                pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(stream));
             // Adds content to page
 
             //student id

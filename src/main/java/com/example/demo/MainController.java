@@ -43,15 +43,15 @@ public class MainController {
 		if(result.hasErrors()) {
 			return "studentform";
 		}else {
-			test.makeRegPDF(student);
+
 			studentrepository.save(student);
 			//model.addAttribute(student);
 			return"printRegistration";
 		}
 	}
 	@RequestMapping(value = "/download", method = RequestMethod.GET)
-	public ResponseEntity download(HttpServletRequest request, HttpServletResponse response) throws IOException {
-		String filePath = "/downloads";
+	public ResponseEntity download(HttpServletRequest request, HttpServletResponse response, @Valid@ModelAttribute("student")Student student, BindingResult result, Model model) throws IOException {
+		String filePath = "/Downloads";
 
 		try {
 			// Get the text that will be added to the PDF
@@ -60,13 +60,14 @@ public class MainController {
 				text = "You didn't enter any text.";
 			}
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-			PdfDocument pdfDoc = new PdfDocument(new PdfWriter(baos));
-			Document doc = new Document(pdfDoc);
-			doc.add(new Paragraph(String.format(
-					"You have submitted the following text using the %s method:",
-					request.getMethod())));
-			doc.add(new Paragraph(text));
-			doc.close();
+            test.makeRegPDF(student,baos);
+//			PdfDocument pdfDoc = new PdfDocument(new PdfWriter(baos));
+//			Document doc = new Document(pdfDoc);
+//			doc.add(new Paragraph(String.format(
+//					"You have submitted the following text using the %s method:",
+//					request.getMethod())));
+//			doc.add(new Paragraph(text));
+//			doc.close();
 
 			// setting some response headers
 			response.setHeader("Expires", "0");
