@@ -216,13 +216,10 @@
             <p th:if="${student.typeDischarge!=null}">[[${student.typeDischarge}]]</p>
         </div>
     </div>
-    <div>
+    <div align="center">
         <form th:action="@{@{/download/(currStudent=${student.id})}}" method="post">
-            <button type="submit">Dwn</button>
+            <button type="submit" class="btn btn-primary">Download</button>
         </form>
-    </div>
-    <div>
-        <a th:href="@{/download}"><button>Download</button></a>
     </div>
 </div>
 
