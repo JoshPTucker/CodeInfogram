@@ -103,8 +103,11 @@ public class Student {
 	 private boolean BlackAfricanAmerican;
 	 private boolean White;
 	 private boolean Hawaiian;
-	 
-	 
+
+	public Student() {
+	}
+
+
 	public long getId() {
 		return id;
 	}

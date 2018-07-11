@@ -20,6 +20,9 @@ public class Course {
     private String crn;
     private boolean active;
 
+    public Course() {
+    }
+
     public long getCourseId() {
         return courseId;
     }
