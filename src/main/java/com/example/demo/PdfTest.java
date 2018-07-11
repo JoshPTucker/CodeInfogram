@@ -55,7 +55,7 @@ public class PdfTest {
             //Email
             makeTextBox(pdfDoc,student.getEmail(),259,477,320,22,1);
             //Attended MC before
-            makeTextBox(pdfDoc, student.boolString(student.isAttenMcb4()),142,462,54,13,1);
+            makeTextBox(pdfDoc, student.boolString(student.isAttenMcb4()),142,461,54,13,1);
             //Hear about MC
             makeTextBox(pdfDoc,student.getHearMC(),131,437,460,15,1);
             //Gender
@@ -84,8 +84,8 @@ public class PdfTest {
             makeCheckBox(pdfDoc,student.isNatGaurd(),24,285,6,6,1);
 
             //Course 1
-            makeTextBox(pdfDoc,"CRN1",22,240,40,15,1);
-            makeTextBox(pdfDoc,"Course Num",64,240,53,15,1);
+            makeTextBox(pdfDoc,"107542",22,240,40,15,1);
+            makeTextBox(pdfDoc,"APG007",64,240,53,15,1);
 
 
 
@@ -108,7 +108,7 @@ public class PdfTest {
            // p.setBorder(new SolidBorder(Color.CYAN,1,1));
             p.setVerticalAlignment(VerticalAlignment.BOTTOM);
             p.setHorizontalAlignment(HorizontalAlignment.CENTER);
-            p.setFontSize(6);
+            p.setFontSize(8);
             Rectangle r = new Rectangle( x,y,w,h);
             PdfCanvas pdfc = new PdfCanvas(pdfDoc.getPage(pageNum));
             pdfc.saveState().setFillColor(Color.GRAY).rectangle(r).fill().restoreState();

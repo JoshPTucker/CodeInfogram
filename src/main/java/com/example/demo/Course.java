@@ -16,6 +16,7 @@ public class Course {
 
     private String courseName;
     private String StartDate;
+    private String EndDate;
     private String courseNum;
     private String crn;
     private boolean active;
@@ -69,5 +70,13 @@ public class Course {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public String getEndDate() {
+        return EndDate;
+    }
+
+    public void setEndDate(String endDate) {
+        EndDate = endDate;
     }
 }
