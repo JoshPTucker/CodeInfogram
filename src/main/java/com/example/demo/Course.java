@@ -79,4 +79,5 @@ public class Course {
     public void setEndDate(String endDate) {
         EndDate = endDate;
     }
+
 }
