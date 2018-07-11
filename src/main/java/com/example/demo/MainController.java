@@ -60,6 +60,15 @@ public class MainController {
 		}
 
 	}
+//	@GetMapping("/login")
+//	public String loginAdmin(){
+//
+//		return "adminLogin";
+//	}
+//	@PostMapping
+//	public String logged(){
+//		return "redirect:/addCourse";
+//	}
 
 	@RequestMapping(value = "/download", method = RequestMethod.POST)
 	public @ResponseBody String download(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("currStudent")Student student) throws IOException {
@@ -67,7 +76,7 @@ public class MainController {
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
             test.makeRegPDF(student,baos);
-//
+
 			// setting some response headers
 			response.setHeader("Expires", "0");
 			response.setHeader("Cache-Control",

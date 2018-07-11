@@ -8,6 +8,10 @@ import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.property.HorizontalAlignment;
+import com.itextpdf.layout.property.VerticalAlignment;
+
+import javax.swing.*;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
@@ -78,6 +82,13 @@ public class PdfTest {
             makeCheckBox(pdfDoc,student.isSixtyPlus(),24,299,6,6,1);
             //Md National gaurd
             makeCheckBox(pdfDoc,student.isNatGaurd(),24,285,6,6,1);
+
+            //Course 1
+            makeTextBox(pdfDoc,"CRN1",22,240,40,15,1);
+            makeTextBox(pdfDoc,"Course Num",64,240,53,15,1);
+
+
+
             pdfDoc.close();
             } catch (IOException e) {
                 e.printStackTrace();
@@ -95,9 +106,12 @@ public class PdfTest {
         }
             Paragraph p = new Paragraph(paragraph);
            // p.setBorder(new SolidBorder(Color.CYAN,1,1));
+            p.setVerticalAlignment(VerticalAlignment.BOTTOM);
+            p.setHorizontalAlignment(HorizontalAlignment.CENTER);
+            p.setFontSize(6);
             Rectangle r = new Rectangle( x,y,w,h);
             PdfCanvas pdfc = new PdfCanvas(pdfDoc.getPage(pageNum));
-            pdfc.saveState().setFillColor(Color.WHITE).rectangle(r).fill().restoreState();
+            pdfc.saveState().setFillColor(Color.GRAY).rectangle(r).fill().restoreState();
             Canvas c = new Canvas(pdfc,pdfDoc,r);
             c.add(p);
             c.close();
