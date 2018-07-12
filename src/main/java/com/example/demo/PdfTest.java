@@ -28,6 +28,7 @@ public class PdfTest {
             PdfDocument pdfDoc;
                 pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(stream));
             // Adds content to page
+            System.out.print(student.getFirstname());
 
             //student id
             makeTextBox(pdfDoc,student.getStudentId(),104, 646, 152, 22,1);
@@ -107,12 +108,12 @@ public class PdfTest {
         }
             Paragraph p = new Paragraph(paragraph);
            // p.setBorder(new SolidBorder(Color.CYAN,1,1));
-            p.setVerticalAlignment(VerticalAlignment.BOTTOM);
-            p.setHorizontalAlignment(HorizontalAlignment.CENTER);
+           // p.setVerticalAlignment(VerticalAlignment.BOTTOM);
+          //  p.setHorizontalAlignment(HorizontalAlignment.CENTER);
             p.setFontSize(8);
             Rectangle r = new Rectangle( x,y,w,h);
             PdfCanvas pdfc = new PdfCanvas(pdfDoc.getPage(pageNum));
-            pdfc.saveState().setFillColor(Color.GRAY).rectangle(r).fill().restoreState();
+            pdfc.saveState().setFillColor(Color.WHITE).rectangle(r).fill().restoreState();
             Canvas c = new Canvas(pdfc,pdfDoc,r);
             c.add(p);
             c.close();

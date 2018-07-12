@@ -41,7 +41,7 @@ public class MainController {
 	
 	@PostMapping("/studentform")
 	public String displayform( @Valid@ModelAttribute("student")Student student, BindingResult result, Model model) {
-		String name= student.getFirstname()+student.getLastname();
+		//String name= student.getFirstname()+student.getLastname();
 		if(result.hasErrors()) {
 			return "studentform";
 		}else {
@@ -92,7 +92,7 @@ public class MainController {
 
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
-            test.makeRegPDF(student,baos);
+            test.makeRegPDF(student, baos);
 
 			// setting some response headers
 			response.setHeader("Expires", "0");
@@ -111,7 +111,8 @@ public class MainController {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-
+        studentrepository.delete(student);
 		return "printerPage";
 	}
+
 }

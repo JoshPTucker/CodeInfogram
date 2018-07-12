@@ -19,17 +19,17 @@ public class DataLoader implements CommandLineRunner {
     @Override
     public  void run(String... strings) throws Exception {
         System.out.println("Loading data . . .");
-        Random rand =new Random();
-        String y="";
-        int x= rand.nextInt(1000);
-        if(x<=500){
-            y="!*";
-        }else if(x>500){
-            y="!!";
-        }else{
-            y="**";
-        }
-        String password="password"+x+y;
+//        Random rand =new Random();
+//        String y="";
+//        int x= rand.nextInt(1000);
+//        if(x<=500){
+//            y="!*";
+//        }else if(x>500){
+//            y="!!";
+//        }else{
+//            y="**";
+//        }
+//        String password="password"+x+y;
 
         roleRepository.save(new Role("USER"));
         roleRepository.save(new Role("ADMIN"));
@@ -37,7 +37,7 @@ public class DataLoader implements CommandLineRunner {
         Role adminRole = roleRepository.findByRole("ADMIN");
         Role userRole = roleRepository.findByRole("USER");
 
-        User user = new User("admin@secure.com",password,"Admin","User", true, "admin");
+        User user = new User("admin@secure.com","password","Admin","User", true, "admin");
         user.setRoles(Arrays.asList(adminRole));
         userRepository.save(user);
 
@@ -45,6 +45,6 @@ public class DataLoader implements CommandLineRunner {
         user.setRoles(Arrays.asList(userRole, adminRole));
         userRepository.save(user);
 
-        System.out.println(password);
+       // System.out.println(password);
     }
 }
