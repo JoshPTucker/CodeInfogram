@@ -13,7 +13,8 @@ import java.io.*;
 
 @Controller
 public class MainController {
-
+	@Autowired
+	private UserService userService;
 	@Autowired
 	private StudentRepository studentrepository;
 	@Autowired
@@ -59,6 +60,10 @@ public class MainController {
 			return "courseList";
 		}
 
+	}
+	@RequestMapping("/adminLogin")
+	public  String adminLogin(){
+		return"adminLogin";
 	}
 //	@GetMapping("/login")
 //	public String loginAdmin(){
