@@ -3,6 +3,8 @@ package com.example.demo;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
+import javax.xml.crypto.Data;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -20,7 +22,10 @@ public class MainController {
 	@Autowired
 	private CourseRepository courserepo;
 
+	DataLoader loader = new DataLoader();
+
 	PdfTest test = new PdfTest();
+
 	@RequestMapping("/")
 	public String index(){
 		return "index";
@@ -70,9 +75,12 @@ public class MainController {
 		return"login";
 	}
 //	@GetMapping("/login")
-//	public String loginAdmin(){
-//
-//		return "adminLogin";
+//	public String loginA() throws Exception {
+//	    roleRepository.save(new Role("USER"));
+//        roleRepository.save(new Role("ADMIN"));
+//        DataLoader loader=new DataLoader();
+//        loader.run();
+//		return "login";
 //	}
 //	@PostMapping
 //	public String logged(){
