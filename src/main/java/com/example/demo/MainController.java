@@ -74,18 +74,6 @@ public class MainController {
 	public  String login(){
 		return"login";
 	}
-//	@GetMapping("/login")
-//	public String loginA() throws Exception {
-//	    roleRepository.save(new Role("USER"));
-//        roleRepository.save(new Role("ADMIN"));
-//        DataLoader loader=new DataLoader();
-//        loader.run();
-//		return "login";
-//	}
-//	@PostMapping
-//	public String logged(){
-//		return "redirect:/addCourse";
-//	}
 
 	@RequestMapping(value = "/download", method = RequestMethod.POST)
 	public @ResponseBody String download(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("currStudent")Student student) throws IOException {

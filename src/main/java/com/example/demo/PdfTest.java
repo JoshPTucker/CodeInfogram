@@ -108,7 +108,7 @@ public class PdfTest {
         }
             Paragraph p = new Paragraph(paragraph);
            // p.setBorder(new SolidBorder(Color.CYAN,1,1));
-           // p.setVerticalAlignment(VerticalAlignment.BOTTOM);
+            p.setVerticalAlignment(VerticalAlignment.MIDDLE);
           //  p.setHorizontalAlignment(HorizontalAlignment.CENTER);
             p.setFontSize(8);
             Rectangle r = new Rectangle( x,y,w,h);
