@@ -21,6 +21,10 @@ public class MainController {
 	private CourseRepository courserepo;
 
 	PdfTest test = new PdfTest();
+	@RequestMapping("/")
+	public String index(){
+		return "index";
+	}
 
 	@GetMapping("/studentform")
 	public String studentform(Model model)
@@ -61,9 +65,9 @@ public class MainController {
 		}
 
 	}
-	@RequestMapping("/adminLogin")
-	public  String adminLogin(){
-		return"adminLogin";
+	@RequestMapping("/login")
+	public  String login(){
+		return"login";
 	}
 //	@GetMapping("/login")
 //	public String loginAdmin(){

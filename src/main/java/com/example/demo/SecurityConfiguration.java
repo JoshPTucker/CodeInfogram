@@ -31,11 +31,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
                 .antMatchers("/", "/h2-console/**", "/index" ,"/studentform","/error","/error-404","/error-500","/printRegistration","/download/**").permitAll()
                 .anyRequest().authenticated()
                 .and()
-                .formLogin().loginPage("/adminLogin").permitAll()
+                .formLogin().loginPage("/login").permitAll()
                 .and()
                 .logout()
                 .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-                .logoutSuccessUrl("/adminLogin").permitAll().permitAll()
+                .logoutSuccessUrl("/login").permitAll().permitAll()
                 .and()
                 .httpBasic();
 
