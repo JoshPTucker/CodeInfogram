@@ -21,6 +21,7 @@ public class PdfTest {
         String studentName=student.getFirstname()+student.getLastname();
         String home = System.getProperty("user.home");
         String src = "static/CyberRegForm.pdf";
+
        // String dest = home+"/Downloads/"+studentName+"RegForm.pdf";
         try {
             //Creates a new pdf doc
