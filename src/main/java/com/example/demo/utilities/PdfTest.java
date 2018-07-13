@@ -100,7 +100,7 @@ public class PdfTest {
         double pt= mm*2.83;
          return pt;
         }
-        //Makes a text box, takes in a pdfdoc, statement, x coord, y coord, w width,h height, and page number
+        //Makes a text box, takes in a pdfdoc, statement, x x-coord, y y-coord, w width,h height, and page number
         public static void makeTextBox(PdfDocument pdfDoc,String paragraph,float x, float y, float w, float h, int pageNum ){
         if(paragraph==null){
             paragraph="";

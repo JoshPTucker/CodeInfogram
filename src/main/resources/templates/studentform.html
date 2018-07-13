@@ -330,7 +330,7 @@
                 <p>What Courses are you taking?</p>
                 <div th:each="course :${courses}" class=" col-md-auto border border-light">
                     <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                   value="Other" checked/><label class="form-check-label"><h3 th:text="${course.courseName}"></h3></label>
+                                                   th:value="${course}" checked/><label class="form-check-label"><h3 th:text="${course.courseName}"></h3></label>
                         <p>Start Date:<span th:text="${course.StartDate}"></span></p>
                         <p>Course Number : <span th:text="${course.courseNum}"></span></p>
                         <p>CRN : <span th:text="${course.crn}"></span></p>
