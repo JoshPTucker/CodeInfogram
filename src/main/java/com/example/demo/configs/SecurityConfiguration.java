@@ -1,4 +1,6 @@
-package com.example.demo;
+package com.example.demo.configs;
+import com.example.demo.utilities.UserRepository;
+import com.example.demo.services.SSUserDetailsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +10,6 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.security.crypto.password.NoOpPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
@@ -35,7 +36,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     protected void configure(HttpSecurity http) throws Exception {
         http
                 .authorizeRequests()
-                .antMatchers("/", "/h2-console/**", "/index" ,"/studentform","/error","/error-404","/error-500","/printRegistration","/download/**").permitAll()
+                .antMatchers("/", "/index" ,"/studentform","/error","/error-404","/error-500","/printRegistration","/download/**").permitAll()
               //  .antMatchers("/addCourse","/courseList","").access("hasAuthority('ADMIN')")
                 .anyRequest().authenticated()
                 .and()

@@ -1,12 +1,15 @@
-package com.example.demo;
+package com.example.demo.services;
 
+import com.example.demo.utilities.RoleRepository;
+import com.example.demo.utilities.UserRepository;
+import com.example.demo.models.Role;
+import com.example.demo.models.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
-import java.util.Random;
 
 @Component
 public class DataLoader implements CommandLineRunner {
@@ -28,14 +31,10 @@ public class DataLoader implements CommandLineRunner {
         roleRepository.save(new Role("ADMIN"));
 
         Role adminRole = roleRepository.findByRole("ADMIN");
-        Role userRole = roleRepository.findByRole("USER");
+       // Role userRole = roleRepository.findByRole("USER");
         
         User user = new User("admin@secure.com",passwordEncoder.encode("password"),"Admin","User", true, "admin");
         user.setRoles(Arrays.asList(adminRole));
-        userRepository.save(user);
-
-        user = new User("sam@every.com","password","Sam","Everyman", true, "everyman");
-        user.setRoles(Arrays.asList(userRole, adminRole));
         userRepository.save(user);
     }
 }

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package com.example.demo;
+package com.example.demo.models;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -398,12 +398,11 @@ public class Student {
 	}
 
 	//Determines whether or not statement is true and returns yes or no
-	public static String boolString(boolean bool){
-
+	public String boolString(boolean bool){
 		String statement="";
-		if(bool==true){
+		if(bool){
 			statement="Yes";
-		}else if (bool==false){
+		}else if (!bool){
 			statement="no";
 		}else{
 			statement="Undetermined";

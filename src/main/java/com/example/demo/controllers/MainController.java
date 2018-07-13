@@ -1,10 +1,16 @@
-package com.example.demo;
+package com.example.demo.controllers;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-import javax.xml.crypto.Data;
 
+import com.example.demo.models.Course;
+import com.example.demo.models.Student;
+import com.example.demo.services.DataLoader;
+import com.example.demo.services.UserService;
+import com.example.demo.utilities.CourseRepository;
+import com.example.demo.utilities.PdfTest;
+import com.example.demo.utilities.StudentRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
