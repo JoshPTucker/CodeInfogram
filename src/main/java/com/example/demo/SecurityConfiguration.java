@@ -7,7 +7,9 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.NoOpPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 @Configuration
@@ -19,6 +21,11 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     @Autowired
     private UserRepository userRepository;
 
+    @Bean
+    public PasswordEncoder encoder() {
+        return new BCryptPasswordEncoder();
+    }
+
     @Override
     public UserDetailsService userDetailsServiceBean() throws Exception {
         return new SSUserDetailsService(userRepository);
@@ -29,6 +36,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
         http
                 .authorizeRequests()
                 .antMatchers("/", "/h2-console/**", "/index" ,"/studentform","/error","/error-404","/error-500","/printRegistration","/download/**").permitAll()
+              //  .antMatchers("/addCourse","/courseList","").access("hasAuthority('ADMIN')")
                 .anyRequest().authenticated()
                 .and()
                 .formLogin().loginPage("/login").permitAll()
@@ -46,16 +54,19 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
     }
 
     @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth
-                .userDetailsService(userDetailsServiceBean());
+    public void configure (AuthenticationManagerBuilder auth) throws Exception
+    {
+        //Allows database authentication
+        auth.userDetailsService(userDetailsServiceBean()).passwordEncoder(encoder());
     }
 
 
-    @SuppressWarnings("deprecation")
-    @Bean
-    public static NoOpPasswordEncoder passwordEncoder() {
-        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
-    }
+//    @SuppressWarnings("deprecation")
+//    @Bean
+//    public static NoOpPasswordEncoder passwordEncoder() {
+//        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
+//    }
+
+
 }
 

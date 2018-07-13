@@ -2,6 +2,7 @@ package com.example.demo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import java.util.Arrays;
@@ -16,6 +17,9 @@ public class DataLoader implements CommandLineRunner {
     @Autowired
     RoleRepository roleRepository;
 
+    @Autowired
+    private PasswordEncoder passwordEncoder;
+
     @Override
     public  void run(String... strings) throws Exception {
         System.out.println("Loading data . . .");
@@ -26,7 +30,7 @@ public class DataLoader implements CommandLineRunner {
         Role adminRole = roleRepository.findByRole("ADMIN");
         Role userRole = roleRepository.findByRole("USER");
         
-        User user = new User("admin@secure.com","password","Admin","User", true, "admin");
+        User user = new User("admin@secure.com",passwordEncoder.encode("password"),"Admin","User", true, "admin");
         user.setRoles(Arrays.asList(adminRole));
         userRepository.save(user);
 
