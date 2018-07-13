@@ -109,7 +109,7 @@ public class PdfTest {
            // p.setBorder(new SolidBorder(Color.CYAN,1,1));
             p.setVerticalAlignment(VerticalAlignment.MIDDLE);
           //  p.setHorizontalAlignment(HorizontalAlignment.CENTER);
-            p.setFontSize(8);
+            p.setFontSize(9);
             Rectangle r = new Rectangle( x,y,w,h);
             PdfCanvas pdfc = new PdfCanvas(pdfDoc.getPage(pageNum));
             pdfc.saveState().setFillColor(Color.WHITE).rectangle(r).fill().restoreState();

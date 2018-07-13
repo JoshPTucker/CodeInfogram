@@ -27,14 +27,18 @@ public class DataLoader implements CommandLineRunner {
     public  void run(String... strings) throws Exception {
         System.out.println("Loading data . . .");
 
-        roleRepository.save(new Role("USER"));
-        roleRepository.save(new Role("ADMIN"));
+
 
         Role adminRole = roleRepository.findByRole("ADMIN");
        // Role userRole = roleRepository.findByRole("USER");
-        
+        if (adminRole == null) {
+            roleRepository.save(new Role("USER"));
+            roleRepository.save(new Role("ADMIN"));
+        }
         User user = new User("admin@secure.com",passwordEncoder.encode("password"),"Admin","User", true, "admin");
         user.setRoles(Arrays.asList(adminRole));
-        userRepository.save(user);
+        if(userRepository.findByUsername("admin")==null) {
+            userRepository.save(user);
+        }
     }
 }
