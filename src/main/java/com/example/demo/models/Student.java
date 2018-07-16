@@ -4,7 +4,10 @@
 package com.example.demo.models;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
+import org.hibernate.validator.constraints.Length;
 import org.springframework.lang.Nullable;
 
 import java.util.Collection;
@@ -22,9 +25,13 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
+	@NotNull
+	@Size(min=3, max=20)
 	@Column(name = "first_name")
 	private String firstname;
 
+	@NotNull
+	@Size(min=3, max=20)
 	@Column(name = "last_name")
 	private String lastname;
 	
@@ -33,7 +40,7 @@ public class Student {
 
 	@Column(name = "email")
 	private String email;
-	
+
 	@Column(name = "studentid")
 	private String studentId;
 	

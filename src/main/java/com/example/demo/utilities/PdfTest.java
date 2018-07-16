@@ -11,13 +11,10 @@ import com.itextpdf.kernel.pdf.canvas.PdfCanvas;
 import com.itextpdf.layout.Canvas;
 import com.itextpdf.layout.element.Paragraph;
 import com.itextpdf.layout.property.VerticalAlignment;
-
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.Collection;
-import java.util.HashSet;
 import java.util.Iterator;
-import java.util.Set;
 
 public class PdfTest {
 
@@ -26,11 +23,11 @@ public class PdfTest {
         String home = System.getProperty("user.home");
         String src = "static/CyberRegForm.pdf";
 
-       // String dest = home+"/Downloads/"+studentName+"RegForm.pdf";
+        // String dest = home+"/Downloads/"+studentName+"RegForm.pdf";
         try {
             //Creates a new pdf doc
             PdfDocument pdfDoc;
-                pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(stream));
+            pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(stream));
             // Adds content to page
             System.out.print(student.getFirstname());
 
@@ -89,46 +86,63 @@ public class PdfTest {
             //Md National gaurd
             makeCheckBox(pdfDoc,student.isNatGaurd(),24,285,6,6,1);
 
-            Collection<Course> courses = student.getCourses();
-            for(Course course:courses){
-                makeTextBox(pdfDoc,course.getCourseNum(),22,240,40,15,1);
-                makeTextBox(pdfDoc,course.getCrn(),64,240,53,15,1);
-                makeTextBox(pdfDoc,"APG007",100,240,53,15,1);
+            //Adds Each Course
+            float val;
+            val = 240;
+            int counter=0;
+            Collection<Course> courses;
+            courses = student.getCourses();
+            for (Iterator<Course> iterator = courses.iterator(); iterator.hasNext(); ) {
+                Course course = iterator.next();
+                //CRN
+                makeTextBox(pdfDoc, course.getCrn(), 22, val, 40, 15, 1);
+                //Course Number
+                makeTextBox(pdfDoc, course.getCourseNum(), 63, val, 54, 15, 1);
+                //Course Title
+                makeTextBox(pdfDoc, course.getCourseName(), 118, val, 378, 15, 1);
+                //Start-End Date
+                makeTextBox(pdfDoc, course.getStartDate() + "|" + course.getEndDate(), 496, val, 96, 15, 1);
+                val = val-18;
+                counter++;
+                if(counter==4){
+                    break;
+                }
             }
+            counter=0;
 
-            makeTextBox(pdfDoc,"APG007",200,240,53,15,1);
+
 
 
 
             pdfDoc.close();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
+        } catch (IOException e) {
+            e.printStackTrace();
         }
+    }
 
-        public static double mm2pt(int mm){
-            return mm*2.83;
-        }
-        //Makes a text box, takes in a pdfdoc, statement, x x-coord, y y-coord, w width,h height, and page number
-        private static void makeTextBox(PdfDocument pdfDoc,String paragraph,float x, float y, float w, float h, int pageNum ){
+    public static double mm2pt(int mm){
+        return mm*2.83;
+    }
+    //Makes a text box, takes in a pdfdoc, statement, x x-coord, y y-coord, w width,h height, and page number
+    private static void makeTextBox(PdfDocument pdfDoc,String paragraph,float x, float y, float w, float h, int pageNum ){
         if(paragraph==null){
             paragraph="";
         }
-            Paragraph p = new Paragraph(paragraph);
-           // p.setBorder(new SolidBorder(Color.CYAN,1,1));
-            p.setVerticalAlignment(VerticalAlignment.MIDDLE);
-          //  p.setHorizontalAlignment(HorizontalAlignment.CENTER);
-            p.setFontSize(9);
-            Rectangle r = new Rectangle( x,y,w,h);
-            PdfCanvas pdfc = new PdfCanvas(pdfDoc.getPage(pageNum));
-            pdfc.saveState().setFillColor(Color.WHITE).rectangle(r).fill().restoreState();
-            Canvas c = new Canvas(pdfc,pdfDoc,r);
-            c.add(p);
-            c.close();
-        }
+        Paragraph p = new Paragraph(paragraph);
+        // p.setBorder(new SolidBorder(Color.CYAN,1,1));
+        p.setVerticalAlignment(VerticalAlignment.MIDDLE);
+        //  p.setHorizontalAlignment(HorizontalAlignment.CENTER);
+        p.setFontSize(9);
+        Rectangle r = new Rectangle( x,y,w,h);
+        PdfCanvas pdfc = new PdfCanvas(pdfDoc.getPage(pageNum));
+        pdfc.saveState().setFillColor(Color.WHITE).rectangle(r).fill().restoreState();
+        Canvas c = new Canvas(pdfc,pdfDoc,r);
+        c.add(p);
+        c.close();
+    }
 
-        //Makes a check box at location, if boolean statement is true fill of box is set to gray
-        private static void makeCheckBox(PdfDocument pdfDoc,boolean bool,float x, float y, float w, float h, int pageNum ){
+    //Makes a check box at location, if boolean statement is true fill of box is set to gray
+    private static void makeCheckBox(PdfDocument pdfDoc,boolean bool,float x, float y, float w, float h, int pageNum ){
         Rectangle r = new Rectangle(x,y,w,h);
         PdfCanvas canvas = new PdfCanvas(pdfDoc.getPage(pageNum));
         if(bool) {
@@ -139,6 +153,6 @@ public class PdfTest {
             canvas.saveState().setFillColor(Color.WHITE).rectangle(r).fill().restoreState();
 
         }
-      }
     }
+}
 

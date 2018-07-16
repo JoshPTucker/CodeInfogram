@@ -85,7 +85,7 @@
             <p>Race/Ethnicity:</p>
         </div>
         <div class="col-sm-10" >
-            <div class="row">
+            <div class="row ">
                 <div class="col-sm-2 border border-light" >
                     <p>Hispanic/Latino</p>
                     <p><span  th:if="${student.hispanic==True}">&#9745</span><span th:if="${student.hispanic==False}">&#9746</span></p>
@@ -216,12 +216,17 @@
             <p th:if="${student.typeDischarge!=null}">[[${student.typeDischarge}]]</p>
         </div>
     </div>
+    <div class="row border border-dark" style="background-color: purple">
+        <div class="col-md-12">
+            <h5 align="center">Courses You Signed Up For</h5>
+        </div>
+    </div>
     <div class="row border border-dark">
-        <div th:each="course:${student.courses}">
+        <div th:each="course:${student.courses}" class="col-md-3 border border-dark">
             <p>[[${course.crn}]]</p>
         </div>
     </div>
-    <div align="center">
+    <div class="row border border-dark justify-content-center">
         <form th:action="@{@{/download/(currStudent=${student.id})}}" method="post">
             <button type="submit" class="btn btn-primary d-print-none">Generate Print-outs</button>
         </form>
