@@ -21,7 +21,7 @@ public class Course {
     private String crn;
     private boolean active;
 
-    @ManyToMany()
+    @ManyToMany(mappedBy = "courses")
     private Collection<Student> students;
 
     public Course() {

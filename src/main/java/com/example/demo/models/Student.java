@@ -111,7 +111,7 @@ public class Student {
 	 private boolean Hawaiian;
 
 
-    @ManyToMany(mappedBy = "students")
+    @ManyToMany()
 	 private Collection<Course> courses;
 
 	public Student() {
