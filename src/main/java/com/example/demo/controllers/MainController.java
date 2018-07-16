@@ -41,7 +41,7 @@ public class MainController {
 	public String studentform(Model model)
 	{
 		model.addAttribute("student", new Student());
-		model.addAttribute("courses",courserepo.findCoursesByActiveIsTrue());
+		model.addAttribute("actCourses",courserepo.findCoursesByActiveIsTrue());
 		return "studentform";
 	}
 	
@@ -71,7 +71,7 @@ public class MainController {
 		}else {
 			course.setActive(true);
 			courserepo.save(course);
-			model.addAttribute("courses", courserepo.findAll());
+			model.addAttribute("allCourses", courserepo.findAll());
 			return "courseList";
 		}
 

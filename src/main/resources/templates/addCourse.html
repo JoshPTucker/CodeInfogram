@@ -21,7 +21,8 @@
 
     <form action="#" th:action="@{/addCourse}" th:object="${course}" method="post">
         <input type="text" th:field="*{courseName}" placeholder="Course Name"/>
-        <input type="text" th:field="*{StartDate}" placeholder="StartDate"/>
+        <input type="text" th:field="*{StartDate}" placeholder="Start Date"/>
+        <input type="text" th:field="*{EndDate}" placeholder="End Date"/>
         <input type="text" th:field="*{courseNum}"  placeholder="Course Number">
         <input type="text" th:field="*{crn}"  placeholder="CRN">
         <input type="reset" value="Reset" id="reset"/>

@@ -2,17 +2,17 @@ package com.example.demo.models;
 
 
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Course {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long courseId;
+    private long id;
 
     private String courseName;
     private String StartDate;
@@ -21,15 +21,27 @@ public class Course {
     private String crn;
     private boolean active;
 
+    @ManyToMany()
+    private Collection<Student> students;
+
     public Course() {
+       /// this.studentSet = new HashSet<>();
     }
 
-    public long getCourseId() {
-        return courseId;
+    public long getId() {
+        return id;
     }
 
-    public void setCourseId(long courseId) {
-        this.courseId = courseId;
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public Collection<Student> getStudents() {
+        return students;
+    }
+
+    public void setStudents(Collection<Student> students) {
+        this.students = students;
     }
 
     public String getCourseName() {
@@ -79,5 +91,6 @@ public class Course {
     public void setEndDate(String endDate) {
         EndDate = endDate;
     }
+
 
 }

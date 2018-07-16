@@ -1,5 +1,6 @@
 package com.example.demo.utilities;
 
+import com.example.demo.models.Course;
 import com.example.demo.models.Student;
 import com.itextpdf.kernel.color.Color;
 import com.itextpdf.kernel.geom.Rectangle;
@@ -13,6 +14,10 @@ import com.itextpdf.layout.property.VerticalAlignment;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Iterator;
+import java.util.Set;
 
 public class PdfTest {
 
@@ -84,9 +89,14 @@ public class PdfTest {
             //Md National gaurd
             makeCheckBox(pdfDoc,student.isNatGaurd(),24,285,6,6,1);
 
-            //Course 1
-            makeTextBox(pdfDoc,"107542",22,240,40,15,1);
-            makeTextBox(pdfDoc,"APG007",64,240,53,15,1);
+            Collection<Course> courses = student.getCourses();
+            for(Course course:courses){
+                makeTextBox(pdfDoc,course.getCourseNum(),22,240,40,15,1);
+                makeTextBox(pdfDoc,course.getCrn(),64,240,53,15,1);
+                makeTextBox(pdfDoc,"APG007",100,240,53,15,1);
+            }
+
+            makeTextBox(pdfDoc,"APG007",200,240,53,15,1);
 
 
 
@@ -97,11 +107,10 @@ public class PdfTest {
         }
 
         public static double mm2pt(int mm){
-        double pt= mm*2.83;
-         return pt;
+            return mm*2.83;
         }
         //Makes a text box, takes in a pdfdoc, statement, x x-coord, y y-coord, w width,h height, and page number
-        public static void makeTextBox(PdfDocument pdfDoc,String paragraph,float x, float y, float w, float h, int pageNum ){
+        private static void makeTextBox(PdfDocument pdfDoc,String paragraph,float x, float y, float w, float h, int pageNum ){
         if(paragraph==null){
             paragraph="";
         }
@@ -119,7 +128,7 @@ public class PdfTest {
         }
 
         //Makes a check box at location, if boolean statement is true fill of box is set to gray
-        public static void makeCheckBox(PdfDocument pdfDoc,boolean bool,float x, float y, float w, float h, int pageNum ){
+        private static void makeCheckBox(PdfDocument pdfDoc,boolean bool,float x, float y, float w, float h, int pageNum ){
         Rectangle r = new Rectangle(x,y,w,h);
         PdfCanvas canvas = new PdfCanvas(pdfDoc.getPage(pageNum));
         if(bool) {

@@ -322,29 +322,28 @@
                 <div class="form-check"><input class="form-check-input" type="checkbox"  th:field="*{hearMC}"
                                                value="Other" checked/><label class="form-check-label">other</label></div>
             </div>
-
         </div>
         <div class="form-row border border-dark">
 
-
+            <div class="col-md-12">
                 <p>What Courses are you taking?</p>
-                <div th:each="course :${courses}" class=" col-md-auto border border-light">
-                    <div class="form-check"><input class="form-check-input" type="checkbox"
-                                                   th:value="${course}" checked/><label class="form-check-label"><h3 th:text="${course.courseName}"></h3></label>
-                        <p>Start Date:<span th:text="${course.StartDate}"></span></p>
-                        <p>Course Number : <span th:text="${course.courseNum}"></span></p>
-                        <p>CRN : <span th:text="${course.crn}"></span></p>
-                    </div>
-                </div>
+                <select th:field="*{courses}" multiple>
+                    <option th:each="course:${actCourses}" th:value="${course.id}" th:name="${course.courseName}">
+                        <p>Course Number [[${course.courseNum}]], CRN : [[${course.crn}]]</p>
+                    </option>
+                </select>
+            </div>
 
         </div>
+
 
         <div class="form-row">
-                <input type="reset"/>
-                <button type="submit" class="btn btn-primary">Submit</button>
+            <input type="reset"/>
+            <button type="submit" class="btn btn-primary">Submit</button>
         </div>
-
     </form>
+
+
 </div>
 </body>
 </html>
