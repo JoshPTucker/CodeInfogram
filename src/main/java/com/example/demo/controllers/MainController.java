@@ -49,6 +49,7 @@ public class MainController {
 	public String displayform( @Valid@ModelAttribute("student")Student student, BindingResult result, Model model) {
 		//String name= student.getFirstname()+student.getLastname();
 		if(result.hasErrors()) {
+			model.addAttribute("actCourses",courserepo.findCoursesByActiveIsTrue());
 			return "studentform";
 		}else {
 

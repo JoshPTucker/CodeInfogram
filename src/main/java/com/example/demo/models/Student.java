@@ -117,8 +117,8 @@ public class Student {
 	 private boolean White;
 	 private boolean Hawaiian;
 
-
-    @ManyToMany()
+	@Size(min=1, max=4)
+     @ManyToMany()
 	 private Collection<Course> courses;
 
 	public Student() {

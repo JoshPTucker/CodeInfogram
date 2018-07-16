@@ -328,11 +328,15 @@
         <div class="form-row border border-dark">
             <div class="col-md-12 ">
                 <p>What Courses are you taking?</p>
+
                 <select class="form-control  form-control-lg" th:field="*{courses}" multiple>
+
                     <option th:each="course:${actCourses}" th:value="${course.id}" th:name="${course.courseName}">
                         <p>Course Number [[${course.courseNum}]], CRN : [[${course.crn}]]</p>
                     </option>
                 </select>
+                <span th:if="${#fields.hasErrors('courses')}"
+                      th:errors="*{courses}">
             </div>
         </div>
         <div class="form-row justify-content-center">
