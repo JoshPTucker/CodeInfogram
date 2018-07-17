@@ -1,5 +1,5 @@
 /**
- * 
+ *
  */
 package com.example.demo.models;
 
@@ -41,7 +41,7 @@ public class Student {
 
 	@Column(name = "studentid")
 	private String studentId;
-	
+
 	//How did they hear about us?
 	@Column(name="Heard_about_us", length=300)
 	private String hearMC;
@@ -117,16 +117,16 @@ public class Student {
 	private boolean recievGreiveVet;
 
 	//Race or ethnicity choices, true or false
-	 private boolean Hispanic;
-	 private boolean AmericanIndian;
-	 private boolean Asian;
-	 private boolean BlackAfricanAmerican;
-	 private boolean White;
-	 private boolean Hawaiian;
+	private boolean Hispanic;
+	private boolean AmericanIndian;
+	private boolean Asian;
+	private boolean BlackAfricanAmerican;
+	private boolean White;
+	private boolean Hawaiian;
 
-	 @Size(min=1, max=4)
-     @ManyToMany()
-	 private Collection<Course> courses;
+	@Size(min=1, max=4)
+	@ManyToMany()
+	private Collection<Course> courses;
 
 	public Student() {
 		//this.courseSet = new HashSet<>();

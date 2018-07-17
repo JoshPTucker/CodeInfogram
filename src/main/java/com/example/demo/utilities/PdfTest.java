@@ -19,18 +19,19 @@ import java.util.Iterator;
 public class PdfTest {
 
     public static void makeRegPDF (Student student, ByteArrayOutputStream stream) {
-        String studentName=student.getFirstname()+student.getLastname();
-        String home = System.getProperty("user.home");
+        //String studentName=student.getFirstname()+student.getLastname();
+       // String home = System.getProperty("user.home");
+        // String dest = home+"/Downloads/"+studentName+"RegForm.pdf";
+
+
+        //Pdf template used
         String src = "static/CyberRegForm.pdf";
 
-        // String dest = home+"/Downloads/"+studentName+"RegForm.pdf";
         try {
             //Creates a new pdf doc
             PdfDocument pdfDoc;
             pdfDoc = new PdfDocument(new PdfReader(src), new PdfWriter(stream));
             // Adds content to page
-            System.out.print(student.getFirstname());
-
             //student id
             makeTextBox(pdfDoc,student.getStudentId(),104, 646, 152, 22,1);
             //Last Name
@@ -86,14 +87,13 @@ public class PdfTest {
             //Md National gaurd
             makeCheckBox(pdfDoc,student.isNatGaurd(),24,285,6,6,1);
 
-            //Adds Each Course
+            //Adds Each Course up to 4
             float val;
             val = 240;
             int counter=0;
             Collection<Course> courses;
             courses = student.getCourses();
-            for (Iterator<Course> iterator = courses.iterator(); iterator.hasNext(); ) {
-                Course course = iterator.next();
+            for (Course course : courses) {
                 //CRN
                 makeTextBox(pdfDoc, course.getCrn(), 22, val, 40, 15, 1);
                 //Course Number
@@ -102,17 +102,13 @@ public class PdfTest {
                 makeTextBox(pdfDoc, course.getCourseName(), 118, val, 378, 15, 1);
                 //Start-End Date
                 makeTextBox(pdfDoc, course.getStartDate() + "|" + course.getEndDate(), 496, val, 96, 15, 1);
-                val = val-18;
+                val = val - 16;
                 counter++;
-                if(counter==4){
+                if (counter == 4) {
                     break;
                 }
             }
             counter=0;
-
-
-
-
 
             pdfDoc.close();
         } catch (IOException e) {

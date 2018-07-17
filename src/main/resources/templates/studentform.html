@@ -87,7 +87,7 @@
             </div>
             <div class="col-md-3">
                 <input class="form-control" type="text" th:field="*{homephone}" placeholder="Home Phone Number"/>
-                <span th:if="${#fields.hasErrors('homephone')}" th:errors="*{homephone}"></span>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('homephone')}" th:errors="*{homephone}"></span>
                 <input class="form-control" type="text" th:field="*{fax}" placeholder="Fax#"/>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('fax')}" th:errors="*{fax}"></span>
             </div>
@@ -358,7 +358,7 @@
 
             <div class="col-md-4 border  border-dark">
                 <p>Are you a Maryland National Gaurd memeber enlisted for at least 24 months and submitting
-                proof of such from the adjutant general's office?</p>
+                    proof of such from the adjutant general's office?</p>
                 <input type="radio" value="yes" th:field="*{NatGaurd}"/><label>Yes</label>
                 <input type="radio" value="no" th:field="*{NatGaurd}"/><label>No</label></div>
             <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('NatGaurd')}" th:errors="*{NatGaurd}"></span>
@@ -416,8 +416,6 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
-
-
 </div>
 </body>
 </html>

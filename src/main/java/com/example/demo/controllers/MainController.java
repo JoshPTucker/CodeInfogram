@@ -87,7 +87,6 @@ public class MainController {
 		try {
 			ByteArrayOutputStream baos = new ByteArrayOutputStream();
             test.makeRegPDF(student, baos);
-
 			// setting some response headers
 			response.setHeader("Expires", "0");
 			response.setHeader("Cache-Control",
