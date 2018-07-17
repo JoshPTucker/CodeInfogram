@@ -20,21 +20,19 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@NotNull
 	@Size(min=3, max=20)
 	@Column(name = "first_name")
 	private String firstname;
 
-	@NotNull
+
 	@Size(min=3, max=30)
 	@Column(name = "last_name")
 	private String lastname;
 
+	@Size(max=1)
 	@Column(name="middle_initial")
 	private String middleInitial;
 
-	@NotNull
-	@Size(min=3, max=100)
 	@Email
 	@Column(name = "email")
 	private String email;
@@ -46,23 +44,28 @@ public class Student {
 	@Column(name="Heard_about_us", length=300)
 	private String hearMC;
 
-	@NotNull
+
 	@Size(min=5, max=200)
 	@Column(name="Street_Address")
 	private String address;
 
 	private String aptnum;
+
 	@NotNull
 	private String zipcode;
+
 	@NotNull
 	private String homephone;
-	@NotNull
+
+	@Size(max=2)
 	private String State;
 	@NotNull
 	private String city;
 	@NotNull
 	private String gender;
+
 	private String highestEducation;
+
 	private String currentEnroll;
 	private String employer;
 	private String hours;
@@ -76,10 +79,10 @@ public class Student {
 	@Column(length=400)
 	private String reasonUEmploy;
 	//Has attended Montgomery College Before
-	@NotNull
+
 	private boolean attenMcb4;
 
-	@NotNull
+
 	private boolean hasDisability;
 
 	private boolean Citizen;
