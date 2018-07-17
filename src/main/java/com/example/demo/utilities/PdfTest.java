@@ -57,7 +57,7 @@ public class PdfTest {
             //Hear about MC
             makeTextBox(pdfDoc,student.getHearMC(),131,437,460,15,2);
             //Gender
-            makeTextBox(pdfDoc,student.getGender(),513,647,61,15,2);
+            makeTextBox(pdfDoc,student.getGender(),513,650,61,15,2);
             //Is American Indian
             makeCheckBox(pdfDoc,student.isAmericanIndian(),23,353,6,6,2);
             //Is Hispanic

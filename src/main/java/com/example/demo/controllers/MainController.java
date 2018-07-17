@@ -10,6 +10,9 @@ import com.example.demo.services.UserService;
 import com.example.demo.utilities.CourseRepository;
 import com.example.demo.utilities.PdfTest;
 import com.example.demo.utilities.StudentRepository;
+import com.itextpdf.kernel.pdf.PdfDocument;
+import com.itextpdf.kernel.pdf.PdfReader;
+import com.itextpdf.kernel.pdf.PdfWriter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -58,6 +61,7 @@ public class MainController {
 		}
 	}
 
+	//What handles the adding a course
 	@GetMapping("/addCourse")
 	public String addcourse(Model model){
 		model.addAttribute("course", new Course());
@@ -81,6 +85,7 @@ public class MainController {
 		return"login";
 	}
 
+	//Displays the Registration Forms filled in
 	@RequestMapping(value = "/download", method = RequestMethod.POST)
 	public @ResponseBody String download(HttpServletRequest request, HttpServletResponse response, @ModelAttribute("currStudent")Student student) throws IOException {
 
@@ -107,5 +112,58 @@ public class MainController {
         studentrepository.delete(student);
 		return "printerPage";
 	}
-
+    //Displays the Grievance Procedures and Veterans priority policies
+	@RequestMapping("/viewvetform")
+    @ResponseBody String viewVetForm(HttpServletRequest request, HttpServletResponse response)throws IOException{
+        try {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            PdfDocument pdfDoc;
+            pdfDoc = new PdfDocument(new PdfReader( "static/GrievanceVetPolicy.pdf"), new PdfWriter(baos));
+            pdfDoc.close();
+            // setting some response headers
+            response.setHeader("Expires", "0");
+            response.setHeader("Cache-Control",
+                    "must-revalidate, post-check=0, pre-check=0");
+            response.setHeader("Pragma", "public");
+            // setting the content type
+            response.setContentType("application/pdf");
+            // the contentlength
+            response.setContentLength(baos.size());
+            // write ByteArrayOutputStream to the ServletOutputStream
+            OutputStream os = response.getOutputStream();
+            baos.writeTo(os);
+            os.flush();
+            os.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "printerPage";
+    }
+    //Displays the autorization to disclose information form
+    @RequestMapping("/viewDiscloseAuth")
+    @ResponseBody String viewDiscloseAuth(HttpServletRequest request, HttpServletResponse response)throws IOException{
+        try {
+            ByteArrayOutputStream baos = new ByteArrayOutputStream();
+            PdfDocument pdfDoc;
+            pdfDoc = new PdfDocument(new PdfReader( "static/AuthToDiscloseInfo.pdf"), new PdfWriter(baos));
+            pdfDoc.close();
+            // setting some response headers
+            response.setHeader("Expires", "0");
+            response.setHeader("Cache-Control",
+                    "must-revalidate, post-check=0, pre-check=0");
+            response.setHeader("Pragma", "public");
+            // setting the content type
+            response.setContentType("application/pdf");
+            // the contentlength
+            response.setContentLength(baos.size());
+            // write ByteArrayOutputStream to the ServletOutputStream
+            OutputStream os = response.getOutputStream();
+            baos.writeTo(os);
+            os.flush();
+            os.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return "printerPage";
+    }
 }

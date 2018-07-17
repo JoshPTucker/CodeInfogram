@@ -30,8 +30,9 @@
         <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('courseNum')}" th:errors="*{courseNum}"></span>
         <input class="form-control" type="text" th:field="*{crn}"  placeholder="CRN">
         <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('crn')}" th:errors="*{crn}"></span>
-        <input  type="reset" value="Reset" id="reset"/>
-        <input type="submit" value="Add Course"/>
+
+        <button type="reset" class="btn btn-warning">Reset</button>
+        <button type="submit" class="btn btn-primary">Add Course</button>
     </form>
 </div>
 
