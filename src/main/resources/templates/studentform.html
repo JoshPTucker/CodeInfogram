@@ -296,11 +296,11 @@
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('Employed')}" th:errors="*{Employed}"></span>
                 <div id="test1" style="display:none">
                     <p>Please enter the following </p>
-                    <input type="text" th:field="*{employer}" placeholder="Employer"/>
-                    <input type="text" th:field="*{salary}" placeholder="Salary"/>
-                    <input type="text" th:field="*{hours}" placeholder="Hours"/>
-                    <input type="text" th:field="*{startdate}" placeholder="Start Date"/>
-                    <input type="text" th:field="*{workPhone}" placeholder="Work Phone"/>
+                    <input class="form-control" type="text" th:field="*{employer}" placeholder="Employer"/>
+                    <input class="form-control" type="text" th:field="*{salary}" placeholder="Salary"/>
+                    <input class="form-control" type="text" th:field="*{hours}" placeholder="Hours"/>
+                    <input class="form-control" type="text" th:field="*{startdate}" placeholder="Start Date"/>
+                    <input class="form-control" type="text" th:field="*{workPhone}" placeholder="Work Phone"/>
                 </div>
 
             </div>
@@ -343,9 +343,9 @@
                 <input type="radio" value="no" th:field="*{Veteran}" onclick="myFunction6()"/><label>No</label>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('Veteran')}" th:errors="*{Veteran}"></span>
                 <div id="vetStuff" style="display:none">
-                    <input type="text" th:field="*{servBranch}" placeholder="Branch of service"/>
-                    <input type="text" th:field="*{typeDischarge}" placeholder="Type of discharge"/>
-                    <input type="text" th:field="*{dateDischarge}" placeholder="Date of discharge">
+                    <input class="form-control" type="text" th:field="*{servBranch}" placeholder="Branch of service"/>
+                    <input class="form-control" type="text" th:field="*{typeDischarge}" placeholder="Type of discharge"/>
+                    <input class="form-control" type="text" th:field="*{dateDischarge}" placeholder="Date of discharge">
                 </div>
             </div>
 
