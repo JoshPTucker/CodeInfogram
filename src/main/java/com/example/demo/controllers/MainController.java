@@ -3,7 +3,6 @@ package com.example.demo.controllers;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
-
 import com.example.demo.models.Course;
 import com.example.demo.models.Student;
 import com.example.demo.services.DataLoader;

@@ -15,24 +15,29 @@
             integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T"
             crossorigin="anonymous"></script>
     <script>
-        function myFunction(){
+        function myFunction() {
             document.getElementById("test1").style.display = "block";
         }
-        function myFunction2(){
+
+        function myFunction2() {
             document.getElementById("test2").style.display = "block";
         }
-        function myFunction3(){
+
+        function myFunction3() {
             document.getElementById("test1").style.display = "none";
 
         }
-        function myFunction4(){
+
+        function myFunction4() {
             document.getElementById("test2").style.display = "none";
 
         }
-        function myFunction5(){
+
+        function myFunction5() {
             document.getElementById("vetStuff").style.display = "block";
         }
-        function myFunction6(){
+
+        function myFunction6() {
             document.getElementById("vetStuff").style.display = "none";
 
         }
@@ -48,46 +53,65 @@
 
         <div class="form-row border  border-dark">
             <div class="col-sm-2">
-                <input class="form-control" type="text"  th:field="*{studentId}" placeholder="MC Student Id"/>
+                <input class="form-control" type="text" th:field="*{studentId}" placeholder="MC Student Id"/>
             </div>
             <div class="col-md-3">
-                <input class="form-control" type="text"  th:field="*{email}" placeholder="Email"/>
+                <input class="form-control" type="text" th:field="*{email}" placeholder="Email"/>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
             </div>
-            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{firstname}"
-                                         placeholder="First Name"/> <span th:if="${#fields.hasErrors('firstname')}"
-                                                                          th:errors="*{firstname}"></span></div>
-            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{lastname}"
-                                         placeholder="Last Name"/><span th:if="${#fields.hasErrors('lastname')}"
-                                                                        th:errors="*{lastname}"></span></div>
-            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{middleInitial}"
-                                         placeholder="Middle Initial"/></div>
+            <div class="col-md-2">
+                <input class="form-control" type="text" th:field="*{firstname}" placeholder="First Name"/>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('firstname')}" th:errors="*{firstname}"></span>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" type="text" th:field="*{lastname}" placeholder="Last Name"/>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('lastname')}" th:errors="*{lastname}"></span>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" type="text" th:field="*{middleInitial}" placeholder="Middle Initial"/>
+            </div>
         </div>
         <div class="form-row border  border-dark">
 
-            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{address}"
-                                         placeholder="Street Address"/></div>
-            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{aptnum}"
-                                         placeholder="Apartment Number"/></div>
-            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{zipcode}"
-                                         placeholder="Zipcode"/></div>
-            <div class="col-md-3"><input class="form-control" type="text"  th:field="*{homephone}"
-                                         placeholder="Home Phone Number"/><input class="form-control" type="text"  th:field="*{fax}"
-                                                                                 placeholder="Fax#"/></div>
-            <div class="col-md-1"><input class="form-control" type="text"  th:field="*{state}" placeholder="State"/>
+            <div class="col-md-2">
+                <input class="form-control" type="text" th:field="*{address}" placeholder="Street Address"/>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
             </div>
-            <div class="col-md-2"><input class="form-control" type="text"  th:field="*{city}" placeholder="City"/></div>
+            <div class="col-md-2">
+                <input class="form-control" type="text" th:field="*{aptnum}" placeholder="Apartment Number"/>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('aptnum')}" th:errors="*{aptnum}"></span>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" type="text" th:field="*{zipcode}" placeholder="Zipcode"/>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('zipcode')}" th:errors="*{zipcode}"></span>
+            </div>
+            <div class="col-md-3">
+                <input class="form-control" type="text" th:field="*{homephone}" placeholder="Home Phone Number"/>
+                <span th:if="${#fields.hasErrors('homephone')}" th:errors="*{homephone}"></span>
+                <input class="form-control" type="text" th:field="*{fax}" placeholder="Fax#"/>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('fax')}" th:errors="*{fax}"></span>
+            </div>
+            <div class="col-md-1">
+                <input class="form-control" type="text" th:field="*{state}" placeholder="State Abbr"/>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('fax')}" th:errors="*{fax}"></span>
+            </div>
+            <div class="col-md-2">
+                <input class="form-control" type="text" th:field="*{city}" placeholder="City"/></div>
+            <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></span>
 
         </div>
         <div class="form-row">
             <div class="col-md-4 border  border-dark">
                 <p>Have you attended Mc before?</p>
-                <input type="radio" value="yes"  th:field="*{attenMcb4}"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{attenMcb4}"/><label>No</label>
+                <input type="radio" value="yes" th:field="*{attenMcb4}"/><label>Yes</label>
+                <input type="radio" value="no" th:field="*{attenMcb4}"/><label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('attenMcb4')}" th:errors="*{attenMcb4}"></span>
             </div>
             <div class="col-md-8 border  border-dark">
                 <p>Have you received Copies of the "Grievance Procedures" and "Veterans Priority of Service" policies?</p>
-                <input type="radio" value="yes"  th:field="*{recievGreiveVet}"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{recievGreiveVet}"/><label>No</label>
+                <input type="radio" value="yes" th:field="*{recievGreiveVet}"/><label>Yes</label>
+                <input type="radio" value="no" th:field="*{recievGreiveVet}"/><label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('recievGreiveVet')}" th:errors="*{recievGreiveVet}"></span>
             </div>
         </div>
 
@@ -98,31 +122,30 @@
                 <div class="form-check form-check-inline">
                     <div class="row">
                         <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox"  value=""
-                                   th:field="*{Hispanic}"><label class="form-check-label">Hispanic/Latino</label>
+                            <input class="form-check-input" type="checkbox" value="" th:field="*{Hispanic}">
+                            <label class="form-check-label">Hispanic/Latino</label>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox"  value=""
-                                   th:field="*{AmericanIndian}"><label class="form-check-label">American Indian</label>
+                            <input class="form-check-input" type="checkbox" value="" th:field="*{AmericanIndian}">
+                            <label class="form-check-label">American Indian</label>
                         </div>
                         <div class="col-md-4">
-                            <input class="form-check-input" type="checkbox" value="" th:field="*{Asian}"><label
-                                class="form-check-label">Asian</label>
+                            <input class="form-check-input" type="checkbox" value="" th:field="*{Asian}">
+                            <label class="form-check-label">Asian</label>
                         </div>
                     </div>
                     <div class="row">
                         <div class="col-md-3">
-                            <input class="form-check-input" type="checkbox"  value=""
-                                   th:field="*{BlackAfricanAmerican}"><label
-                                class="form-check-label">Black/African American</label>
+                            <input class="form-check-input" type="checkbox" value="" th:field="*{BlackAfricanAmerican}">
+                            <label class="form-check-label">Black/African American</label>
                         </div>
                         <div class="col-md-3">
-                            <input class="form-check-input" type="checkbox"  value="" th:field="*{White}"><label
-                                class="form-check-label">White</label>
+                            <input class="form-check-input" type="checkbox" value="" th:field="*{White}">
+                            <label class="form-check-label">White</label>
                         </div>
                         <div class="col-md-3">
-                            <input class="form-check-input" type="checkbox"  value=""
-                                   th:field="*{Hawaiian}"><label class="form-check-label">Hawaiian</label>
+                            <input class="form-check-input" type="checkbox" value="" th:field="*{Hawaiian}">
+                            <label class="form-check-label">Hawaiian</label>
                         </div>
                     </div>
 
@@ -131,74 +154,105 @@
         </div>
         <div class="form-row">
             <div class="col-md-3 border  border-dark"><p>Do you have a documented disability?</p>
-                <input type="radio" value="yes"  th:field="*{hasDisability}"/><label>Yes</label>
-                <input type="radio" value="no"
-                       th:field="*{hasDisability}"/><label>No</label></div></span>
+                <input type="radio" value="yes" th:field="*{hasDisability}"/><label>Yes</label>
+                <input type="radio" value="no" th:field="*{hasDisability}"/><label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('hasDisability')}" th:errors="*{hasDisability}"></span>
+            </div>
+            </span>
 
             <div class="col-md-3 border  border-dark"><p>Are you a United States Citizen?</p>
-                <input type="radio" value="yes"  th:field="*{Citizen}"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{Citizen}"/><label>No</label></div>
+                <input type="radio" value="yes" th:field="*{Citizen}"/><label>Yes</label>
+                <input type="radio" value="no" th:field="*{Citizen}"/><label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('Citizen')}" th:errors="*{Citizen}"></span>
+            </div>
 
             <div class="col-md-3 border  border-dark"><p>Are you a permanent resident alien?</p>
-                <input type="radio" value="yes"
-                       th:field="*{PermanentResidnetAlien}"/><label>Yes</label>
-                <input type="radio" value="no"
-                       th:field="*{PermanentResidnetAlien}"/><label>No</label></div>
+                <input type="radio" value="yes" th:field="*{PermanentResidnetAlien}"/><label>Yes</label>
+                <input type="radio" value="no" th:field="*{PermanentResidnetAlien}"/><label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('PermanentResidnetAlien')}" th:errors="*{PermanentResidnetAlien}"></span>
+
+            </div>
             <div class="col-md-3 border  border-dark">
                 <p>Gender</p>
-                <input type="radio"  value="Male" th:field="*{gender}"/><label>Male</label>
-                <input type="radio"  value="Female" th:field="*{gender}"/><label>Female</label>
+                <input type="radio" value="Male" th:field="*{gender}"/><label>Male</label>
+                <input type="radio" value="Female" th:field="*{gender}"/><label>Female</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('gender')}" th:errors="*{gender}"></span>
+
             </div>
         </div>
         <div class="form-row">
             <div class="col-md-8 border  border-dark">
                 <p>Have you been a maryland[as defined by montgomery college] resident for at least three months? </p>
-                <input type="radio" value="yes"  th:field="*{MdRes}"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{MdRes}"/><label>No</label>
+                <input type="radio" value="yes" th:field="*{MdRes}"/>
+                <label>Yes</label>
+                <input type="radio" value="no" th:field="*{MdRes}"/>
+                <label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('MdRes')}" th:errors="*{MdRes}"></span>
+
             </div>
 
             <div class="col-md-4 border  border-dark">
                 <p>Are you 60 years of age or older?</p>
-                <input type="radio" value="yes"  th:field="*{sixtyPlus}"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{sixtyPlus}"/><label>No</label>
+                <input type="radio" value="yes" th:field="*{sixtyPlus}"/>
+                <label>Yes</label>
+                <input type="radio" value="no" th:field="*{sixtyPlus}"/>
+                <label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('sixtyPlus')}" th:errors="*{sixtyPlus}"></span>
+
             </div>
         </div>
 
         <div class="form-row border  border-dark">
-            <div class="col-auto"><p align="center">What is your highest education?</p></div>
-            <div class="col-auto"><input type="radio"  th:field="*{highestEducation}" value="GED"/><label>GED</label></div>
-            <div class="col-auto"><input type="radio"  th:field="*{highestEducation}"
-                                         value="H.S Diploma"/><label>H.S Diploma</label></div>
-            <div class="col-auto"><input type="radio"  th:field="*{highestEducation}"
-                                         value="Some College"/><label>Some College</label></div>
-            <div class="col-auto"><input type="radio" th:field="*{highestEducation}"
-                                         value="Associates Degree"/><label>Associates Degree</label></div>
-            <div class="col-auto"><input type="radio" th:field="*{highestEducation}"
-                                         value="Bachelors Degree"/><label>Bachelors Degree</label></div>
-            <div class="col-auto"><input type="radio"  th:field="*{highestEducation}"
-                                         value="Graduate Degree"/><label>Graduate Degree</label></div>
+            <div class="col-auto">
+                <p align="center">What is your highest education?</p>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('highestEducation')}" th:errors="*{highestEducation}"></span>
+
+            </div>
+            <div class="col-auto"><input type="radio" th:field="*{highestEducation}" value="GED"/>
+                <label>GED</label>
+            </div>
+            <div class="col-auto">
+                <input type="radio" th:field="*{highestEducation}" value="H.S Diploma"/>
+                <label>H.S Diploma</label>
+            </div>
+            <div class="col-auto">
+                <input type="radio" th:field="*{highestEducation}" value="Some College"/>
+                <label>Some College</label>
+            </div>
+            <div class="col-auto">
+                <input type="radio" th:field="*{highestEducation}" value="Associates Degree"/>
+                <label>Associates Degree</label>
+            </div>
+            <div class="col-auto">
+                <input type="radio" th:field="*{highestEducation}" value="Bachelors Degree"/>
+                <label>Bachelors Degree</label>
+            </div>
+            <div class="col-auto">
+                <input type="radio" th:field="*{highestEducation}" value="Graduate Degree"/>
+                <label>Graduate Degree</label>
+            </div>
         </div>
-
-
 
 
         <div class="form-row">
             <div class="col-md-4 border  border-dark">
                 <p>Are you a fulltime student?</p>
-                <input type="radio" value="yes"  th:field="*{FullTimeStudent}"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{FullTimeStudent}"/><label>No</label>
-
+                <input type="radio" value="yes" th:field="*{FullTimeStudent}"/><label>Yes</label>
+                <input type="radio" value="no" th:field="*{FullTimeStudent}"/><label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('FullTimeStudent')}" th:errors="*{FullTimeStudent}"></span>
             </div>
-            <div class="col-md-4 border  border-dark" >
+            <div class="col-md-4 border  border-dark">
                 <p>Are you a part time student?</p>
-                <input type="radio" value="yes"  th:field="*{PartTimeStudent}"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{PartTimeStudent}"/><label>No</label>
+                <input type="radio" value="yes" th:field="*{PartTimeStudent}"/><label>Yes</label>
+                <input type="radio" value="no" th:field="*{PartTimeStudent}"/><label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('PartTimeStudent')}" th:errors="*{PartTimeStudent}"></span>
             </div>
 
             <div class="col-md-4 border  border-dark">
                 <p>Do you have or are you eligible for a pell grant?</p>
-                <input type="radio" value="yes"  th:field="*{Pellgrant}"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{Pellgrant}"/><label>No</label>
+                <input type="radio" value="yes" th:field="*{Pellgrant}"/><label>Yes</label>
+                <input type="radio" value="no" th:field="*{Pellgrant}"/><label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('Pellgrant')}" th:errors="*{Pellgrant}"></span>
             </div>
 
         </div>
@@ -206,20 +260,23 @@
         <div class="form-row border  border-dark">
             <div class="col-auto ">
                 <p>Please identify the program of study you are currently enrolled in(select 1)</p>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('currentEnroll')}" th:errors="*{currentEnroll}"></span>
             </div>
             <div class="col-auto">
-                <input type="radio"  th:field="*{currentEnroll}"
-                       value="Certificate"/><label>Certificate</label>
+                <input type="radio" th:field="*{currentEnroll}" value="Certificate"/>
+                <label>Certificate</label>
             </div>
             <div class="col-auto">
-                <input type="radio"  th:field="*{currentEnroll}" value="Associates Degree"/><label>Associates Degree</label>
+                <input type="radio" th:field="*{currentEnroll}" value="Associates Degree"/>
+                <label>Associates Degree</label>
             </div>
             <div class="col-auto">
-                <input type="radio"  th:field="*{currentEnroll}"
-                       value="Non-Credit"/><label>Non-CreditProgram</label>
+                <input type="radio" th:field="*{currentEnroll}" value="Non-Credit"/>
+                <label>Non-CreditProgram</label>
             </div>
             <div class="col-auto">
-                <input type="radio"  th:field="*{currentEnroll}" value="Other"/><label>Other</label>
+                <input type="radio" th:field="*{currentEnroll}" value="Other"/>
+                <label>Other</label>
             </div>
 
         </div>
@@ -227,21 +284,23 @@
         <div class="form-row">
             <div class="col-md-6 border  border-dark">
                 <p>Are you currently recieving benefits under the trade adjustment assistance program?</p>
-                <input type="radio" value="yes"  th:field="*{recTAAP}"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{recTAAP}"/><label>No</label>
+                <input type="radio" value="yes" th:field="*{recTAAP}"/><label>Yes</label>
+                <input type="radio" value="no" th:field="*{recTAAP}"/><label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('recTAAP')}" th:errors="*{recTAAP}"></span>
             </div>
 
             <div class="col-md-6 border  border-dark">
                 <p>Are you currently employed?</p>
-                <input type="radio" value="yes"  th:field="*{Employed}" onclick="myFunction()"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{Employed}" onclick="myFunction3()"/><label>No</label>
+                <input type="radio" value="yes" th:field="*{Employed}" onclick="myFunction()"/><label>Yes</label>
+                <input type="radio" value="no" th:field="*{Employed}" onclick="myFunction3()"/><label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('Employed')}" th:errors="*{Employed}"></span>
                 <div id="test1" style="display:none">
                     <p>Please enter the following </p>
-                    <input type="text"  th:field="*{employer}" placeholder="Employer"/>
-                    <input type="text"  th:field="*{salary}" placeholder="Salary"/>
-                    <input type="text"  th:field="*{hours}" placeholder="Hours"/>
+                    <input type="text" th:field="*{employer}" placeholder="Employer"/>
+                    <input type="text" th:field="*{salary}" placeholder="Salary"/>
+                    <input type="text" th:field="*{hours}" placeholder="Hours"/>
                     <input type="text" th:field="*{startdate}" placeholder="Start Date"/>
-                    <input type="text"  th:field="*{workPhone}" placeholder="Work Phone"/>
+                    <input type="text" th:field="*{workPhone}" placeholder="Work Phone"/>
                 </div>
 
             </div>
@@ -251,92 +310,105 @@
         <div class="form-row border  border-dark">
             <div class="col-md-12 ">
                 <p>Are you under employed?</p>
-                <input type="radio" value="yes"  th:field="*{UnderEmployed}" onclick="myFunction2()"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{UnderEmployed}" onclick="myFunction4()"/><label>No</label>
+                <input type="radio" value="yes" th:field="*{UnderEmployed}" onclick="myFunction2()"/><label>Yes</label>
+                <input type="radio" value="no" th:field="*{UnderEmployed}" onclick="myFunction4()"/><label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('UnderEmployed')}" th:errors="*{UnderEmployed}"></span>
             </div>
             <div id="test2" style="display:none">
                 <div class="col-auto">
                     <p>If yes, what is the reason for you under employment?</p>
 
-                    <input type="checkbox"  th:field="*{reasonUEmploy}" value=" Working Part Time."/>
+                    <input type="checkbox" th:field="*{reasonUEmploy}" value=" Working Part Time."/>
                     <label>Working Part Time</label>
                     <br/>
-                    <input type="checkbox"  th:field="*{reasonUEmploy}"
+                    <input type="checkbox" th:field="*{reasonUEmploy}"
                            value=" My Earnings are less than $19.96/hr with benefits or $21.78/hr without benefits."/>
                     <label>My Earnings are less than $19.96/hr with benefits or $21.78/hr without benefits.</label>
                     <br/>
-                    <input type="checkbox"  th:field="*{reasonUEmploy}"
+                    <input type="checkbox" th:field="*{reasonUEmploy}"
                            value=" Working fulltime, but duties and/or salary are not commensurate with my skill level."/>
                     <label>Working fulltime, but duties and/or salary are not commensurate with my skill level.</label>
                     <br/>
-                    <input type="checkbox"  th:field="*{reasonUEmploy}"
+                    <input type="checkbox" th:field="*{reasonUEmploy}"
                            value=" Working fulltime, but duties and/or salary are not commensurate with my education level."/>
-                    <label>Working fulltime, but duties and/or salary are not commensurate with my education level.</label>
+                    <label>Working fulltime, but duties and/or salary are not commensurate with my education
+                        level.</label>
                 </div>
             </div>
         </div>
 
         <div class="form-row">
             <div class="col-4 border  border-dark"><p>Are you a veteran?</p>
-                <input type="radio" value="yes"  th:field="*{Veteran}" onclick="myFunction5()"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{Veteran}" onclick="myFunction6()"/><label>No</label>
+                <input type="radio" value="yes" th:field="*{Veteran}" onclick="myFunction5()"/><label>Yes</label>
+                <input type="radio" value="no" th:field="*{Veteran}" onclick="myFunction6()"/><label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('Veteran')}" th:errors="*{Veteran}"></span>
                 <div id="vetStuff" style="display:none">
-                    <input type="text"  th:field="*{servBranch}" placeholder="Branch of service"/>
-                    <input type="text"  th:field="*{typeDischarge}" placeholder="Type of discharge"/>
-                    <input type="text"  th:field="*{dateDischarge}" placeholder="Date of discharge">
+                    <input type="text" th:field="*{servBranch}" placeholder="Branch of service"/>
+                    <input type="text" th:field="*{typeDischarge}" placeholder="Type of discharge"/>
+                    <input type="text" th:field="*{dateDischarge}" placeholder="Date of discharge">
                 </div>
             </div>
 
 
             <div class="col-md-4 border  border-dark"><p>Are you the spouse of a veteran?</p>
                 <input type="radio" value="yes" th:field="*{SpouseVeteran}"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{SpouseVeteran}"/><label>No</label></div>
+                <input type="radio" value="no" th:field="*{SpouseVeteran}"/><label>No</label>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('SpouseVeteran')}" th:errors="*{SpouseVeteran}"></span>
+            </div>
 
-            <div class="col-md-4 border  border-dark"><p>Are you a Maryland National Gaurd memeber enlisted for at least 24 months and submitting
+            <div class="col-md-4 border  border-dark">
+                <p>Are you a Maryland National Gaurd memeber enlisted for at least 24 months and submitting
                 proof of such from the adjutant general's office?</p>
-                <input type="radio" value="yes"  th:field="*{NatGaurd}"/><label>Yes</label>
-                <input type="radio" value="no"  th:field="*{NatGaurd}"/><label>No</label></div></span>
-
+                <input type="radio" value="yes" th:field="*{NatGaurd}"/><label>Yes</label>
+                <input type="radio" value="no" th:field="*{NatGaurd}"/><label>No</label></div>
+            <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('NatGaurd')}" th:errors="*{NatGaurd}"></span>
         </div>
 
         <div class="form-row border  border-dark" align="center">
 
             <p>How did you hear about this program?</p>
+            <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('hearMC')}" th:errors="*{hearMC}"></span>
             <div class="col-auto">
-                <div class="form-check"><input class="form-check-input" type="checkbox"  th:field="*{hearMC}"
-                                               value="Mail brochure"/><label class="form-check-label">Mail brochure</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" th:field="*{hearMC}" value="Mail brochure"/>
+                    <label class="form-check-label">Mail brochure</label>
                 </div>
             </div>
             <div class="col-auto">
-                <div class="form-check"><input class="form-check-input" type="checkbox"  th:field="*{hearMC}"
-                                               value="Website"/><label class="form-check-label">Website</label></div>
-            </div>
-            <div class="col-auto">
-                <div class="form-check"><input class="form-check-input" type="checkbox"  th:field="*{hearMC}"
-                                               value="Social media"/><label class="form-check-label">Social media</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" th:field="*{hearMC}" value="Website"/>
+                    <label class="form-check-label">Website</label>
                 </div>
             </div>
             <div class="col-auto">
-                <div class="form-check"><input class="form-check-input" type="checkbox"  th:field="*{hearMC}"
-                                               value="On campus"/><label class="form-check-label">On campus</label></div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" th:field="*{hearMC}" value="Social media"/>
+                    <label class="form-check-label">Social media</label>
+                </div>
             </div>
             <div class="col-auto">
-                <div class="form-check"><input class="form-check-input" type="checkbox"  th:field="*{hearMC}"
-                                               value="Other" checked/><label class="form-check-label">other</label></div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" th:field="*{hearMC}" value="On campus"/>
+                    <label class="form-check-label">On campus</label>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" th:field="*{hearMC}" value="Other" checked/>
+                    <label class="form-check-label">other</label>
+                </div>
             </div>
         </div>
         <div class="form-row border border-dark">
             <div class="col-md-12 ">
                 <p>What Courses are you taking?</p>
-
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('courses')}" th:errors="*{courses}"></span>
                 <select class="form-control  form-control-lg" th:field="*{courses}" multiple>
-
                     <option th:each="course:${actCourses}" th:value="${course.id}" th:name="${course.courseName}">
                         <p>Course Number [[${course.courseNum}]], CRN : [[${course.crn}]]</p>
                     </option>
                 </select>
-                <span th:if="${#fields.hasErrors('courses')}"
-                      th:errors="*{courses}">
+
             </div>
         </div>
         <div class="form-row justify-content-center">
