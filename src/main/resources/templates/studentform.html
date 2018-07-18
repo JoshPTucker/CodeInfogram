@@ -86,14 +86,68 @@
                 <input class="form-control" type="text" th:field="*{zipcode}" placeholder="Zipcode"/>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('zipcode')}" th:errors="*{zipcode}"></span>
             </div>
-            <div class="col-md-3">
-                <input class="form-control" type="text" th:field="*{homephone}" placeholder="Home Phone Number"/>
+            <div class="col-md-2">
+                <input class="form-control" type="text" th:field="*{homephone}" placeholder="Home Phone#"/>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('homephone')}" th:errors="*{homephone}"></span>
+                <hr/>
                 <input class="form-control" type="text" th:field="*{fax}" placeholder="Fax#"/>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('fax')}" th:errors="*{fax}"></span>
             </div>
-            <div class="col-md-1">
-                <input class="form-control" type="text" th:field="*{State}" placeholder="State Abbr" />
+            <div class="col-md-2">
+
+                <select class="custom-select" th:field="*{State}">
+                    <option value="AL">Alabama</option>
+                    <option value="AK">Alaska</option>
+                    <option value="AZ">Arizona</option>
+                    <option value="AR">Arkansas</option>
+                    <option value="CA">California</option>
+                    <option value="CO">Colorado</option>
+                    <option value="CT">Connecticut</option>
+                    <option value="DE">Delaware</option>
+                    <option value="DC">District Of Columbia</option>
+                    <option value="FL">Florida</option>
+                    <option value="GA">Georgia</option>
+                    <option value="HI">Hawaii</option>
+                    <option value="ID">Idaho</option>
+                    <option value="IL">Illinois</option>
+                    <option value="IN">Indiana</option>
+                    <option value="IA">Iowa</option>
+                    <option value="KS">Kansas</option>
+                    <option value="KY">Kentucky</option>
+                    <option value="LA">Louisiana</option>
+                    <option value="ME">Maine</option>
+                    <option value="MD" selected>Maryland</option>
+                    <option value="MA">Massachusetts</option>
+                    <option value="MI">Michigan</option>
+                    <option value="MN">Minnesota</option>
+                    <option value="MS">Mississippi</option>
+                    <option value="MO">Missouri</option>
+                    <option value="MT">Montana</option>
+                    <option value="NE">Nebraska</option>
+                    <option value="NV">Nevada</option>
+                    <option value="NH">New Hampshire</option>
+                    <option value="NJ">New Jersey</option>
+                    <option value="NM">New Mexico</option>
+                    <option value="NY">New York</option>
+                    <option value="NC">North Carolina</option>
+                    <option value="ND">North Dakota</option>
+                    <option value="OH">Ohio</option>
+                    <option value="OK">Oklahoma</option>
+                    <option value="OR">Oregon</option>
+                    <option value="PA">Pennsylvania</option>
+                    <option value="RI">Rhode Island</option>
+                    <option value="SC">South Carolina</option>
+                    <option value="SD">South Dakota</option>
+                    <option value="TN">Tennessee</option>
+                    <option value="TX">Texas</option>
+                    <option value="UT">Utah</option>
+                    <option value="VT">Vermont</option>
+                    <option value="VA">Virginia</option>
+                    <option value="WA">Washington</option>
+                    <option value="WV">West Virginia</option>
+                    <option value="WI">Wisconsin</option>
+                    <option value="WY">Wyoming</option>
+                </select>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('State')}" th:errors="*{State}"></span>
             </div>
             <div class="col-md-2">
@@ -406,7 +460,7 @@
             <div class="col-md-12 ">
                 <p>What Courses are you taking?</p>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('courses')}" th:errors="*{courses}"></span>
-                <select class="form-control  form-control-lg" th:field="*{courses}" multiple>
+                <select class="custom-select" th:field="*{courses}" multiple>
                     <option th:each="course:${actCourses}" th:value="${course.id}" th:name="${course.courseName}">
                         <p>Couse Name [[${course.courseName}]],Course Number [[${course.courseNum}]], CRN : [[${course.crn}]]</p>
                     </option>

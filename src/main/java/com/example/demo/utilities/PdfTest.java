@@ -75,22 +75,22 @@ public class PdfTest {
             makeTextBox(pdfDoc,student.getGender(),513,320,66,20,1);
             makeTextBox(pdfDoc,student.getGender(),513,650,61,15,2);
             //Is American Indian
-
+            makeCheckBox(pdfDoc,student.isAmericanIndian(),261,375,6,6,1);
             makeCheckBox(pdfDoc,student.isAmericanIndian(),23,353,6,6,2);
             //Is Hispanic
-
+            makeCheckBox(pdfDoc,student.isHispanic(),185,375,6,6,1);
             makeCheckBox(pdfDoc,student.isHispanic(),122,374,6,6,2);
             //Asian
-
+            makeCheckBox(pdfDoc,student.isAsian(),404,375,6,6,1);
             makeCheckBox(pdfDoc,student.isAsian(),147,353,6,6,2);
             //Black or African American
-
+            makeCheckBox(pdfDoc,student.isBlackAfricanAmerican(),442,375,6,6,1);
             makeCheckBox(pdfDoc,student.isBlackAfricanAmerican(),181,353,6,6,2);
             //Native hawaiian
-
+            makeCheckBox(pdfDoc,student.isHawaiian(),33,365,6,6,1);
             makeCheckBox(pdfDoc,student.isHawaiian(),278,353,6,6,2);
             //White
-
+            makeCheckBox(pdfDoc,student.isWhite(),178,365,6,6,1);
             makeCheckBox(pdfDoc,student.isWhite(),420,353,6,6,2);
             //Us Citizen
             if (student.isCitizen()){
@@ -162,7 +162,6 @@ public class PdfTest {
         p.setVerticalAlignment(VerticalAlignment.MIDDLE);
         //  p.setHorizontalAlignment(HorizontalAlignment.CENTER);
         p.setFontSize(9);
-        p.setFont("Arial");
         Rectangle r = new Rectangle( x,y,w,h);
         PdfCanvas pdfc = new PdfCanvas(pdfDoc.getPage(pageNum));
         //Comment out dark gray line when not testing
