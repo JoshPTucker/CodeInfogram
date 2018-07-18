@@ -69,6 +69,7 @@
             </div>
             <div class="col-md-2">
                 <input class="form-control" type="text" th:field="*{middleInitial}" placeholder="Middle Initial"/>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('middleInitial')}" th:errors="*{middleInitial}"></span>
             </div>
         </div>
         <div class="form-row border  border-dark">
@@ -93,7 +94,7 @@
             </div>
             <div class="col-md-1">
                 <input class="form-control" type="text" th:field="*{state}" placeholder="State Abbr"/>
-                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('fax')}" th:errors="*{fax}"></span>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('state')}" th:errors="*{state}"></span>
             </div>
             <div class="col-md-2">
                 <input class="form-control" type="text" th:field="*{city}" placeholder="City"/></div>
@@ -412,8 +413,8 @@
             </div>
         </div>
         <div class="form-row justify-content-center">
-            <button type="reset" class="btn btn-warning">Reset</button>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="reset" class="btn btn-light">Reset</button>
+            <button type="submit" class="btn btn-light">Submit</button>
         </div>
     </form>
 </div>

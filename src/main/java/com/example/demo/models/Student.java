@@ -4,9 +4,7 @@
 package com.example.demo.models;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
+import javax.validation.constraints.*;
 import java.util.Collection;
 
 /**
@@ -20,16 +18,16 @@ public class Student {
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
 
-	@Size(min=3, max=20)
+	@Size(min=1, max=20)
 	@Column(name = "first_name")
 	private String firstname;
 
 
-	@Size(min=3, max=30)
+	@Size(min=1, max=30)
 	@Column(name = "last_name")
 	private String lastname;
 
-	@Size(max=1)
+	@Size(max = 1)
 	@Column(name="middle_initial")
 	private String middleInitial;
 
@@ -51,15 +49,14 @@ public class Student {
 
 	private String aptnum;
 
-	@NotNull
 	private String zipcode;
 
-	@NotNull
-	private String homephone;
 
-	@Size(max=2)
+	private String homephone;
+	@NotEmpty
+	@Size(max = 2)
 	private String State;
-	@NotNull
+
 	private String city;
 	@NotNull
 	private String gender;
