@@ -93,12 +93,14 @@
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('fax')}" th:errors="*{fax}"></span>
             </div>
             <div class="col-md-1">
-                <input class="form-control" type="text" th:field="*{state}" placeholder="State Abbr"/>
-                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('state')}" th:errors="*{state}"></span>
+                <input class="form-control" type="text" th:field="*{State}" placeholder="State Abbr" />
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('State')}" th:errors="*{State}"></span>
             </div>
             <div class="col-md-2">
-                <input class="form-control" type="text" th:field="*{city}" placeholder="City"/></div>
-            <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></span>
+                <input class="form-control" type="text" th:field="*{city}" placeholder="City"/>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('city')}" th:errors="*{city}"></span>
+            </div>
+
 
         </div>
         <div class="form-row">
@@ -413,8 +415,8 @@
             </div>
         </div>
         <div class="form-row justify-content-center">
-            <button type="reset" class="btn btn-light">Reset</button>
-            <button type="submit" class="btn btn-light">Submit</button>
+            <button type="reset" class="btn btn-outline-dark">Reset</button>
+            <button type="submit" class="btn btn-outline-dark">Submit</button>
         </div>
     </form>
 </div>

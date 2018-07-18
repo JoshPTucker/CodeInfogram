@@ -17,12 +17,12 @@ public class Student {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
-
+	@NotBlank
 	@Size(min=1, max=20)
 	@Column(name = "first_name")
 	private String firstname;
 
-
+	@NotBlank
 	@Size(min=1, max=30)
 	@Column(name = "last_name")
 	private String lastname;
@@ -30,7 +30,7 @@ public class Student {
 	@Size(max = 1)
 	@Column(name="middle_initial")
 	private String middleInitial;
-
+	@NotBlank
 	@Email
 	@Column(name = "email")
 	private String email;
@@ -42,27 +42,27 @@ public class Student {
 	@Column(name="Heard_about_us", length=300)
 	private String hearMC;
 
-
-	@Size(min=5, max=200)
+	@NotBlank
+	@Size(min=1, max=200)
 	@Column(name="Street_Address")
 	private String address;
 
 	private String aptnum;
-
-	private String zipcode;
-
-
-	private String homephone;
 	@NotBlank
-	@Size(max = 2)
-	private String State;
+	private String zipcode;
+	@NotBlank
+	private String homephone;
 
+	@NotBlank
+	@Size(max=2)
+	private String State;
+	@NotBlank
 	private String city;
 	@NotNull
 	private String gender;
-
+	@NotBlank
 	private String highestEducation;
-
+	@NotBlank
 	private String currentEnroll;
 	private String employer;
 	private String hours;
@@ -76,44 +76,57 @@ public class Student {
 	@Column(length=400)
 	private String reasonUEmploy;
 	//Has attended Montgomery College Before
-
+	@NotNull
 	private boolean attenMcb4;
 
-
+	@NotNull
 	private boolean hasDisability;
-
+	@NotNull
 	private boolean Citizen;
 	//Is Student a permanent Resident Alien
+	@NotNull
 	private boolean PermanentResidnetAlien;
 	//Is student Currently Employed
+	@NotNull
 	private boolean Employed;
 	//If student is employed are the under employed
+	@NotNull
 	private boolean UnderEmployed;
 	//Is the student elligible
+	@NotNull
 	private boolean Pellgrant;
+	@NotNull
 	private boolean FullTimeStudent;
+	@NotNull
 	private boolean PartTimeStudent;
 
 	//TAAP is Trade adjustment Assistance Program
+	@NotNull
 	private boolean recTAAP;
+	@NotNull
 	private boolean Veteran;
 
 	//Branch of Military Service
 	private String servBranch;
 	private String dateDischarge;
 	private String typeDischarge;
+	@NotNull
 	private boolean SpouseVeteran;
 
 	// is member of the MD national gaurd
+	@NotNull
 	private boolean NatGaurd;
 
 	//Is a maryland resident
+	@NotNull
 	private boolean MdRes;
 
 	//Is sixty years of age or older
+	@NotNull
 	private boolean sixtyPlus;
 
 	//Has the student received the Grievance and Veteran forms
+	@NotNull
 	private boolean recievGreiveVet;
 
 	//Race or ethnicity choices, true or false
@@ -209,7 +222,7 @@ public class Student {
 	}
 
 	public void setState(String state) {
-		State = state;
+		this.State = state;
 	}
 
 	public String getCity() {

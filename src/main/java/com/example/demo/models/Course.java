@@ -3,6 +3,7 @@ package com.example.demo.models;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
 import java.util.Collection;
 
 
@@ -12,11 +13,15 @@ public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
-
+    @NotBlank
     private String courseName;
+    @NotBlank
     private String StartDate;
+    @NotBlank
     private String EndDate;
+    @NotBlank
     private String courseNum;
+    @NotBlank
     private String crn;
     private boolean active;
 

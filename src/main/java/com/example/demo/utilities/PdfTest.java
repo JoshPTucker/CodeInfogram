@@ -162,6 +162,7 @@ public class PdfTest {
         p.setVerticalAlignment(VerticalAlignment.MIDDLE);
         //  p.setHorizontalAlignment(HorizontalAlignment.CENTER);
         p.setFontSize(9);
+        p.setFont("Arial");
         Rectangle r = new Rectangle( x,y,w,h);
         PdfCanvas pdfc = new PdfCanvas(pdfDoc.getPage(pageNum));
         //Comment out dark gray line when not testing
