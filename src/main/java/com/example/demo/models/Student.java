@@ -53,7 +53,7 @@ public class Student {
 
 
 	private String homephone;
-	@NotEmpty
+	@NotBlank
 	@Size(max = 2)
 	private String State;
 
