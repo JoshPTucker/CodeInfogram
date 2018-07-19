@@ -24,23 +24,19 @@
             <p>Student ID : [[${student.studentId}]]</p>
         </div>
     </div>
-    <div class="row border border-dark" style="background-color: purple">
+    <div class="row border border-dark" style="background-color: whitesmoke">
         <div class="col-md-12">
-            <h5 align="center">Signature</h5>
+            <h5 align="center">Confirmation</h5>
         </div>
     </div>
     <div id="signature" class="row border border-dark" >
-        <div class="col-md-12 ">
-            <p>I certify that the information i provide here is accurate: ____________________________________________________  Date:_______________________</p>
-            <div class="row" >
-                <div class="col-md-12 " >
-                    <p>I have recieved copies of the Grievance Procedures and veteran's Priority of Service Policies<span th:if="${student.recievGreiveVet==True}">&#9745</span><span th:if="${student.recievGreiveVet==False}">&#9746</span></p>
-                </div>
-            </div>
-        </div>
 
+                <div class="col-md-12 " >
+                    <p>I have recieved copies of the Grievance Procedures and veteran's Priority of Service Policies</p>
+                    <span th:if="${student.recievGreiveVet==True}">&#9745</span><span th:if="${student.recievGreiveVet==False}">&#9746</span>
+                </div>
     </div>
-    <div class="row border border-dark" style="background-color: purple">
+    <div class="row border border-dark" style="background-color: whitesmoke">
         <div class="col-md-12">
             <h5 align="center">Contact Info</h5>
         </div>
@@ -54,7 +50,7 @@
 
         </div>
     </div>
-    <div class="row border border-dark" style="background-color: purple">
+    <div class="row border border-dark" style="background-color: whitesmoke">
         <div class="col-md-12">
             <h5 align="center">Personal Information</h5>
         </div>
@@ -64,7 +60,7 @@
             <p>Has a documented Disability</p>
             <span th:if="${student.hasDisability==True}">&#9745</span><span th:if="${student.hasDisability==False}">&#9746</span>
         </div>
-        <div class="col-sm-1 border border-dark" >
+        <div class="col-sm-3 border border-dark" >
             <p>US Citizen</p>
             <span th:if="${student.Citizen==True}">&#9745</span><span th:if="${student.Citizen==False}">&#9746</span>
         </div>
@@ -72,11 +68,8 @@
             <p>Permanent Resident Alien</p>
             <span th:if="${student.PermanentResidnetAlien==True}">&#9745</span><span th:if="${student.PermanentResidnetAlien==False}">&#9746</span>
         </div>
-        <div class="col-sm-5 border border-dark" >
-            <p>Country of citizenship:</p>
-            <p>_______________________________________________</p>
-            <p>Registration number:</p>
-            <p>________________________________________________</p>
+        <div class="col-sm-3 border border-dark" >
+            <p>Gender:[[${student.gender}]]</p>
         </div>
     </div>
 
@@ -113,18 +106,7 @@
             </div>
         </div>
     </div>
-    <div class="row" >
-        <div class="col-sm-5 border border-dark" >
-            <p>Social Security#:</p>
-        </div>
-        <div class="col-sm-5 border border-dark" >
-            <p>Date of birth:</p>
-        </div>
-        <div class="col-sm-2 border border-dark" >
-            <p>Gender:[[${student.gender}]]</p>
-        </div>
-    </div>
-    <div class="row border border-dark" style="background-color: purple">
+    <div class="row border border-dark" style="background-color: whitesmoke">
         <div class="col-md-12">
             <h5 align="center">Education And Employment</h5>
         </div>
@@ -189,7 +171,7 @@
             <p th:if="${student.reasonUEmploy!=null}">[[${student.reasonUEmploy}]]</p>
         </div>
     </div>
-    <div class="row border border-dark"style="background-color: purple">
+    <div class="row border border-dark"style="background-color: whitesmoke">
         <div class="col-md-12">
             <h5 align="center">Veteran Status</h5>
         </div>
@@ -216,7 +198,7 @@
             <p th:if="${student.typeDischarge!=null}">[[${student.typeDischarge}]]</p>
         </div>
     </div>
-    <div class="row border border-dark" style="background-color: purple">
+    <div class="row border border-dark" style="background-color: whitesmoke">
         <div class="col-md-12">
             <h5 align="center">Courses You Signed Up For</h5>
         </div>
