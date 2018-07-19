@@ -51,10 +51,10 @@ public class PdfTest {
             makeTextBox(pdfDoc,student.getCity(),127,492,273,15,1);
             makeTextBox(pdfDoc,student.getCity(),55,538,274,22,2);
             //State
-            makeTextBox(pdfDoc,student.getState(),412,492,40,15,1);
+            makeTextBox(pdfDoc,student.getState(),412,494,40,13,1);
             makeTextBox(pdfDoc,student.getState(),360,538,34,22,2);
             //Zipcode
-            makeTextBox(pdfDoc,student.getZipcode(),488,492,100,14,1);
+            makeTextBox(pdfDoc,student.getZipcode(),488,493,100,13,1);
             makeTextBox(pdfDoc,student.getZipcode(),426,538,160,22,2);
             //Home Phone
             makeTextBox(pdfDoc,student.getHomephone(),127,460,209,16,1);
@@ -65,11 +65,12 @@ public class PdfTest {
             makeTextBox(pdfDoc,student.getWorkPhone(),492,183,88,13,1);
             makeTextBox(pdfDoc,student.getWorkPhone(),263,512,174,22,2);
             //Currently employed
-            if(student.isEmployed()){
-                makeCheckBox(pdfDoc,student.isEmployed(),154,201,6,6,1);
-            }else{
-                makeCheckBox(pdfDoc,true,180,201,6,6,1);
-            }
+//            if(student.isEmployed()){
+//                makeCheckBox(pdfDoc,student.isEmployed(),154,201,6,6,1);
+//            }else{
+//                makeCheckBox(pdfDoc,true,181,202,6,6,1);
+//            }
+            makeYesNoCheck(pdfDoc,student.isEmployed(),154,201,6,6,181,202,6,6,1);
             //Employer name
             makeTextBox(pdfDoc,student.getEmployer(),70,183,145,13,1);
             //Salary
@@ -107,18 +108,15 @@ public class PdfTest {
             makeCheckBox(pdfDoc,student.isWhite(),178,365,6,6,1);
             makeCheckBox(pdfDoc,student.isWhite(),420,353,6,6,2);
             //Us Citizen
-            if (student.isCitizen()){
-                makeCheckBox(pdfDoc,student.isCitizen(),153,407,6,6,1);
-            }else{
-                makeCheckBox(pdfDoc,true,153,396,6,6,1);
-            }
+            makeYesNoCheck(pdfDoc,student.isCitizen(),153,407,6,6,153,396,6,6,1);
             makeCheckBox(pdfDoc,student.isCitizen(),24,333,6,6,2);
             //Permanent resident alien
-            if(student.isPermanentResidnetAlien()){
-                makeCheckBox(pdfDoc,student.isPermanentResidnetAlien(),246,407,6,6,1);
-            }else{
-                makeCheckBox(pdfDoc,true,246,396,6,6,1);
-            }
+//            if(student.isPermanentResidnetAlien()){
+//                makeCheckBox(pdfDoc,student.isPermanentResidnetAlien(),246,407,6,6,1);
+//            }else{
+//                makeCheckBox(pdfDoc,true,246,396,6,6,1);
+//            }
+            makeYesNoCheck(pdfDoc,student.isPermanentResidnetAlien(),246,407,6,6,246,396,6,6,1);
             makeCheckBox(pdfDoc,student.isPermanentResidnetAlien(),76,333,6,6,2);
             //Md res
             makeCheckBox(pdfDoc,student.isMdRes(),24,307,6,6,2);
@@ -127,45 +125,50 @@ public class PdfTest {
             //Md National gaurd
             makeCheckBox(pdfDoc,student.isNatGaurd(),24,285,6,6,2);
             //Student has documented disability
-            if(student.isHasDisability()){
-                makeCheckBox(pdfDoc,student.isHasDisability(),36,407,6,6,1);
-            }else{
-                    makeCheckBox(pdfDoc,true,36,396,6,6,1);
-            }
+//            if(student.isHasDisability()){
+//                makeCheckBox(pdfDoc,student.isHasDisability(),36,407,6,6,1);
+//            }else{
+//                    makeCheckBox(pdfDoc,true,36,396,6,6,1);
+//            }
+            makeYesNoCheck(pdfDoc,student.isHasDisability(),36,407,6,6,36,396,6,6,1);
             //Highest Level Of Education
             makeTextBox(pdfDoc,student.getHighestEducation(),34,270,465,13,1);
             //Program currently enrolled in
-            makeTextBox(pdfDoc,student.getCurrentEnroll(),34,242,335,14,1);
+            makeTextBox(pdfDoc,student.getCurrentEnroll(),34,240,335,13,1);
             //Full Time Student
            makeCheckBox(pdfDoc,student.isFullTimeStudent(),375,255,6,6,1);
             //Part Time Student
             makeCheckBox(pdfDoc,student.isPartTimeStudent(),375,245,6,6,1);
             //Is Elligible for pell grant
-            if(student.isPellgrant()){
-                makeCheckBox(pdfDoc,student.isPellgrant(),476,240,6,6,1);
-            }else{
-                makeCheckBox(pdfDoc,true,503,240,6,6,1);
-            }
+//            if(student.isPellgrant()){
+//                makeCheckBox(pdfDoc,student.isPellgrant(),476,240,6,6,1);
+//            }else{
+//                makeCheckBox(pdfDoc,true,503,240,6,6,1);
+//            }
+            makeYesNoCheck(pdfDoc,student.isPellgrant(),476,240,6,6,503,240,6,6,1);
             //Trade Assistance Program
-            if(student.isRecTAAP()){
-                makeCheckBox(pdfDoc,student.isRecTAAP(),380,221,6,6,1);
-            }else{
-                makeCheckBox(pdfDoc,true,415,221,6,6,1);
-            }
+//            if(student.isRecTAAP()){
+//                makeCheckBox(pdfDoc,student.isRecTAAP(),380,221,6,6,1);
+//            }else{
+//                makeCheckBox(pdfDoc,true,415,221,6,6,1);
+//            }
+            makeYesNoCheck(pdfDoc,student.isRecTAAP(),380,221,6,6,415,221,6,6,1);
             //Is Student Under Employed
-            if(student.isUnderEmployed()){
-                makeCheckBox(pdfDoc,student.isUnderEmployed(),35,107,6,6,1);
-            }else{
-                makeCheckBox(pdfDoc,true,45,107,6,6,1);
-            }
+//            if(student.isUnderEmployed()){
+//                makeCheckBox(pdfDoc,student.isUnderEmployed(),35,107,6,6,1);
+//            }else{
+//                makeCheckBox(pdfDoc,true,63,107,6,6,1);
+//            }
+            makeYesNoCheck(pdfDoc,student.isUnderEmployed(),35,107,6,6,63,107,6,6,1);
             //Reasons For Under Employment
             makeTextBox(pdfDoc,student.getReasonUEmploy(),121,105,393,44,1);
             //Veteran Status
-            if(student.isVeteran()){
-                makeCheckBox(pdfDoc,student.isVeteran(),32,52,6,6,1);
-            }else{
-                makeCheckBox(pdfDoc,true,32,64,6,6,1);
-            }
+//            if(student.isVeteran()){
+//                makeCheckBox(pdfDoc,student.isVeteran(),32,52,6,6,1);
+//            }else{
+//                makeCheckBox(pdfDoc,true,32,67,6,6,1);
+//            }
+            makeYesNoCheck(pdfDoc,student.isVeteran(),32,52,6,6,32,67,6,6,1);
             //Spouse of Veteran
             makeCheckBox(pdfDoc,student.isSpouseVeteran(),145,68,6,6,1);
             //Branch of Service
