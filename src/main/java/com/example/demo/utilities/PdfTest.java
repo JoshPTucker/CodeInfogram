@@ -64,6 +64,20 @@ public class PdfTest {
             //Work Phone
             makeTextBox(pdfDoc,student.getWorkPhone(),492,183,88,13,1);
             makeTextBox(pdfDoc,student.getWorkPhone(),263,512,174,22,2);
+            //Currently employed
+            if(student.isEmployed()){
+                makeCheckBox(pdfDoc,student.isEmployed(),154,200,6,6,1);
+            }else{
+                makeCheckBox(pdfDoc,true,180,200,6,6,1);
+            }
+            //Employer name
+            makeTextBox(pdfDoc,student.getEmployer(),70,183,145,13,1);
+            //Salary
+            makeTextBox(pdfDoc,student.getSalary(),288,183,100,13,1);
+            //StartDate
+            makeTextBox(pdfDoc,student.getStartdate(),388,183,100,13,1);
+            //Hours working per week
+            makeTextBox(pdfDoc,student.getHours(),218,183,57,13,1);
             //Email
             makeTextBox(pdfDoc,student.getEmail(),379,460,200,16,1);
             makeTextBox(pdfDoc,student.getEmail(),259,477,320,22,2);
@@ -99,7 +113,6 @@ public class PdfTest {
                 makeCheckBox(pdfDoc,true,153,396,6,6,1);
             }
             makeCheckBox(pdfDoc,student.isCitizen(),24,333,6,6,2);
-
             //Permanent resident alien
             if(student.isPermanentResidnetAlien()){
                 makeCheckBox(pdfDoc,student.isPermanentResidnetAlien(),246,407,6,6,1);
@@ -119,7 +132,27 @@ public class PdfTest {
             }else{
                     makeCheckBox(pdfDoc,true,36,396,6,6,1);
             }
-
+            //Highest Level Of Education
+            makeTextBox(pdfDoc,student.getHighestEducation(),34,270,465,13,1);
+            //Program currently enrolled in
+            makeTextBox(pdfDoc,student.getCurrentEnroll(),34,242,335,14,1);
+            //Full Time Student
+           makeCheckBox(pdfDoc,student.isFullTimeStudent(),375,255,6,6,1);
+            //Part Time Student
+            makeCheckBox(pdfDoc,student.isPartTimeStudent(),375,245,6,6,1);
+            //Is Elligible for pell grant
+            if(student.isPellgrant()){
+                makeCheckBox(pdfDoc,student.isPellgrant(),476,240,6,6,1);
+            }else{
+                makeCheckBox(pdfDoc,true,501,240,6,6,1);
+            }
+            //Trade Assistance Program
+            if(student.isRecTAAP()){
+                makeCheckBox(pdfDoc,student.isRecTAAP(),380,221,6,6,1);
+            }else{
+                makeCheckBox(pdfDoc,true,415,221,6,6,1);
+            }
+            
             //Adds Each Course up to 4
             float val;
             val = 240;
@@ -134,8 +167,8 @@ public class PdfTest {
                 //Course Title
                 makeTextBox(pdfDoc, course.getCourseName(), 118, val, 374, 15, 2);
                 //Start-End Date
-                makeTextBox(pdfDoc, course.getStartDate() + "|" + course.getEndDate(), 497, val, 95, 15, 2);
-                val = val - 16;
+                makeTextBox(pdfDoc, course.getStartDate() + "|" + course.getEndDate(), 496, val, 95, 15, 2);
+                val = val - 17;
                 counter++;
                 if (counter == 4) {
                     break;
@@ -183,6 +216,16 @@ public class PdfTest {
         }else{
             canvas.saveState().setFillColor(Color.WHITE).rectangle(r).fill().restoreState();
 
+        }
+    }
+    //Makes a check appear for a yes location an no location
+    private static void makeYesNoCheck(PdfDocument pdfDoc,boolean bool,float yesX, float yesY, float yesW, float yesH,float noX, float noY, float noW, float noH, int pageNum){
+       //Yes Box
+        if(bool){
+            makeCheckBox(pdfDoc,bool,yesX,yesY,yesW,yesH,pageNum);
+        //no box
+        }else{
+            makeCheckBox(pdfDoc,true,noX,noY,noW,noH,pageNum);
         }
     }
 }
