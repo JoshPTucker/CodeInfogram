@@ -170,8 +170,6 @@
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('recievGreiveVet')}" th:errors="*{recievGreiveVet}"></span>
             </div>
         </div>
-
-
         <div class="form-row ">
             <div class="col-md-12 border  border-dark">
                 <p>What is your race or ethnicity. Check all that apply</p>
@@ -204,7 +202,6 @@
                             <label class="form-check-label">Hawaiian</label>
                         </div>
                     </div>
-
                 </div>
             </div>
         </div>
@@ -358,6 +355,8 @@
                     <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></span>
                     <input class="form-control" type="number" th:field="*{hours}" placeholder="Hours"/>
                     <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('hours')}" th:errors="*{hours}"></span>
+                    <br/>
+                    <label>Start Date</label>
                     <input class="form-control" type="date" th:field="*{startdate}" placeholder="Start Date"/>
                     <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('startdate')}" th:errors="*{startdate}"></span>
                     <input class="form-control" type="tel" th:field="*{workPhone}"placeholder="Work Phone"/>
@@ -399,7 +398,7 @@
         </div>
 
         <div class="form-row">
-            <div class="col-4 border  border-dark"><p>Are you a veteran?</p>
+            <div class="col-md-4 border  border-dark"><p>Are you a veteran?</p>
                 <input type="radio" value="yes" th:field="*{Veteran}" onclick="myFunction5()"/><label>Yes</label>
                 <input type="radio" value="no" th:field="*{Veteran}" onclick="myFunction6()"/><label>No</label>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('Veteran')}" th:errors="*{Veteran}"></span>
@@ -408,18 +407,17 @@
                     <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('servBranch')}" th:errors="*{servBranch}"></span>
                     <input class="form-control" type="text" th:field="*{typeDischarge}" placeholder="Type of discharge"/>
                     <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('typeDischarge')}" th:errors="*{typeDischarge}"></span>
-                    <input class="form-control" type="date" th:field="*{dateDischarge}" placeholder="Date of discharge">
+                    <br/>
+                    <label>Date of discharge</label>
+                    <input class="form-control" type="date" th:field="*{dateDischarge}">
                     <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('dateDischarge')}" th:errors="*{dateDischarge}"></span>
                 </div>
             </div>
-
-
             <div class="col-md-4 border  border-dark"><p>Are you the spouse of a veteran?</p>
                 <input type="radio" value="yes" th:field="*{SpouseVeteran}"/><label>Yes</label>
                 <input type="radio" value="no" th:field="*{SpouseVeteran}"/><label>No</label>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('SpouseVeteran')}" th:errors="*{SpouseVeteran}"></span>
             </div>
-
             <div class="col-md-4 border  border-dark">
                 <p>Are you a Maryland National Gaurd memeber enlisted for at least 24 months and submitting
                     proof of such from the adjutant general's office?</p>
@@ -427,9 +425,7 @@
                 <input type="radio" value="no" th:field="*{NatGaurd}"/><label>No</label></div>
             <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('NatGaurd')}" th:errors="*{NatGaurd}"></span>
         </div>
-
         <div class="form-row border  border-dark" align="center">
-
             <p>How did you hear about this program?</p>
             <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('hearMC')}" th:errors="*{hearMC}"></span>
             <div class="col-auto">

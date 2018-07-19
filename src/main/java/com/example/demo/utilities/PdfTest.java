@@ -137,11 +137,11 @@ public class PdfTest {
             //Spouse of Veteran
             makeCheckBox(pdfDoc,student.isSpouseVeteran(),145,68,6,6,1);
             //Branch of Service
-            makeTextBox(pdfDoc,student.getServBranch(),121,49,240,14,1);
+            makeTextBox(pdfDoc,student.getServBranch(),121,52,240,13,1);
             //Date of discharge
-            makeTextBox(pdfDoc,student.getDateDischarge(),375,49,108,14,1);
+            makeTextBox(pdfDoc,student.getDateDischarge(),375,52,108,13,1);
             //type of discharge
-            makeTextBox(pdfDoc,student.getTypeDischarge(),491,49,88,14,1);
+            makeTextBox(pdfDoc,student.getTypeDischarge(),491,52,88,13,1);
             //Adds Each Course up to 4
             float val;
             val = 240;
