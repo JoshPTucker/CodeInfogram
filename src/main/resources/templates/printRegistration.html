@@ -72,7 +72,6 @@
             <p>Gender:[[${student.gender}]]</p>
         </div>
     </div>
-
     <div id="race" class ="row  border border-dark">
         <div class="col-sm-2 border-dark">
             <p>Race/Ethnicity:</p>
@@ -112,12 +111,10 @@
         </div>
     </div>
     <div id ="education" class="row">
-
         <div class="col-md-3 border border-dark" >
             <p>Highest education:</p>
             <p th:if="${student.highestEducation!=null}">[[${student.highestEducation}]]</p>
         </div>
-
         <div class="col-md-3 border border-dark" >
             <p>Program of study currently enrolled</p>
             <p th:if="${student.currentEnroll!=null}">[[${student.currentEnroll}]]</p>
@@ -214,9 +211,5 @@
         </form>
     </div>
 </div>
-
-
-
-
 </body>
 </html>

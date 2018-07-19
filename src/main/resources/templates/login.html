@@ -22,7 +22,7 @@
     <div th:if="${param.error}" class="text-danger border border-danger rounded">
         Invalid username and password.
     </div>
-    <div th:if="${param.logout}">
+    <div th:if="${param.logout}" class="text-success border border-success rounded">
         You have been logged out.
     </div>
     <form th:action="@{/login}" method="post">
@@ -32,6 +32,5 @@
         <button type="reset" class="btn btn-outline-dark">Reset</button>
     </form>
 </div>
-
 </body>
 </html>
