@@ -73,7 +73,7 @@ public class PdfTest {
             //Employer name
             makeTextBox(pdfDoc,student.getEmployer(),70,183,145,13,1);
             //Salary
-            makeTextBox(pdfDoc,student.getSalary(),288,183,100,13,1);
+            makeTextBox(pdfDoc,student.getSalary(),286,183,95,13,1);
             //StartDate
             makeTextBox(pdfDoc,student.getStartdate(),388,183,100,13,1);
             //Hours working per week
@@ -219,8 +219,8 @@ public class PdfTest {
         Rectangle r = new Rectangle( x,y,w,h);
         PdfCanvas pdfc = new PdfCanvas(pdfDoc.getPage(pageNum));
         //Comment out dark gray line when not testing
-        pdfc.saveState().setFillColor(Color.DARK_GRAY).rectangle(r).fill().restoreState();
-        //pdfc.saveState().setFillColor(Color.WHITE).rectangle(r).fill().restoreState();
+        //pdfc.saveState().setFillColor(Color.DARK_GRAY).rectangle(r).fill().restoreState();
+        pdfc.saveState().setFillColor(Color.WHITE).rectangle(r).fill().restoreState();
         Canvas c = new Canvas(pdfc,pdfDoc,r);
         c.add(p);
         c.close();
