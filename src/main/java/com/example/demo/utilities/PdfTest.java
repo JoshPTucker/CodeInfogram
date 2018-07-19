@@ -66,9 +66,9 @@ public class PdfTest {
             makeTextBox(pdfDoc,student.getWorkPhone(),263,512,174,22,2);
             //Currently employed
             if(student.isEmployed()){
-                makeCheckBox(pdfDoc,student.isEmployed(),154,200,6,6,1);
+                makeCheckBox(pdfDoc,student.isEmployed(),154,201,6,6,1);
             }else{
-                makeCheckBox(pdfDoc,true,180,200,6,6,1);
+                makeCheckBox(pdfDoc,true,180,201,6,6,1);
             }
             //Employer name
             makeTextBox(pdfDoc,student.getEmployer(),70,183,145,13,1);
@@ -144,7 +144,7 @@ public class PdfTest {
             if(student.isPellgrant()){
                 makeCheckBox(pdfDoc,student.isPellgrant(),476,240,6,6,1);
             }else{
-                makeCheckBox(pdfDoc,true,501,240,6,6,1);
+                makeCheckBox(pdfDoc,true,503,240,6,6,1);
             }
             //Trade Assistance Program
             if(student.isRecTAAP()){
@@ -152,7 +152,28 @@ public class PdfTest {
             }else{
                 makeCheckBox(pdfDoc,true,415,221,6,6,1);
             }
-            
+            //Is Student Under Employed
+            if(student.isUnderEmployed()){
+                makeCheckBox(pdfDoc,student.isUnderEmployed(),35,107,6,6,1);
+            }else{
+                makeCheckBox(pdfDoc,true,45,107,6,6,1);
+            }
+            //Reasons For Under Employment
+            makeTextBox(pdfDoc,student.getReasonUEmploy(),121,105,393,44,1);
+            //Veteran Status
+            if(student.isVeteran()){
+                makeCheckBox(pdfDoc,student.isVeteran(),32,52,6,6,1);
+            }else{
+                makeCheckBox(pdfDoc,true,32,64,6,6,1);
+            }
+            //Spouse of Veteran
+            makeCheckBox(pdfDoc,student.isSpouseVeteran(),145,68,6,6,1);
+            //Branch of Service
+            makeTextBox(pdfDoc,student.getServBranch(),121,49,240,14,1);
+            //Date of discharge
+            makeTextBox(pdfDoc,student.getDateDischarge(),375,49,108,14,1);
+            //type of discharge
+            makeTextBox(pdfDoc,student.getTypeDischarge(),491,49,88,14,1);
             //Adds Each Course up to 4
             float val;
             val = 240;
@@ -175,7 +196,6 @@ public class PdfTest {
                 }
             }
             counter=0;
-
             pdfDoc.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -185,6 +205,7 @@ public class PdfTest {
     public static double mm2pt(int mm){
         return mm*2.83;
     }
+
     //Makes a text box, takes in a pdfdoc, statement, x x-coord, y y-coord, w width,h height, and page number
     private static void makeTextBox(PdfDocument pdfDoc,String paragraph,float x, float y, float w, float h, int pageNum ){
         if(paragraph==null){
@@ -218,6 +239,7 @@ public class PdfTest {
 
         }
     }
+
     //Makes a check appear for a yes location an no location
     private static void makeYesNoCheck(PdfDocument pdfDoc,boolean bool,float yesX, float yesY, float yesW, float yesH,float noX, float noY, float noW, float noH, int pageNum){
        //Yes Box
