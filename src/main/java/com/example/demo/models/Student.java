@@ -64,10 +64,12 @@ public class Student {
 	private String highestEducation;
 	@NotBlank
 	private String currentEnroll;
+	@Size(max=150)
 	private String employer;
+	@Size(max=3)
 	private String hours;
 	private String salary;
-
+		
 	private String startdate;
 	private String workPhone;
 	private String fax;

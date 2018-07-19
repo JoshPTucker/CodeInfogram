@@ -22,9 +22,13 @@
     <form action="#" th:action="@{/addCourse}" th:object="${course}" method="post">
         <input class="form-control" type="text" th:field="*{courseName}" placeholder="Course Name"/>
         <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('courseName')}" th:errors="*{courseName}"></span>
-        <input class="form-control" type="text" th:field="*{StartDate}" placeholder="Start Date"/>
+        <br/>
+        <label>Start Date</label>
+        <input class="form-control" type="date" th:field="*{StartDate}"/>
         <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('StartDate')}" th:errors="*{StartDate}"></span>
-        <input class="form-control" type="text" th:field="*{EndDate}" placeholder="End Date"/>
+        <br/>
+        <label>End Date</label>
+        <input class="form-control" type="date" th:field="*{EndDate}" />
         <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('EndDate')}" th:errors="*{EndDate}"></span>
         <input class="form-control" type="text" th:field="*{courseNum}"  placeholder="Course Number">
         <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('courseNum')}" th:errors="*{courseNum}"></span>

@@ -24,7 +24,7 @@
             <p>Student ID : [[${student.studentId}]]</p>
         </div>
     </div>
-    <div class="row border border-dark" style="background-color: whitesmoke">
+    <div class="row border border-dark" style="background-color: white">
         <div class="col-md-12">
             <h5 align="center">Confirmation</h5>
         </div>
@@ -50,7 +50,7 @@
 
         </div>
     </div>
-    <div class="row border border-dark" style="background-color: whitesmoke">
+    <div class="row border border-dark" style="background-color: white">
         <div class="col-md-12">
             <h5 align="center">Personal Information</h5>
         </div>
@@ -106,7 +106,7 @@
             </div>
         </div>
     </div>
-    <div class="row border border-dark" style="background-color: whitesmoke">
+    <div class="row border border-dark" style="background-color: white">
         <div class="col-md-12">
             <h5 align="center">Education And Employment</h5>
         </div>
@@ -171,34 +171,34 @@
             <p th:if="${student.reasonUEmploy!=null}">[[${student.reasonUEmploy}]]</p>
         </div>
     </div>
-    <div class="row border border-dark"style="background-color: whitesmoke">
+    <div class="row border border-dark"style="background-color: white">
         <div class="col-md-12">
             <h5 align="center">Veteran Status</h5>
         </div>
     </div>
     <div id="VeteranStatus" class="row" >
-        <div class="col-sm-2 border border-dark" >
+        <div class="col-sm-1 border border-dark" >
             <p>Veteran</p>
             <p><span th:if="${student.Veteran==True}">&#9745</span><span th:if="${student.Veteran==False}">&#9746</span></p>
         </div>
-        <div class="col-sm-2 border border-dark" >
+        <div class="col-md-2 border border-dark" >
             <p>Spouse of veteran</p>
             <p><span th:if="${student.SpouseVeteran==True}">&#9745</span><span th:if="${student.SpouseVeteran==False}">&#9746</span></p>
         </div>
-        <div class="col-sm-3 border border-dark" >
+        <div class="col-md-4 border border-dark" >
             <p>Branch</p>
             <p th:if="${student.servBranch!=null}">[[${student.servBranch}]]</p>
         </div>
-        <div class="col-sm-3 border border-dark" >
+        <div class="col-md-3 border border-dark" >
             <p>Date of discharge</p>
             <p th:if="${student.dateDischarge!=null}">[[${student.dateDischarge}]]</p>
         </div>
-        <div class="col-sm-2 border border-dark" >
+        <div class="text-truncate col-md-2 border border-dark" >
             <p>Type of Discharge</p>
-            <p th:if="${student.typeDischarge!=null}">[[${student.typeDischarge}]]</p>
+            <p  th:if="${student.typeDischarge!=null}">[[${student.typeDischarge}]]</p>
         </div>
     </div>
-    <div class="row border border-dark" style="background-color: whitesmoke">
+    <div class="row border border-dark" style="background-color: white">
         <div class="col-md-12">
             <h5 align="center">Courses You Signed Up For</h5>
         </div>
