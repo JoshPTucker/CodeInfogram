@@ -65,7 +65,7 @@ public class GenPdf {
             makeTextBox(pdfDoc,student.getWorkPhone(),492,183,88,13,1);
             makeTextBox(pdfDoc,student.getWorkPhone(),263,512,174,22,2);
             //Currently employed
-            makeYesNoCheck(pdfDoc,student.isEmployed(),154,201,6,6,181,202,6,6,1);
+            makeYesNoCheck(pdfDoc,student.isEmployed(),154,201,6,6,182,202,6,6,1);
             //Employer name
             makeTextBox(pdfDoc,student.getEmployer(),70,183,145,13,1);
             //Salary
@@ -73,7 +73,7 @@ public class GenPdf {
             //StartDate
             makeTextBox(pdfDoc,student.getStartdate(),388,183,100,13,1);
             //Hours working per week
-            makeTextBox(pdfDoc,student.getHours(),218,183,57,13,1);
+            makeTextBox(pdfDoc,student.getHours(),220,183,55,13,1);
             //Email
             makeTextBox(pdfDoc,student.getEmail(),379,460,200,16,1);
             makeTextBox(pdfDoc,student.getEmail(),259,477,320,22,2);
@@ -125,13 +125,13 @@ public class GenPdf {
             //Part Time Student
             makeCheckBox(pdfDoc,student.isPartTimeStudent(),375,245,6,6,1);
             //Is Elligible for pell grant
-            makeYesNoCheck(pdfDoc,student.isPellgrant(),476,240,6,6,503,240,6,6,1);
+            makeYesNoCheck(pdfDoc,student.isPellgrant(),475,240,6,6,503,240,6,6,1);
             //Trade Assistance Program
             makeYesNoCheck(pdfDoc,student.isRecTAAP(),380,221,6,6,415,221,6,6,1);
             //Is Student Under Employed
             makeYesNoCheck(pdfDoc,student.isUnderEmployed(),35,107,6,6,63,107,6,6,1);
             //Reasons For Under Employment
-            makeTextBox(pdfDoc,student.getReasonUEmploy(),121,105,393,42,1);
+            makeTextBox(pdfDoc,student.getReasonUEmploy(),123,105,393,42,1);
             //Veteran Status
             makeYesNoCheck(pdfDoc,student.isVeteran(),32,52,6,6,32,67,6,6,1);
             //Spouse of Veteran
@@ -156,7 +156,7 @@ public class GenPdf {
                 //Course Title
                 makeTextBox(pdfDoc, course.getCourseName(), 124, val, 370, 15, 2);
                 //Start-End Date
-                makeTextBox(pdfDoc, course.getStartDate() + "-" + course.getEndDate(), 496, val, 95, 15, 2);
+                makeTextBox(pdfDoc, course.getStartDate()+ "|"+course.getEndDate(), 496, val, 95, 13, 2);
                 val = val - 17;
                 counter++;
                 if (counter == 4) {

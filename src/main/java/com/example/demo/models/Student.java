@@ -66,6 +66,7 @@ public class Student {
 	private String currentEnroll;
 	@Size(max=150)
 	private String employer;
+
 	@Size(max=3)
 	private String hours;
 	private String salary;
@@ -94,7 +95,7 @@ public class Student {
 	//If student is employed are the under employed
 	@NotNull
 	private boolean UnderEmployed;
-	//Is the student elligible
+	//Is the student elligible for the pll grant
 	@NotNull
 	private boolean Pellgrant;
 	@NotNull
@@ -112,6 +113,7 @@ public class Student {
 	private String servBranch;
 	private String dateDischarge;
 	private String typeDischarge;
+
 	@NotNull
 	private boolean SpouseVeteran;
 

@@ -52,6 +52,7 @@
         <div class="form-row border  border-dark p-2">
             <div class="col-sm-2">
                 <input class="form-control" type="text" th:field="*{studentId}" placeholder="MC Student Id"/>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('studentId')}" th:errors="*{studentId}"></span>
             </div>
             <div class="col-md-3">
                 <input class="form-control" type="text" th:field="*{email}" placeholder="Email"/>
@@ -71,26 +72,30 @@
             </div>
         </div>
         <div class="form-row border  border-dark pt-2">
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <input class="form-control" type="text" th:field="*{address}" placeholder="Street Address"/>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('address')}" th:errors="*{address}"></span>
-            </div>
-            <div class="col-md-2">
+                <hr/>
                 <input class="form-control" type="number" th:field="*{aptnum}" placeholder="Apartment Number"/>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('aptnum')}" th:errors="*{aptnum}"></span>
             </div>
-            <div class="col-md-2">
+
+            <div class="col-md-3">
+                <input class="form-control" type="text" th:field="*{city}" placeholder="City"/>
+                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('city')}"
+                      th:errors="*{city}"></span>
+                 <hr/>
                 <input class="form-control" type="number" th:field="*{zipcode}" placeholder="Zipcode"/>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('zipcode')}" th:errors="*{zipcode}"></span>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <input class="form-control" type="tel" th:field="*{homephone}" placeholder="Home Phone#"/>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('homephone')}" th:errors="*{homephone}"></span>
                 <hr/>
                 <input class="form-control" type="text" th:field="*{fax}" placeholder="Fax#"/>
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('fax')}" th:errors="*{fax}"></span>
             </div>
-            <div class="col-md-2">
+            <div class="col-md-3">
                 <select class="custom-select" th:field="*{State}">
                     <option value="AL">Alabama</option>
                     <option value="AK">Alaska</option>
@@ -147,11 +152,7 @@
                 <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('State')}"
                       th:errors="*{State}"></span>
             </div>
-            <div class="col-md-2">
-                <input class="form-control" type="text" th:field="*{city}" placeholder="City"/>
-                <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('city')}"
-                      th:errors="*{city}"></span>
-            </div>
+
         </div>
         <div class="form-row">
             <div class="col-md-4 border  border-dark">
@@ -336,12 +337,12 @@
                     <input class="form-control" type="number" th:field="*{salary}" placeholder="Salary"/>
                     <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></span>
                     <input class="form-control" type="number" th:field="*{hours}" placeholder="Hours"/>
-                    <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('hours')}" th:errors="*{hours}"></span>
+                    <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('hours')}"  th:errors="*{hours}"></span>
                     <br/>
                     <label>Start Date</label>
                     <input class="form-control" type="date" th:field="*{startdate}" placeholder="Start Date"/>
                     <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('startdate')}" th:errors="*{startdate}"></span>
-                    <input class="form-control" type="tel" th:field="*{workPhone}"placeholder="Work Phone"/>
+                    <input class="form-control" type="tel" th:field="*{workPhone}" placeholder="Work Phone"/>
                     <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('workPhone')}" th:errors="*{workPhone}"></span>
                 </div>
 
