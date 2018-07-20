@@ -337,7 +337,7 @@
                     <input class="form-control" type="number" th:field="*{salary}" placeholder="Salary"/>
                     <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('salary')}" th:errors="*{salary}"></span>
                     <input class="form-control" type="number" th:field="*{hours}" placeholder="Hours"/>
-                    <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('hours')}"  th:errors="*{hours}"></span>
+                    <span class="text-danger border border-danger rounded" th:if="${#fields.hasErrors('hours')}"  th:errors="*{hours}" ></span>
                     <br/>
                     <label>Start Date</label>
                     <input class="form-control" type="date" th:field="*{startdate}" placeholder="Start Date"/>
