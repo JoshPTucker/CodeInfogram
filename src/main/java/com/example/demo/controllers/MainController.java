@@ -8,7 +8,7 @@ import com.example.demo.models.Student;
 import com.example.demo.services.DataLoader;
 import com.example.demo.services.UserService;
 import com.example.demo.utilities.CourseRepository;
-import com.example.demo.utilities.PdfTest;
+import com.example.demo.utilities.GenPdf;
 import com.example.demo.utilities.StudentRepository;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfReader;
@@ -32,7 +32,7 @@ public class MainController {
 
 	DataLoader loader = new DataLoader();
 
-	PdfTest test = new PdfTest();
+	GenPdf test = new GenPdf();
 
 	@RequestMapping("/")
 	public String index(){

@@ -16,7 +16,7 @@ import java.io.IOException;
 import java.util.Collection;
 import java.util.Iterator;
 
-public class PdfTest {
+public class GenPdf {
 
     public static void makeRegPDF (Student student, ByteArrayOutputStream stream) {
         String src = "static/RegForms.pdf";
@@ -131,7 +131,7 @@ public class PdfTest {
             //Is Student Under Employed
             makeYesNoCheck(pdfDoc,student.isUnderEmployed(),35,107,6,6,63,107,6,6,1);
             //Reasons For Under Employment
-            makeTextBox(pdfDoc,student.getReasonUEmploy(),121,105,393,44,1);
+            makeTextBox(pdfDoc,student.getReasonUEmploy(),121,105,393,42,1);
             //Veteran Status
             makeYesNoCheck(pdfDoc,student.isVeteran(),32,52,6,6,32,67,6,6,1);
             //Spouse of Veteran
@@ -150,13 +150,13 @@ public class PdfTest {
             courses = student.getCourses();
             for (Course course : courses) {
                 //CRN
-                makeTextBox(pdfDoc, course.getCrn(), 22, val, 40, 15, 2);
+                makeTextBox(pdfDoc, course.getCrn(), 22, val, 39, 15, 2);
                 //Course Number
-                makeTextBox(pdfDoc, course.getCourseNum(), 63, val, 54, 15, 2);
+                makeTextBox(pdfDoc, course.getCourseNum(), 64, val, 52, 15, 2);
                 //Course Title
-                makeTextBox(pdfDoc, course.getCourseName(), 120, val, 374, 15, 2);
+                makeTextBox(pdfDoc, course.getCourseName(), 124, val, 370, 15, 2);
                 //Start-End Date
-                makeTextBox(pdfDoc, course.getStartDate() + "|" + course.getEndDate(), 496, val, 95, 15, 2);
+                makeTextBox(pdfDoc, course.getStartDate() + "-" + course.getEndDate(), 496, val, 95, 15, 2);
                 val = val - 17;
                 counter++;
                 if (counter == 4) {
