@@ -61,13 +61,5 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter{
         auth.userDetailsService(userDetailsServiceBean()).passwordEncoder(encoder());
     }
 
-
-//    @SuppressWarnings("deprecation")
-//    @Bean
-//    public static NoOpPasswordEncoder passwordEncoder() {
-//        return (NoOpPasswordEncoder) NoOpPasswordEncoder.getInstance();
-//    }
-
-
 }
 
