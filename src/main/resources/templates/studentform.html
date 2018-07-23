@@ -388,7 +388,7 @@
 						value="no" th:field="*{Employed}" onclick="myFunction3()" /><label>No</label>
 					<span class="text-danger border border-danger rounded"
 						th:if="${#fields.hasErrors('Employed')}" th:errors="*{Employed}"></span>
-					<div id="test1" >
+					<div id="test1" style="display: none">
 						<p>Please enter the following</p>
 						<input class="form-control" type="text" th:field="*{employer}"
 							placeholder="Employer" /> <span
@@ -427,7 +427,7 @@
 						th:if="${#fields.hasErrors('UnderEmployed')}"
 						th:errors="*{UnderEmployed}"></span>
 				</div>
-				<div id="test2" style="display: block">
+				<div id="test2" style="display: none">
 					<div class="col-auto">
 						<p>If yes, what is the reason for you under employment?</p>
 
@@ -456,7 +456,7 @@
 						value="no" th:field="*{Veteran}" onclick="myFunction6()" /><label>No</label>
 					<span class="text-danger border border-danger rounded"
 						th:if="${#fields.hasErrors('Veteran')}" th:errors="*{Veteran}"></span>
-					<div id="vetStuff" style="display: block">
+					<div id="vetStuff" style="display: none">
 						<input class="form-control" type="text" th:field="*{servBranch}"
 							placeholder="Branch of service" /> <span
 							class="text-danger border border-danger rounded"
