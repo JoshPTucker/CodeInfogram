@@ -7,4 +7,7 @@ import java.util.Set;
 
 public interface CourseRepository extends CrudRepository<Course, Long> {
   Set<Course> findCoursesByActiveIsTrue();
+  Course findByCrn(String crn);
+  
+ 
 }
