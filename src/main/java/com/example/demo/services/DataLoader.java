@@ -27,8 +27,10 @@ public class DataLoader implements CommandLineRunner {
     public  void run(String... strings) throws Exception {
         System.out.println("Loading data . . .");
 
+        //Trys to find a role
         Role adminRole = roleRepository.findByRole("ADMIN");
        // Role userRole = roleRepository.findByRole("USER");
+        //If role does not exist then the role is added
         if (adminRole == null) {
             roleRepository.save(new Role("USER"));
             roleRepository.save(new Role("ADMIN"));
