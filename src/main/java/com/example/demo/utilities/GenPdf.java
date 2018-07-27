@@ -17,7 +17,10 @@ import java.util.Collection;
 import java.util.Iterator;
 
 public class GenPdf {
-
+    /*Coordinates for the boxes are taken at the bottom left corne of where the box will be.
+    IText 7 uses a coordinate system based on computer pts. For Example an 8.5 by 11 paper
+    is 792 by 612 pts
+     */
     public static void makeRegPDF (Student student, ByteArrayOutputStream stream) {
         String src = "static/RegForms.pdf";
 
@@ -142,7 +145,8 @@ public class GenPdf {
             makeTextBox(pdfDoc,student.getDateDischarge(),375,52,108,13,1);
             //type of discharge
             makeTextBox(pdfDoc,student.getTypeDischarge(),491,52,88,13,1);
-            //Adds Each Course up to 4
+
+            //Adds Each Course up to 4 courses.
             float val;
             val = 240;
             int counter=0;
@@ -170,6 +174,7 @@ public class GenPdf {
         }
     }
 
+    //COnversion method to change mm measurements to pts
     public static double mm2pt(int mm){
         return mm*2.83;
     }
@@ -208,7 +213,9 @@ public class GenPdf {
         }
     }
 
-    //Makes a check appear for a yes location an no location
+    /*Makes a check appear for a yes location an no location
+      
+     */
     private static void makeYesNoCheck(PdfDocument pdfDoc,boolean bool,float yesX, float yesY, float yesW, float yesH,float noX, float noY, float noW, float noH, int pageNum){
        //Yes Box
         if(bool){
