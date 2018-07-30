@@ -214,7 +214,7 @@ public class GenPdf {
     }
 
     /*Makes a check appear for a yes location an no location
-      
+
      */
     private static void makeYesNoCheck(PdfDocument pdfDoc,boolean bool,float yesX, float yesY, float yesW, float yesH,float noX, float noY, float noW, float noH, int pageNum){
        //Yes Box

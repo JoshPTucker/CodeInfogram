@@ -384,12 +384,12 @@
 				<div class="col-md-6 border  border-dark">
 					<p>Are you currently employed?</p>
 					<input type="radio" value="yes" th:field="*{Employed}"
-						onclick="myFunction()" checked/><label>Yes</label> <input type="radio"
-						value="no" th:field="*{Employed}" onclick="myFunction3()" /><label>No</label>
+						checked/><label>Yes</label> <input type="radio"
+						value="no" th:field="*{Employed}"/><label>No</label>
 					<span class="text-danger border border-danger rounded"
 						th:if="${#fields.hasErrors('Employed')}" th:errors="*{Employed}"></span>
-					<div id="test1" style="display: none">
-						<p>Please enter the following</p>
+					<div id="test1" style="display: block">
+						<p>If yes, please enter the following.</p>
 						<input class="form-control" type="text" th:field="*{employer}"
 							placeholder="Employer" /> <span
 							class="text-danger border border-danger rounded"
@@ -421,13 +421,13 @@
 				<div class="col-md-12 ">
 					<p>Are you under employed?</p>
 					<input type="radio" value="yes" th:field="*{UnderEmployed}"
-						onclick="myFunction2()" /><label>Yes</label> <input type="radio"
-						value="no" th:field="*{UnderEmployed}" onclick="myFunction4()" /><label>No</label>
+						 /><label>Yes</label> <input type="radio"
+						value="no" th:field="*{UnderEmployed}"/><label>No</label>
 					<span class="text-danger border border-danger rounded"
 						th:if="${#fields.hasErrors('UnderEmployed')}"
 						th:errors="*{UnderEmployed}"></span>
 				</div>
-				<div id="test2" style="display: none">
+				<div id="test2" style="display: block">
 					<div class="col-auto">
 						<p>If yes, what is the reason for you under employment?</p>
 
@@ -452,11 +452,12 @@
 				<div class="col-md-4 border  border-dark">
 					<p>Are you a veteran?</p>
 					<input type="radio" value="yes" th:field="*{Veteran}"
-						onclick="myFunction5()" /><label>Yes</label> <input type="radio"
-						value="no" th:field="*{Veteran}" onclick="myFunction6()" /><label>No</label>
+						 /><label>Yes</label> <input type="radio"
+						value="no" th:field="*{Veteran}" /><label>No</label>
+					<p>If yes, fill out the following.</p>
 					<span class="text-danger border border-danger rounded"
 						th:if="${#fields.hasErrors('Veteran')}" th:errors="*{Veteran}"></span>
-					<div id="vetStuff" style="display: none">
+					<div id="vetStuff" style="display: block">
 						<input class="form-control" type="text" th:field="*{servBranch}"
 							placeholder="Branch of service" /> <span
 							class="text-danger border border-danger rounded"

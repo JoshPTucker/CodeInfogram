@@ -13,7 +13,7 @@ import java.util.Collection;
  */
 @Entity
 public class Student {
-	//Values do not include ssn or dob for security reasons
+	//Values do not include ssn or dob for security
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
 	private long id;
